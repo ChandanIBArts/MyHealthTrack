@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3F5F3AA1-A91A-4718-B101-28E34400831E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5EF24B4-42A6-4D23-BA02-0F525E04B1EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHealthTrack/UserInterface/Heart Rate/HeartRateVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDD8BD5F-A2AA-4CBE-AC05-2A8BC0610CB7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHealthTrack/UserInterface/Screens/Mobility/MobilityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "readWalkingStepLengthAData(comp:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DDD8BD5F-A2AA-4CBE-AC05-2A8BC0610CB7 - b11dd8a76c243cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.HKSampleQuery, Swift.Optional&lt;Swift.Array&lt;__C.HKSample&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.MobilityHealthKitManager.readWalkingStepLengthAData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.MobilityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/HealthKitApp/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Mobility/MobilityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "5787">
+               </Location>
+               <Location
+                  uuid = "DDD8BD5F-A2AA-4CBE-AC05-2A8BC0610CB7 - b11dd8a76c243cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.HKSampleQuery, Swift.Optional&lt;Swift.Array&lt;__C.HKSample&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.MobilityHealthKitManager.readWalkingStepLengthAData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.MobilityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/HealthKitApp/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Mobility/MobilityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "4408">
+               </Location>
+               <Location
+                  uuid = "DDD8BD5F-A2AA-4CBE-AC05-2A8BC0610CB7 - 9a323477c1ed49db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.HKSampleQuery, Swift.Optional&lt;Swift.Array&lt;__C.HKSample&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.MobilityHealthKitManager.readWalkingStepLengthAData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.MobilityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Mobility/MobilityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "4408">
+               </Location>
+               <Location
+                  uuid = "DDD8BD5F-A2AA-4CBE-AC05-2A8BC0610CB7 - 9a323477c1ed49db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.HKSampleQuery, Swift.Optional&lt;Swift.Array&lt;__C.HKSample&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.MobilityHealthKitManager.readWalkingStepLengthAData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.MobilityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Mobility/MobilityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "4360">
+               </Location>
+               <Location
+                  uuid = "DDD8BD5F-A2AA-4CBE-AC05-2A8BC0610CB7 - 5abad2de0bf1981e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.HKSampleQuery, Swift.Optional&lt;Swift.Array&lt;__C.HKSample&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.MobilityHealthKitManager.readWalkingStepLengthAData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.MobilityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Mobility/MobilityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "4408">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD1C8D85-4D1A-47BE-B38A-FE228E573241"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHealthTrack/UserInterface/Screens/Activity/ActivityViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "readHealthData(comp:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FD1C8D85-4D1A-47BE-B38A-FE228E573241 - 1a88722a76c24c22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyHealthTrack.HealthKitmanager.readHealthData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.ActivityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/HealthKitApp/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Activity/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "FD1C8D85-4D1A-47BE-B38A-FE228E573241 - 248a8d6b23c0f804"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.ActivityRecord&gt;&gt;) -&gt; () in MyHealthTrack.HealthKitmanager.readHealthData(comp: (Swift.Optional&lt;Swift.Array&lt;MyHealthTrack.ActivityRecord&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/HealthKitApp/MyHealthTrack/MyHealthTrack/UserInterface/Screens/Activity/ActivityViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

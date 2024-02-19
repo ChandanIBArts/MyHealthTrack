@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HearingTVCell" rowHeight="63" id="KGk-i7-Jjw" customClass="HearingTVCell" customModule="MyHealthTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOb-XN-O2Z">
+                        <rect key="frame" x="5" y="5" width="310" height="53"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T3-Vs-bHH">
+                                <rect key="frame" x="5" y="5" width="300" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3T3-Vs-bHH" secondAttribute="bottom" constant="5" id="6Zp-oC-tIO"/>
+                            <constraint firstItem="3T3-Vs-bHH" firstAttribute="top" secondItem="VOb-XN-O2Z" secondAttribute="top" constant="5" id="XnO-kB-Vil"/>
+                            <constraint firstAttribute="trailing" secondItem="3T3-Vs-bHH" secondAttribute="trailing" constant="5" id="Xtj-Ef-Uwj"/>
+                            <constraint firstItem="3T3-Vs-bHH" firstAttribute="leading" secondItem="VOb-XN-O2Z" secondAttribute="leading" constant="5" id="zRG-1z-sWe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VOb-XN-O2Z" secondAttribute="trailing" constant="5" id="S5I-YU-FxS"/>
+                    <constraint firstItem="VOb-XN-O2Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="VFl-By-M5D"/>
+                    <constraint firstItem="VOb-XN-O2Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="VdW-HA-GN2"/>
+                    <constraint firstAttribute="bottom" secondItem="VOb-XN-O2Z" secondAttribute="bottom" constant="5" id="Ya0-ke-4GO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellBackground" destination="VOb-XN-O2Z" id="tYF-OD-zAO"/>
+                <outlet property="strLbl" destination="3T3-Vs-bHH" id="PIS-2T-AMC"/>
+            </connections>
+            <point key="canvasLocation" x="129.7709923664122" y="-4.5774647887323949"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

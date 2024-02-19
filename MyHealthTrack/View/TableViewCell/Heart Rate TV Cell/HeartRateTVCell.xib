@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeartRateTVCell" rowHeight="96" id="KGk-i7-Jjw" customClass="HeartRateTVCell" customModule="MyHealthTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWC-RJ-fqg">
+                        <rect key="frame" x="5" y="5" width="344" height="86"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-RQ-mSi">
+                                <rect key="frame" x="10" y="8" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="9dl-r8-dWc"/>
+                                    <constraint firstAttribute="height" constant="25" id="FdQ-U5-UfJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1l-99-kPp">
+                                <rect key="frame" x="40" y="8" width="130" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="ftT-39-xdZ"/>
+                                    <constraint firstAttribute="height" constant="25" id="tRN-zx-cRI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="83" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-Oq-TWB">
+                                <rect key="frame" x="10" y="58" width="184" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="zcg-nE-9u1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:31 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoA-U9-MGh">
+                                <rect key="frame" x="286" y="8" width="50" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BSi-9R-PY4"/>
+                                    <constraint firstAttribute="height" constant="15" id="hzL-7Y-7HG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OoA-U9-MGh" secondAttribute="trailing" constant="8" id="02s-SE-GdO"/>
+                            <constraint firstItem="N6k-RQ-mSi" firstAttribute="top" secondItem="MWC-RJ-fqg" secondAttribute="top" constant="8" id="5l5-nU-UIW"/>
+                            <constraint firstItem="S1l-99-kPp" firstAttribute="top" secondItem="MWC-RJ-fqg" secondAttribute="top" constant="8" id="Boq-SB-WUZ"/>
+                            <constraint firstItem="ubn-Oq-TWB" firstAttribute="leading" secondItem="MWC-RJ-fqg" secondAttribute="leading" constant="10" id="Fd3-W3-fI0"/>
+                            <constraint firstAttribute="bottom" secondItem="ubn-Oq-TWB" secondAttribute="bottom" constant="8" id="TCw-9v-Oyl"/>
+                            <constraint firstItem="OoA-U9-MGh" firstAttribute="top" secondItem="MWC-RJ-fqg" secondAttribute="top" constant="8" id="eFO-Oz-g77"/>
+                            <constraint firstAttribute="trailing" secondItem="ubn-Oq-TWB" secondAttribute="trailing" constant="150" id="gnv-ek-CTY"/>
+                            <constraint firstItem="S1l-99-kPp" firstAttribute="leading" secondItem="N6k-RQ-mSi" secondAttribute="trailing" constant="5" id="qCS-mQ-mHp"/>
+                            <constraint firstItem="N6k-RQ-mSi" firstAttribute="leading" secondItem="MWC-RJ-fqg" secondAttribute="leading" constant="10" id="qSZ-MA-Xvs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="MWC-RJ-fqg" secondAttribute="trailing" constant="5" id="Xti-4w-3iw"/>
+                    <constraint firstItem="MWC-RJ-fqg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="jAR-RI-zWx"/>
+                    <constraint firstAttribute="bottom" secondItem="MWC-RJ-fqg" secondAttribute="bottom" constant="5" id="rht-0D-xBz"/>
+                    <constraint firstItem="MWC-RJ-fqg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="sSN-8Z-cJx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellBackground" destination="MWC-RJ-fqg" id="7wf-qb-c5Q"/>
+                <outlet property="lblData" destination="ubn-Oq-TWB" id="EIM-Ji-Hpo"/>
+                <outlet property="lblTime" destination="OoA-U9-MGh" id="2oX-4T-i4o"/>
+            </connections>
+            <point key="canvasLocation" x="-125.19083969465649" y="-13.380281690140846"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Heart" width="36" height="31.5"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
