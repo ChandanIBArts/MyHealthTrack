@@ -101,4 +101,17 @@ extension MobilityVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //DetailsDoubleSupportVC
+        if indexPath.section == 0 {
+            let str = mobilityRecord[indexPath.row].title
+            if str == "Double Support Time" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsDoubleSupportVC") as! DetailsDoubleSupportVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    
 }

@@ -17,6 +17,10 @@ class Details_StepsVC: UIViewController {
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var staticData = StaticModel.StepsModel
+    
     var dailyTotalCount = 0
     var weeklyTotalCount = 0
     var monthlyTotalCount = 0
@@ -26,10 +30,12 @@ class Details_StepsVC: UIViewController {
     let healthKitManager = DetailsStepsHealthKitManager()
     var barChartView = BarChartView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         barChartView.frame = CGRect(x: 0, y: 0, width: Int(view.frame.size.width), height: Int(view.frame.size.width))
         barChartView.center = view.center
         chartsManage()
@@ -330,5 +336,27 @@ extension Details_StepsVC {
     
    
     
+    
+}
+
+
+extension Details_StepsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return staticData.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Steps_Static_Cell", for: indexPath) as! Steps_Static_Cell
+        cell.imgView.image = staticData[indexPath.row].img
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
 }

@@ -19,6 +19,7 @@ class HearingVC: UIViewController {
         hearingTableview.dataSource = self
         hearingTableview.delegate = self
         hearingTableview.register(UINib(nibName: "HearingTVCell", bundle: nil), forCellReuseIdentifier: "HearingTVCell")
+        hearingTableview.register(UINib(nibName: "DefultHearingTVCell", bundle: nil), forCellReuseIdentifier: "DefultHearingTVCell")
         hearingTableview.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -36,20 +37,48 @@ class HearingVC: UIViewController {
 
 extension HearingVC: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myStrRecord.count
+        
+        if section == 0 {
+            
+            return 1
+            
+        } else {
+            return myStrRecord.count
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = hearingTableview.dequeueReusableCell(withIdentifier: "HearingTVCell", for: indexPath) as! HearingTVCell
-        cell.strLbl.text = myStrRecord[indexPath.row].strData
-        return cell
+        
+        if indexPath.section == 0 {
+            
+            let cell = hearingTableview.dequeueReusableCell(withIdentifier: "DefultHearingTVCell", for: indexPath) as! DefultHearingTVCell
+            cell.title.text = "Headphone Audio Levels"
+            cell.selectionStyle = .none
+            return cell
+            
+        } else {
+            
+            let cell = hearingTableview.dequeueReusableCell(withIdentifier: "HearingTVCell", for: indexPath) as! HearingTVCell
+            cell.strLbl.text = myStrRecord[indexPath.row].strData
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        if indexPath.section == 0 {
+            return 90
+        } else {
+            return 65
+        }
     }
+    
+    
     
     
 }

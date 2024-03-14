@@ -17,7 +17,7 @@ class MentalRecord {
     
     static var mentalData : [MentalRecord] = [
     
-    MentalRecord(title: "Anxiety Risk"),
+   // MentalRecord(title: "Anxiety Risk"),
     MentalRecord(title: "Depression Risk"),
     MentalRecord(title: "Exercise Minutes"),
     MentalRecord(title: "Mindful Minutes"),

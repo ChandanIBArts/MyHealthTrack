@@ -16,7 +16,7 @@ class Details_Walking_RunningDistanceVC: UIViewController {
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
-    
+    @IBOutlet weak var tableView: UITableView!
     
     var dailyTotalCount: Float = 0.0
     var weeklyTotalCount: Float = 0.0
@@ -26,9 +26,15 @@ class Details_Walking_RunningDistanceVC: UIViewController {
     
     let healthKitManager = DWRDHealthKitManager()
     var barChartView = BarChartView()
+    var staticData = StaticModel.RWDModel
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         barChartView.frame = CGRect(x: 0, y: 0, width: Int(view.frame.size.width), height: Int(view.frame.size.width))
         barChartView.center = view.center
@@ -329,6 +335,24 @@ extension Details_Walking_RunningDistanceVC {
         
 }
 
+extension Details_Walking_RunningDistanceVC: UITableViewDataSource,UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return staticData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RW_Static_Cell", for: indexPath) as! RW_Static_Cell
+        cell.imgView.image = staticData[indexPath.row].img
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    
+}
 
 
 

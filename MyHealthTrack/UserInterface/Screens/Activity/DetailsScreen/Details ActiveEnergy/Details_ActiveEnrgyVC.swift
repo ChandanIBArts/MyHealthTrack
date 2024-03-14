@@ -17,6 +17,7 @@ class Details_ActiveEnrgyVC: UIViewController {
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
     
     var dailyTotalCount: Float = 0.0
     var weeklyTotalCount: Float = 0.0
@@ -26,6 +27,7 @@ class Details_ActiveEnrgyVC: UIViewController {
     
     let healthKitManager = DetailsActiveEnergyHealthKitManager()
     var barChartView = BarChartView()
+    var staticData = StaticModel.ActiveEnergyModel
     
 //    var dayArr = ["12:00Am","1:00AM","2:00AM","3:00AM","4:00AM","5:00AM","6:00AM","7:00AM","8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","6:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"]
 //    
@@ -40,6 +42,9 @@ class Details_ActiveEnrgyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         barChartView.frame = CGRect(x: 0, y: 0, width: Int(view.frame.size.width), height: Int(view.frame.size.width))
         barChartView.center = view.center
@@ -340,4 +345,22 @@ extension Details_ActiveEnrgyVC {
         barChartView.zoomToCenter(scaleX: 2.5, scaleY: 0)
     }
 
+}
+
+extension Details_ActiveEnrgyVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return staticData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Active_Static_Cell", for: indexPath) as! Active_Static_Cell
+        cell.imgView.image = staticData[indexPath.row].img
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
+   
 }

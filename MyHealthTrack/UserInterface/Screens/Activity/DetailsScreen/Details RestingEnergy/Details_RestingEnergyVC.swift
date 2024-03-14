@@ -17,6 +17,9 @@ class Details_RestingEnergyVC: UIViewController {
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var dailyTotalCount: Float = 0.0
     var weeklyTotalCount: Float = 0.0
     var monthlyTotalCount: Float = 0.0
@@ -25,11 +28,15 @@ class Details_RestingEnergyVC: UIViewController {
 
     let healthKitManager = DetailsRestingEnergyHealthKitManager()
     var barChartView = BarChartView()
+    var staticData = StaticModel.RestingEnergyModel
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         barChartView.frame = CGRect(x: 0, y: 0, width: Int(view.frame.size.width), height: Int(view.frame.size.width - 10))
         barChartView.center = view.center
         chartsManage()
@@ -325,5 +332,25 @@ extension Details_RestingEnergyVC {
         barChartView.zoomToCenter(scaleX: 2.9, scaleY: 0)
         //barChartView.xAxis.granularity = 1
     }
+    
+}
+
+extension Details_RestingEnergyVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return staticData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Resting_Static_Cell", for: indexPath) as! Resting_Static_Cell
+        cell.lblTitle.text = "About Resting Energy"
+        cell.imgView.image = staticData[indexPath.row].img
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+    
     
 }
