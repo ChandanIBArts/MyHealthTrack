@@ -1,23 +1,16 @@
 //
-//  RW_Static_Cell.swift
+//  SleepChartCell.swift
 //  MyHealthTrack
 //
-//  Created by IB Arts Mac on 27/02/24.
+//  Created by IB Arts Mac on 15/03/24.
 //
 
 import UIKit
 
-class RW_Static_Cell: UITableViewCell {
-    
-    
-    @IBOutlet weak var imgView: UIImageView!
-    
+class SleepChartCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        imgView.layer.cornerRadius = 10
-        imgView.clipsToBounds = true
-        
         // Initialization code
     }
 
@@ -26,5 +19,5 @@ class RW_Static_Cell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

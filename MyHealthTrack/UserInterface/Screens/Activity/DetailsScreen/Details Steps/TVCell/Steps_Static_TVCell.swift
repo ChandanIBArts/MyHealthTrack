@@ -1,21 +1,16 @@
 //
-//  Active_Static_Cell.swift
+//  Steps_Static_TVCell.swift
 //  MyHealthTrack
 //
-//  Created by IB Arts Mac on 27/02/24.
+//  Created by IB Arts Mac on 15/03/24.
 //
 
 import UIKit
 
-class Active_Static_Cell: UITableViewCell {
+class Steps_Static_TVCell: UITableViewCell {
 
-    @IBOutlet weak var imgView: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        imgView.layer.cornerRadius = 10
-        imgView.clipsToBounds = true
         // Initialization code
     }
 
@@ -24,5 +19,5 @@ class Active_Static_Cell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

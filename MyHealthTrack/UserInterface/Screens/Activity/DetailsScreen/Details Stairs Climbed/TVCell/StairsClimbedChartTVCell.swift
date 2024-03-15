@@ -1,17 +1,14 @@
 //
-//  Static_DoubleSupport_TextCell.swift
+//  StairsClimbedChartTVCell.swift
 //  MyHealthTrack
 //
-//  Created by IB Arts Mac on 28/02/24.
+//  Created by IB Arts Mac on 15/03/24.
 //
 
 import UIKit
 
-class Static_DoubleSupport_TextCell: UITableViewCell {
-    
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblDescrip: UILabel!
-    
+class StairsClimbedChartTVCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +19,5 @@ class Static_DoubleSupport_TextCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
