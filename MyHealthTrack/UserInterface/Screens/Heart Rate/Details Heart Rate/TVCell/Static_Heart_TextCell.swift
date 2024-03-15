@@ -9,6 +9,10 @@ import UIKit
 
 class Static_Heart_TextCell: UITableViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescrib: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

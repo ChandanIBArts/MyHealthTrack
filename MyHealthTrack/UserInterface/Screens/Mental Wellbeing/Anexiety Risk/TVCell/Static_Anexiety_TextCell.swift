@@ -8,6 +8,10 @@
 import UIKit
 
 class Static_Anexiety_TextCell: UITableViewCell {
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescrip: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

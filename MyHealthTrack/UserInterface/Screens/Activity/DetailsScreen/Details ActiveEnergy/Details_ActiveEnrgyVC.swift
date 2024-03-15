@@ -184,7 +184,13 @@ class Details_ActiveEnrgyVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Daily Active Enrgy Burned")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -192,10 +198,16 @@ class Details_ActiveEnrgyVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .hour, value: Int(-$0.x), to: Date())!) })
+            var time = [String]()
+            
+            time = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -213,7 +225,13 @@ class Details_ActiveEnrgyVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Weekly Active Enrgy Burned")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -221,10 +239,16 @@ class Details_ActiveEnrgyVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "EEE"
+            var dayName = [String]()
+            
+            dayName = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            dayName.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: dayName)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -242,7 +266,13 @@ class Details_ActiveEnrgyVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Monthly Active Enrgy Burned")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -250,10 +280,16 @@ class Details_ActiveEnrgyVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+            var day = [String]()
+            
+            day = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            day.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: day)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -272,9 +308,15 @@ class Details_ActiveEnrgyVC: UIViewController {
             halfYearlyTotalCount = halfYearlyTotalCount + Float(data.1)
             entries.append(entry)
         }
-        let dataSet = BarChartDataSet(entries: entries, label: "Yearly Active Enrgy Burned")
+        let dataSet = BarChartDataSet(entries: entries, label: "Half Yearly Active Enrgy Burned")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -282,10 +324,16 @@ class Details_ActiveEnrgyVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "MMM"
+            var monthNames = [String]()
+            
+            monthNames = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            monthNames.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -307,7 +355,13 @@ class Details_ActiveEnrgyVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Yearly Active Enrgy Burned")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -315,10 +369,16 @@ class Details_ActiveEnrgyVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "MMM"
+            var monthNames = [String]()
+            
+            monthNames = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            monthNames.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()

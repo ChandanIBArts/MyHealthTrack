@@ -9,8 +9,14 @@ import UIKit
 
 class StairsClimbed_Static_Cell: UITableViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var imgView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        imgView.layer.cornerRadius = 10
+        imgView.clipsToBounds = true
         // Initialization code
     }
 

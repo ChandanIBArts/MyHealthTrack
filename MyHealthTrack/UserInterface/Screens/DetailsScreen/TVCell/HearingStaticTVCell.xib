@@ -1,21 +1,80 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HearingStaticTVCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HearingStaticTVCell" rowHeight="488" id="KGk-i7-Jjw" customClass="HearingStaticTVCell" customModule="MyHealthTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="488"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="359" height="488"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CkV-wJ-vPI">
+                        <rect key="frame" x="5" y="5" width="349" height="323"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Headphone Audio Levels" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYA-RN-MHb">
+                                <rect key="frame" x="5" y="5" width="339" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r1-bG-pg0">
+                                <rect key="frame" x="5" y="44" width="339" height="264"/>
+                                <string key="text">This represents the volume of your headphone audio measured in A-weighted decibels (dB). It can be helpful to understand how long you're exposed to loud audio as this can affect your hearing.
+Headphone Audio Levels can be added to Health automatically by your devices. These measurements are most accurate when using Apple or Beats headphones. Audio played through other headphones or speakers connected via a wire can be estimated based on the volume of your device.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="3r1-bG-pg0" firstAttribute="leading" secondItem="CkV-wJ-vPI" secondAttribute="leading" constant="5" id="5Bl-gZ-Vzj"/>
+                            <constraint firstItem="nYA-RN-MHb" firstAttribute="top" secondItem="CkV-wJ-vPI" secondAttribute="top" constant="5" id="FRf-SK-6AC"/>
+                            <constraint firstItem="3r1-bG-pg0" firstAttribute="top" secondItem="nYA-RN-MHb" secondAttribute="bottom" constant="15" id="RmM-7v-3iv"/>
+                            <constraint firstAttribute="trailing" secondItem="3r1-bG-pg0" secondAttribute="trailing" constant="5" id="arE-Q8-9Wv"/>
+                            <constraint firstItem="nYA-RN-MHb" firstAttribute="leading" secondItem="CkV-wJ-vPI" secondAttribute="leading" constant="5" id="dC8-HV-K63"/>
+                            <constraint firstAttribute="trailing" secondItem="nYA-RN-MHb" secondAttribute="trailing" constant="5" id="n4O-0D-rNE"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="GeK-mN-EoD">
+                        <rect key="frame" x="5" y="333" width="349" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="tbb-uy-Hlh"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GeK-mN-EoD" secondAttribute="trailing" constant="5" id="5ke-S3-sL9"/>
+                    <constraint firstItem="CkV-wJ-vPI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BxB-eo-cpr"/>
+                    <constraint firstItem="GeK-mN-EoD" firstAttribute="top" secondItem="CkV-wJ-vPI" secondAttribute="bottom" constant="5" id="J8G-pi-ijw"/>
+                    <constraint firstAttribute="bottom" secondItem="GeK-mN-EoD" secondAttribute="bottom" constant="5" id="kdG-6V-K3m"/>
+                    <constraint firstItem="CkV-wJ-vPI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="nmR-2B-8yU"/>
+                    <constraint firstAttribute="trailing" secondItem="CkV-wJ-vPI" secondAttribute="trailing" constant="5" id="sML-Hb-w20"/>
+                    <constraint firstItem="GeK-mN-EoD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="uwT-sU-POW"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgView" destination="GeK-mN-EoD" id="IAY-7p-4An"/>
+                <outlet property="txtView" destination="CkV-wJ-vPI" id="5We-bg-9Lw"/>
+            </connections>
+            <point key="canvasLocation" x="12.977099236641221" y="-9.1549295774647899"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="img" width="742" height="442"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

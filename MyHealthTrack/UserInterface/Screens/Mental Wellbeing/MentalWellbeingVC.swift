@@ -83,7 +83,7 @@ extension MentalWellbeingVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 70
+            return 100
         } else if indexPath.section == 1 {
             return 65
         } else {

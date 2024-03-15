@@ -142,6 +142,11 @@
 		F722B61A2B593EFB002F6803 /* RespiratoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F722B6182B593EFB002F6803 /* RespiratoryTVCell.swift */; };
 		F722B61B2B593EFB002F6803 /* RespiratoryTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F722B6192B593EFB002F6803 /* RespiratoryTVCell.xib */; };
 		F722B61E2B5947FF002F6803 /* SleepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F722B61D2B5947FF002F6803 /* SleepVC.swift */; };
+		F73580002BA30D5100633477 /* DetailsHearingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7357FFF2BA30D5100633477 /* DetailsHearingVC.swift */; };
+		F73580082BA3119400633477 /* HearingBarchatTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73580062BA3119400633477 /* HearingBarchatTVCell.swift */; };
+		F73580092BA3119400633477 /* HearingBarchatTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73580072BA3119400633477 /* HearingBarchatTVCell.xib */; };
+		F735800C2BA311A600633477 /* HearingStaticTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735800A2BA311A600633477 /* HearingStaticTVCell.swift */; };
+		F735800D2BA311A600633477 /* HearingStaticTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F735800B2BA311A600633477 /* HearingStaticTVCell.xib */; };
 		F735D5862B6269DA0074040E /* DWRDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735D5852B6269DA0074040E /* DWRDViewModel.swift */; };
 		F73CBF962B68EF3100D0693B /* Details_StairsClimbedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73CBF952B68EF3100D0693B /* Details_StairsClimbedModel.swift */; };
 		F73EBABA2B837B36008D8BB7 /* DetailsHartRateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EBAB92B837B36008D8BB7 /* DetailsHartRateVC.swift */; };
@@ -159,6 +164,11 @@
 		F75E90D42B679A680040BC94 /* Details_StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E90D32B679A680040BC94 /* Details_StepsModel.swift */; };
 		F75E90D82B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E90D72B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift */; };
 		F75E90DB2B67B9360040BC94 /* DetailsRestingEnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E90DA2B67B9360040BC94 /* DetailsRestingEnergyModel.swift */; };
+		F79BA1122B8F278A002B2770 /* Static_Heart_TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1112B8F278A002B2770 /* Static_Heart_TextCell.swift */; };
+		F79BA1142B8F27A3002B2770 /* Static_Heart_imgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1132B8F27A3002B2770 /* Static_Heart_imgCell.swift */; };
+		F79BA1172B8F3044002B2770 /* Static_Anexiety_TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1162B8F3044002B2770 /* Static_Anexiety_TextCell.swift */; };
+		F79BA1192B8F3055002B2770 /* Static_Anexiety_ImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1182B8F3055002B2770 /* Static_Anexiety_ImgCell.swift */; };
+		F79BA11C2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA11B2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift */; };
 		F7B8D3CE2B4FF660001BB1C7 /* HealthCategoriesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8D3CC2B4FF660001BB1C7 /* HealthCategoriesTVCell.swift */; };
 		F7B8D3CF2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B8D3CD2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib */; };
 		F7B8D3D22B50014B001BB1C7 /* BrowserCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8D3D12B50014B001BB1C7 /* BrowserCategoriesModel.swift */; };
@@ -174,6 +184,7 @@
 		F7D5677C2B5A38F300A92DF0 /* HearingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5677B2B5A38F300A92DF0 /* HearingModel.swift */; };
 		F7D567802B5A3A4700A92DF0 /* HearingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5677E2B5A3A4700A92DF0 /* HearingTVCell.swift */; };
 		F7D567812B5A3A4700A92DF0 /* HearingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D5677F2B5A3A4700A92DF0 /* HearingTVCell.xib */; };
+		F7D79D952B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D79D942B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift */; };
 		F7E1DED72B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E1DED62B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift */; };
 		F7E683442B51016000AE6765 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E683432B51016000AE6765 /* ActivityVC.swift */; };
 		F7E683472B51021200AE6765 /* ActivityTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E683452B51021200AE6765 /* ActivityTVCell.swift */; };
@@ -337,6 +348,11 @@
 		F722B6182B593EFB002F6803 /* RespiratoryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespiratoryTVCell.swift; sourceTree = "<group>"; };
 		F722B6192B593EFB002F6803 /* RespiratoryTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RespiratoryTVCell.xib; sourceTree = "<group>"; };
 		F722B61D2B5947FF002F6803 /* SleepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepVC.swift; sourceTree = "<group>"; };
+		F7357FFF2BA30D5100633477 /* DetailsHearingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHearingVC.swift; sourceTree = "<group>"; };
+		F73580062BA3119400633477 /* HearingBarchatTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingBarchatTVCell.swift; sourceTree = "<group>"; };
+		F73580072BA3119400633477 /* HearingBarchatTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HearingBarchatTVCell.xib; sourceTree = "<group>"; };
+		F735800A2BA311A600633477 /* HearingStaticTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingStaticTVCell.swift; sourceTree = "<group>"; };
+		F735800B2BA311A600633477 /* HearingStaticTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HearingStaticTVCell.xib; sourceTree = "<group>"; };
 		F735D5852B6269DA0074040E /* DWRDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DWRDViewModel.swift; sourceTree = "<group>"; };
 		F73CBF952B68EF3100D0693B /* Details_StairsClimbedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details_StairsClimbedModel.swift; sourceTree = "<group>"; };
 		F73EBAB92B837B36008D8BB7 /* DetailsHartRateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHartRateVC.swift; sourceTree = "<group>"; };
@@ -354,6 +370,11 @@
 		F75E90D32B679A680040BC94 /* Details_StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details_StepsModel.swift; sourceTree = "<group>"; };
 		F75E90D72B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsActiveEnergyModel.swift; sourceTree = "<group>"; };
 		F75E90DA2B67B9360040BC94 /* DetailsRestingEnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRestingEnergyModel.swift; sourceTree = "<group>"; };
+		F79BA1112B8F278A002B2770 /* Static_Heart_TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Heart_TextCell.swift; sourceTree = "<group>"; };
+		F79BA1132B8F27A3002B2770 /* Static_Heart_imgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Heart_imgCell.swift; sourceTree = "<group>"; };
+		F79BA1162B8F3044002B2770 /* Static_Anexiety_TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Anexiety_TextCell.swift; sourceTree = "<group>"; };
+		F79BA1182B8F3055002B2770 /* Static_Anexiety_ImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Anexiety_ImgCell.swift; sourceTree = "<group>"; };
+		F79BA11B2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_DoubleSupport_TextCell.swift; sourceTree = "<group>"; };
 		F7B8D3CC2B4FF660001BB1C7 /* HealthCategoriesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCategoriesTVCell.swift; sourceTree = "<group>"; };
 		F7B8D3CD2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthCategoriesTVCell.xib; sourceTree = "<group>"; };
 		F7B8D3D12B50014B001BB1C7 /* BrowserCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserCategoriesModel.swift; sourceTree = "<group>"; };
@@ -369,6 +390,7 @@
 		F7D5677B2B5A38F300A92DF0 /* HearingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingModel.swift; sourceTree = "<group>"; };
 		F7D5677E2B5A3A4700A92DF0 /* HearingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingTVCell.swift; sourceTree = "<group>"; };
 		F7D5677F2B5A3A4700A92DF0 /* HearingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HearingTVCell.xib; sourceTree = "<group>"; };
+		F7D79D942B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairsClimbed_Static_Cell.swift; sourceTree = "<group>"; };
 		F7E1DED62B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details_Walking_RunningDistanceVC.swift; sourceTree = "<group>"; };
 		F7E683432B51016000AE6765 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		F7E683452B51021200AE6765 /* ActivityTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTVCell.swift; sourceTree = "<group>"; };
@@ -457,6 +479,7 @@
 				F722B6122B593A7A002F6803 /* Respiratory */,
 				F722B61C2B5947DD002F6803 /* Sleep */,
 				F7D567782B5A380D00A92DF0 /* Hearing */,
+				F7357FFE2BA30B0600633477 /* DetailsScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -942,6 +965,26 @@
 			path = Sleep;
 			sourceTree = "<group>";
 		};
+		F7357FFE2BA30B0600633477 /* DetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F73580052BA3115300633477 /* TVCell */,
+				F7357FFF2BA30D5100633477 /* DetailsHearingVC.swift */,
+			);
+			path = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		F73580052BA3115300633477 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F73580062BA3119400633477 /* HearingBarchatTVCell.swift */,
+				F73580072BA3119400633477 /* HearingBarchatTVCell.xib */,
+				F735800A2BA311A600633477 /* HearingStaticTVCell.swift */,
+				F735800B2BA311A600633477 /* HearingStaticTVCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
 		F735D5822B6269460074040E /* Details Walking Running Distance */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,6 +998,7 @@
 		F73CBF942B68EEDF00D0693B /* Details Stairs Climbed */ = {
 			isa = PBXGroup;
 			children = (
+				F7D79D932B8F106F000FABE0 /* TVCell */,
 				F7EF82D72B6236BC000C80FB /* Details_StairsClimbedVC.swift */,
 				F73CBF952B68EF3100D0693B /* Details_StairsClimbedModel.swift */,
 			);
@@ -964,6 +1008,7 @@
 		F73EBAB82B837B10008D8BB7 /* Details Heart Rate */ = {
 			isa = PBXGroup;
 			children = (
+				F79BA1102B8F2760002B2770 /* TVCell */,
 				F73EBAB92B837B36008D8BB7 /* DetailsHartRateVC.swift */,
 				F73EBABB2B837B54008D8BB7 /* DetailsHartRateModel.swift */,
 			);
@@ -973,6 +1018,7 @@
 		F73EBABD2B83802E008D8BB7 /* Details DoubleSupport Time */ = {
 			isa = PBXGroup;
 			children = (
+				F79BA11A2B8F362E002B2770 /* TVCell */,
 				F73EBAC02B838064008D8BB7 /* DetailsDoubleSupportVC.swift */,
 				F73EBABE2B838054008D8BB7 /* DetailsDoubleSupportModelView.swift */,
 			);
@@ -982,6 +1028,7 @@
 		F75BCDFD2B84A213008082FD /* Anexiety Risk */ = {
 			isa = PBXGroup;
 			children = (
+				F79BA1152B8F2FDA002B2770 /* TVCell */,
 				F75BCE022B84A415008082FD /* AnexietyRiskVC.swift */,
 				F75BCE042B84A43C008082FD /* AnexietyRiskViewModel.swift */,
 			);
@@ -1016,6 +1063,32 @@
 				F75E90DA2B67B9360040BC94 /* DetailsRestingEnergyModel.swift */,
 			);
 			path = "Details RestingEnergy";
+			sourceTree = "<group>";
+		};
+		F79BA1102B8F2760002B2770 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F79BA1112B8F278A002B2770 /* Static_Heart_TextCell.swift */,
+				F79BA1132B8F27A3002B2770 /* Static_Heart_imgCell.swift */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
+		F79BA1152B8F2FDA002B2770 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F79BA1162B8F3044002B2770 /* Static_Anexiety_TextCell.swift */,
+				F79BA1182B8F3055002B2770 /* Static_Anexiety_ImgCell.swift */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
+		F79BA11A2B8F362E002B2770 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F79BA11B2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift */,
+			);
+			path = TVCell;
 			sourceTree = "<group>";
 		};
 		F7B8D3CB2B4FF547001BB1C7 /* TableViewCell */ = {
@@ -1072,6 +1145,14 @@
 				F75BCDFA2B849A4F008082FD /* DefultHearingTVCell.xib */,
 			);
 			path = HearingTVCell;
+			sourceTree = "<group>";
+		};
+		F7D79D932B8F106F000FABE0 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7D79D942B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift */,
+			);
+			path = TVCell;
 			sourceTree = "<group>";
 		};
 		F7E1DED52B5F912E00B2376E /* DetailsScreen */ = {
@@ -1171,6 +1252,7 @@
 				F75BCDFC2B849A4F008082FD /* DefultHearingTVCell.xib in Resources */,
 				17BD23202B52FFD2001CD06B /* HeartRateTVCell.xib in Resources */,
 				1701728B2B52BCCC008189A8 /* BodyMeasurementsTVCell.xib in Resources */,
+				F73580092BA3119400633477 /* HearingBarchatTVCell.xib in Resources */,
 				F7E683482B51021200AE6765 /* ActivityTVCell.xib in Resources */,
 				F705F8432B5554BA00A2AE04 /* VitalsTVCell.xib in Resources */,
 				F705F8482B555C6D00A2AE04 /* StrVitalsTVCell.xib in Resources */,
@@ -1188,6 +1270,7 @@
 				F71D57F32B56469A00EBDF98 /* InTVCell.xib in Resources */,
 				F722B60B2B58EB2F002F6803 /* StrMobilityTVCell.xib in Resources */,
 				F705F84D2B555F7700A2AE04 /* StrHeartRateTVCell.xib in Resources */,
+				F735800D2BA311A600633477 /* HearingStaticTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1289,7 @@
 				F70865EB2B8DBF4C005F188E /* StaticDataModel.swift in Sources */,
 				559204A62B25E4C9002FB6BA /* SummaryHealthDataCell.swift in Sources */,
 				55F332132B28B7DC00BD6C14 /* EditProfileResponse.swift in Sources */,
+				F79BA1142B8F27A3002B2770 /* Static_Heart_imgCell.swift in Sources */,
 				F7EF82D62B62338C000C80FB /* Details_ActiveEnrgyVC.swift in Sources */,
 				F722B61A2B593EFB002F6803 /* RespiratoryTVCell.swift in Sources */,
 				F75E90D82B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift in Sources */,
@@ -1234,6 +1318,7 @@
 				559204F02B28377B002FB6BA /* ProgressHUD+Public.swift in Sources */,
 				F705F8472B555C6D00A2AE04 /* StrVitalsTVCell.swift in Sources */,
 				55B66C572B21F3AC0007B94C /* CoordinatorManager.swift in Sources */,
+				F79BA1122B8F278A002B2770 /* Static_Heart_TextCell.swift in Sources */,
 				555A24932B29EB3500F8F7CE /* GetProfileRequest.swift in Sources */,
 				F722B6142B593D34002F6803 /* RespiratoryModel.swift in Sources */,
 				F7EF82D22B6229BF000C80FB /* Details_RestingEnergyVC.swift in Sources */,
@@ -1242,6 +1327,7 @@
 				55903EC42B2A3DF500CDA361 /* NotificationManager.swift in Sources */,
 				F70865F72B8DDB73005F188E /* Resting_Static_Cell.swift in Sources */,
 				55B66C4E2B21E9EF0007B94C /* HealthKitManager.swift in Sources */,
+				F79BA11C2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift in Sources */,
 				55F332102B28B68400BD6C14 /* EditProfileVM.swift in Sources */,
 				559204B62B2704FB002FB6BA /* LoginResponse.swift in Sources */,
 				F70865F12B8DC620005F188E /* Steps_Static_Cell.swift in Sources */,
@@ -1263,12 +1349,14 @@
 				559205012B28377B002FB6BA /* ProgressHUD+PacmanProgress.swift in Sources */,
 				559204F72B28377B002FB6BA /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				F70865EE2B8DC0EF005F188E /* RW_Static_Cell.swift in Sources */,
+				F735800C2BA311A600633477 /* HearingStaticTVCell.swift in Sources */,
 				55B66C722B21FB410007B94C /* SwiftyJSON.swift in Sources */,
 				559204C02B27703A002FB6BA /* DTTextField.swift in Sources */,
 				559205022B28377B002FB6BA /* ProgressHUD+SemiRingRotation.swift in Sources */,
 				55F3321A2B28BE9A00BD6C14 /* OTPRequest.swift in Sources */,
 				F7E6834F2B510A2900AE6765 /* ActivityModel.swift in Sources */,
 				F70865F42B8DD615005F188E /* Active_Static_Cell.swift in Sources */,
+				F73580082BA3119400633477 /* HearingBarchatTVCell.swift in Sources */,
 				559204C82B2783AA002FB6BA /* Manageable.swift in Sources */,
 				F7B8D3D72B501179001BB1C7 /*  MentalWellbeingModel.swift in Sources */,
 				559204F12B28377B002FB6BA /* ProgressHUD.swift in Sources */,
@@ -1282,6 +1370,7 @@
 				5592050F2B2841ED002FB6BA /* RegisterVM.swift in Sources */,
 				559204F42B28377B002FB6BA /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				55F332182B28BE7700BD6C14 /* OTPResponse.swift in Sources */,
+				F79BA1192B8F3055002B2770 /* Static_Anexiety_ImgCell.swift in Sources */,
 				5592050A2B2837AB002FB6BA /* AppLoader.swift in Sources */,
 				F722B5FF2B58E97B002F6803 /* MobilityVC.swift in Sources */,
 				F71D57F22B56469A00EBDF98 /* InTVCell.swift in Sources */,
@@ -1292,6 +1381,7 @@
 				559204A82B25E90B002FB6BA /* SummaryItem.swift in Sources */,
 				F73EBABA2B837B36008D8BB7 /* DetailsHartRateVC.swift in Sources */,
 				55F332152B28B80300BD6C14 /* EditProfileRequest.swift in Sources */,
+				F7D79D952B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift in Sources */,
 				F7B8D3D52B500CD5001BB1C7 /* MentalWellbeingVC.swift in Sources */,
 				F722B60E2B58EB5F002F6803 /* MobilityInTVCell.swift in Sources */,
 				F722B6112B58F3C3002F6803 /* MobilityViewModel.swift in Sources */,
@@ -1302,6 +1392,7 @@
 				5585800B2B2205D300A1B7E7 /* UIViewExtension.swift in Sources */,
 				559204B82B2710DE002FB6BA /* ValidationCheck.swift in Sources */,
 				17BD23182B52EA30001CD06B /* HeartRateModel.swift in Sources */,
+				F79BA1172B8F3044002B2770 /* Static_Anexiety_TextCell.swift in Sources */,
 				559205062B28377B002FB6BA /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				170172872B52BB55008189A8 /* BodyMeasurementsViewModel.swift in Sources */,
 				557D5FBD2B2B393700A22B1E /* SampleData.swift in Sources */,
@@ -1336,6 +1427,7 @@
 				F7E683782B5147CE00AE6765 /* ActivityViewModel.swift in Sources */,
 				559205132B28461A002FB6BA /* RegisterRequest.swift in Sources */,
 				559204AF2B26FFA1002FB6BA /* LoginVC.swift in Sources */,
+				F73580002BA30D5100633477 /* DetailsHearingVC.swift in Sources */,
 				559204B12B26FFED002FB6BA /* LoginVM.swift in Sources */,
 				F705F83B2B554D2F00A2AE04 /* VitalsVC.swift in Sources */,
 				559205052B28377B002FB6BA /* ProgressHUD+CirclePulseSingle.swift in Sources */,
@@ -1496,7 +1588,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyHealthTrack/MyHealthTrack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = JFNBL45B7W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHealthTrack/Info.plist;
@@ -1536,7 +1628,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyHealthTrack/MyHealthTrack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = JFNBL45B7W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHealthTrack/Info.plist;

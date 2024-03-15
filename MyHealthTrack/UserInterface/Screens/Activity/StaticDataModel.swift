@@ -50,5 +50,32 @@ struct StaticModel {
     
     ]
     
+    static var StairClimbedModel: [StaticModel] = [
+    
+        StaticModel(img: UIImage(named: "StairsClimbed"))
+    
+    ]
+    
+    
+    static var HeartModel: [StaticModel] = [
+    
+        StaticModel(img: UIImage(named: "Heart1")),
+        StaticModel(img: UIImage(named: "Heart2")),
+        StaticModel(img: UIImage(named: "Heart3"))
+    
+    ]
+    
+    
+    
+    static var AnxietyModel: [StaticModel] = [
+    
+        StaticModel(img: UIImage(named: "Anxiety1")),
+        StaticModel(img: UIImage(named: "Anxiety2")),
+        StaticModel(img: UIImage(named: "Anxiety3"))
+    
+    ]
+   
+    
     
 }
+

@@ -16,7 +16,7 @@ class Details_StairsClimbedVC: UIViewController {
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
-    
+    @IBOutlet weak var tableView: UITableView!
     
     var dailyTotalCount = 0
     var weeklyTotalCount = 0
@@ -25,8 +25,8 @@ class Details_StairsClimbedVC: UIViewController {
     var yearlyTotalCount = 0
     
     let healthKitManager = DetailsStairsClimbedHealthKitManager()
-    
     var barChartView = BarChartView()
+    var staticData = StaticModel.StairClimbedModel
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,10 @@ class Details_StairsClimbedVC: UIViewController {
                 }
             }
         }
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
         
     }
     
@@ -167,7 +171,13 @@ class Details_StairsClimbedVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Daily Stair Climbed Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -175,11 +185,16 @@ class Details_StairsClimbedVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
-            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .hour, value: Int(-$0.x), to: Date())!) })
+            var time = [String]()
+            
+            time = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -197,7 +212,13 @@ class Details_StairsClimbedVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Weekly Stair Climbed Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -206,8 +227,15 @@ class Details_StairsClimbedVC: UIViewController {
             barChart.center = self.view.center
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "EEE"
+            var dayName = [String]()
+            
+            dayName = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            dayName.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: dayName)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -225,7 +253,13 @@ class Details_StairsClimbedVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Monthly Stair Climbed Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -235,7 +269,14 @@ class Details_StairsClimbedVC: UIViewController {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+            var day = [String]()
+            
+            day = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            day.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: day)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -254,9 +295,15 @@ class Details_StairsClimbedVC: UIViewController {
             halfYearlyTotalCount = halfYearlyTotalCount + Int(data.1)
             entries.append(entry)
         }
-        let dataSet = BarChartDataSet(entries: entries, label: "Yearly Stair Climbed Step Count")
+        let dataSet = BarChartDataSet(entries: entries, label: "Half Yearly Stair Climbed Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -265,8 +312,15 @@ class Details_StairsClimbedVC: UIViewController {
             barChart.center = self.view.center
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "MMM"
+            var monthNames = [String]()
+            
+            monthNames = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            monthNames.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -287,7 +341,16 @@ class Details_StairsClimbedVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Yearly Stair Climbed Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        
+        
+        
+        let color = UIColor(red: 240.0/255.0, green: 201.0/255.0, blue: 193.0/255.0, alpha: 1.0)
+        let cgColor = color.cgColor
+        let nsuicolor = NSUIColor(cgColor: cgColor)
+        dataSet.colors = [nsuicolor]
+        
+        
+//        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -296,8 +359,15 @@ class Details_StairsClimbedVC: UIViewController {
             barChart.center = self.view.center
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "MMM"
+            var monthNames = [String]()
+            
+            monthNames = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            monthNames.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -326,4 +396,27 @@ extension Details_StairsClimbedVC {
         
     }
 
+}
+
+extension Details_StairsClimbedVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return staticData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StairsClimbed_Static_Cell", for: indexPath) as! StairsClimbed_Static_Cell
+        cell.lblTitle.text = "About Stairs Climbed"
+        cell.imgView.image = staticData[indexPath.row].img
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
+    
+    
+    
 }

@@ -8,7 +8,10 @@
 import UIKit
 
 class Static_DoubleSupport_TextCell: UITableViewCell {
-
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescrip: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

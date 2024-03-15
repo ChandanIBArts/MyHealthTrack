@@ -17,8 +17,10 @@ class DetailsDoubleSupportVC: UIViewController {
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+   
     
-    
+
     var dailyTotalCount = 0
     var weeklyTotalCount = 0
     var monthlyTotalCount = 0
@@ -47,6 +49,9 @@ class DetailsDoubleSupportVC: UIViewController {
                 }
             }
         }
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
    
@@ -166,7 +171,8 @@ class DetailsDoubleSupportVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Daily Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        dataSet.colors = [NSUIColor(cgColor: UIColor(red: 231.0/255.0, green: 144.0/255.0, blue: 77.0/255.0, alpha: 1.0).cgColor)]
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -176,7 +182,14 @@ class DetailsDoubleSupportVC: UIViewController {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .hour, value: Int(-$0.x), to: Date())!) })
+            var time = [String]()
+            
+            time = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -194,7 +207,8 @@ class DetailsDoubleSupportVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Weekly Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        dataSet.colors = [NSUIColor(cgColor: UIColor(red: 231.0/255.0, green: 144.0/255.0, blue: 77.0/255.0, alpha: 1.0).cgColor)]
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -202,10 +216,16 @@ class DetailsDoubleSupportVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "EEE"
+            var dayName = [String]()
+            
+            dayName = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            dayName.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: dayName)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -223,7 +243,8 @@ class DetailsDoubleSupportVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Monthly Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        dataSet.colors = [NSUIColor(cgColor: UIColor(red: 231.0/255.0, green: 144.0/255.0, blue: 77.0/255.0, alpha: 1.0).cgColor)]
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -231,10 +252,16 @@ class DetailsDoubleSupportVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+            var day = [String]()
+            
+            day = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            day.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: day)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -253,9 +280,10 @@ class DetailsDoubleSupportVC: UIViewController {
             halfYearlyTotalCount = halfYearlyTotalCount + Int(data.1)
             entries.append(entry)
         }
-        let dataSet = BarChartDataSet(entries: entries, label: "Yearly Step Count")
+        let dataSet = BarChartDataSet(entries: entries, label: "Half Yearly Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        dataSet.colors = [NSUIColor(cgColor: UIColor(red: 231.0/255.0, green: 144.0/255.0, blue: 77.0/255.0, alpha: 1.0).cgColor)]
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -263,10 +291,16 @@ class DetailsDoubleSupportVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "MMM"
+            var monthNames = [String]()
+            
+            monthNames = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            monthNames.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -287,7 +321,8 @@ class DetailsDoubleSupportVC: UIViewController {
         }
         let dataSet = BarChartDataSet(entries: entries, label: "Yearly Step Count")
         let data = BarChartData(dataSet: dataSet)
-        dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+        dataSet.colors = [NSUIColor(cgColor: UIColor(red: 231.0/255.0, green: 144.0/255.0, blue: 77.0/255.0, alpha: 1.0).cgColor)]
+        //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
         dataSet.drawValuesEnabled = false
         let barChart = barChartView
         DispatchQueue.main.async {
@@ -295,10 +330,16 @@ class DetailsDoubleSupportVC: UIViewController {
             self.view.addSubview(barChart)
             barChart.center = self.view.center
             
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+            dateFormatter.dateFormat = "MMM"
+            var monthNames = [String]()
+            
+            monthNames = entries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            monthNames.reverse()
+            let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
             self.barChartView.xAxis.valueFormatter = xValuesFormatter
             self.barChartView.xAxis.granularity = 1
             self.barChartView.notifyDataSetChanged()
@@ -326,6 +367,27 @@ extension DetailsDoubleSupportVC {
         barChartView.scaleYEnabled = false
         barChartView.zoomToCenter(scaleX: 2.5, scaleY: 0)
         
+    }
+    
+    
+}
+
+extension DetailsDoubleSupportVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Static_DoubleSupport_TextCell", for: indexPath) as! Static_DoubleSupport_TextCell
+        cell.lblTitle.text = "About Double Support Time"
+        cell.lblDescrip.text = "This is the percentage of time during a walk that both feet are on the ground. A lower value means you spend more of your walk with your weight on one foot instead of two, which can be a sign of better balance. During a typical walk, this measure will fall between 20 and 40%.\n \nWalking requires strength and coordination. Changes in these can affect your balance and two-foot contact time \n \nDouble support time naturally varies with how fast you walk and the terrain, but may increase with age. \n \nDouble support time is recorded automatically on iPhone when you carry your phone near your waist, such as in a trouser pocket, and walk steadily over flat ground."
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
     }
     
     

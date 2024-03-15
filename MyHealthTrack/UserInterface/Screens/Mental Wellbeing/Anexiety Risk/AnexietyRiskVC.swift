@@ -16,7 +16,8 @@ class AnexietyRiskVC: UIViewController {
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
-
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var dailyTotalCount = 0
     var weeklyTotalCount = 0
@@ -26,6 +27,7 @@ class AnexietyRiskVC: UIViewController {
     
     let healthKitManager = DetailsAnexietyRiskHealthKitManager()
     var barChartView = BarChartView()
+    var staticData = StaticModel.AnxietyModel
     
     
     override func viewDidLoad() {
@@ -47,6 +49,10 @@ class AnexietyRiskVC: UIViewController {
                 }
             }
         }
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
         
     }
     
@@ -167,7 +173,13 @@ class AnexietyRiskVC: UIViewController {
          }
          let dataSet = BarChartDataSet(entries: entries, label: "Daily Step Count")
          let data = BarChartData(dataSet: dataSet)
-         dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+         
+         let color = UIColor(red: 151.0/255.0, green: 250.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+         let cgColor = color.cgColor
+         let nsuicolor = NSUIColor(cgColor: cgColor)
+         dataSet.colors = [nsuicolor]
+         
+         //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
          dataSet.drawValuesEnabled = false
          let barChart = barChartView
          DispatchQueue.main.async {
@@ -177,7 +189,14 @@ class AnexietyRiskVC: UIViewController {
              
              let dateFormatter = DateFormatter()
              dateFormatter.dateFormat = "h:mm a"
-             let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .hour, value: Int(-$0.x), to: Date())!) })
+             var time = [String]()
+             
+             time = entries.map { entry in
+                 let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                 return dateFormatter.string(from: date)
+             }
+             time.reverse()
+             let xValuesFormatter = IndexAxisValueFormatter(values: time)
              self.barChartView.xAxis.valueFormatter = xValuesFormatter
              self.barChartView.xAxis.granularity = 1
              self.barChartView.notifyDataSetChanged()
@@ -195,7 +214,13 @@ class AnexietyRiskVC: UIViewController {
          }
          let dataSet = BarChartDataSet(entries: entries, label: "Weekly Step Count")
          let data = BarChartData(dataSet: dataSet)
-         dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+         
+         let color = UIColor(red: 151.0/255.0, green: 250.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+         let cgColor = color.cgColor
+         let nsuicolor = NSUIColor(cgColor: cgColor)
+         dataSet.colors = [nsuicolor]
+         
+         //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
          dataSet.drawValuesEnabled = false
          let barChart = barChartView
          DispatchQueue.main.async {
@@ -203,10 +228,16 @@ class AnexietyRiskVC: UIViewController {
              self.view.addSubview(barChart)
              barChart.center = self.view.center
              
-             
              let dateFormatter = DateFormatter()
-             dateFormatter.dateFormat = "EEEE"
-             let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+             dateFormatter.dateFormat = "EEE"
+             var dayName = [String]()
+             
+             dayName = entries.map { entry in
+                 let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                 return dateFormatter.string(from: date)
+             }
+             dayName.reverse()
+             let xValuesFormatter = IndexAxisValueFormatter(values: dayName)
              self.barChartView.xAxis.valueFormatter = xValuesFormatter
              self.barChartView.xAxis.granularity = 1
              self.barChartView.notifyDataSetChanged()
@@ -224,7 +255,13 @@ class AnexietyRiskVC: UIViewController {
          }
          let dataSet = BarChartDataSet(entries: entries, label: "Monthly Step Count")
          let data = BarChartData(dataSet: dataSet)
-         dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+         
+         let color = UIColor(red: 151.0/255.0, green: 250.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+         let cgColor = color.cgColor
+         let nsuicolor = NSUIColor(cgColor: cgColor)
+         dataSet.colors = [nsuicolor]
+         
+         //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
          dataSet.drawValuesEnabled = false
          let barChart = barChartView
          DispatchQueue.main.async {
@@ -232,10 +269,16 @@ class AnexietyRiskVC: UIViewController {
              self.view.addSubview(barChart)
              barChart.center = self.view.center
              
-             
              let dateFormatter = DateFormatter()
              dateFormatter.dateFormat = "MMM d"
-             let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-$0.x), to: Date())!) })
+             var day = [String]()
+             
+             day = entries.map { entry in
+                 let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                 return dateFormatter.string(from: date)
+             }
+             day.reverse()
+             let xValuesFormatter = IndexAxisValueFormatter(values: day)
              self.barChartView.xAxis.valueFormatter = xValuesFormatter
              self.barChartView.xAxis.granularity = 1
              self.barChartView.notifyDataSetChanged()
@@ -254,9 +297,15 @@ class AnexietyRiskVC: UIViewController {
              halfYearlyTotalCount = halfYearlyTotalCount + Int(data.1)
              entries.append(entry)
          }
-         let dataSet = BarChartDataSet(entries: entries, label: "Yearly Step Count")
+         let dataSet = BarChartDataSet(entries: entries, label: "Half Yearly Step Count")
          let data = BarChartData(dataSet: dataSet)
-         dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+         
+         let color = UIColor(red: 151.0/255.0, green: 250.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+         let cgColor = color.cgColor
+         let nsuicolor = NSUIColor(cgColor: cgColor)
+         dataSet.colors = [nsuicolor]
+         
+         //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
          dataSet.drawValuesEnabled = false
          let barChart = barChartView
          DispatchQueue.main.async {
@@ -264,10 +313,16 @@ class AnexietyRiskVC: UIViewController {
              self.view.addSubview(barChart)
              barChart.center = self.view.center
              
-             
              let dateFormatter = DateFormatter()
-             dateFormatter.dateFormat = "MMMM"
-             let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+             dateFormatter.dateFormat = "MMM"
+             var monthNames = [String]()
+             
+             monthNames = entries.map { entry in
+                 let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                 return dateFormatter.string(from: date)
+             }
+             monthNames.reverse()
+             let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
              self.barChartView.xAxis.valueFormatter = xValuesFormatter
              self.barChartView.xAxis.granularity = 1
              self.barChartView.notifyDataSetChanged()
@@ -288,7 +343,14 @@ class AnexietyRiskVC: UIViewController {
          }
          let dataSet = BarChartDataSet(entries: entries, label: "Yearly Step Count")
          let data = BarChartData(dataSet: dataSet)
-         dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
+         
+         
+         let color = UIColor(red: 151.0/255.0, green: 250.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+         let cgColor = color.cgColor
+         let nsuicolor = NSUIColor(cgColor: cgColor)
+         dataSet.colors = [nsuicolor]
+         
+         //dataSet.colors = [NSUIColor(cgColor: UIColor.red.cgColor)]
          dataSet.drawValuesEnabled = false
          let barChart = barChartView
          DispatchQueue.main.async {
@@ -296,10 +358,16 @@ class AnexietyRiskVC: UIViewController {
              self.view.addSubview(barChart)
              barChart.center = self.view.center
              
-             
              let dateFormatter = DateFormatter()
-             dateFormatter.dateFormat = "MMMM"
-             let xValuesFormatter = IndexAxisValueFormatter(values: entries.map { dateFormatter.string(from: Calendar.current.date(byAdding: .month, value: Int(-$0.x), to: Date())!) })
+             dateFormatter.dateFormat = "MMM"
+             var monthNames = [String]()
+             
+             monthNames = entries.map { entry in
+                 let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                 return dateFormatter.string(from: date)
+             }
+             monthNames.reverse()
+             let xValuesFormatter = IndexAxisValueFormatter(values: monthNames)
              self.barChartView.xAxis.valueFormatter = xValuesFormatter
              self.barChartView.xAxis.granularity = 1
              self.barChartView.notifyDataSetChanged()
@@ -328,6 +396,50 @@ extension AnexietyRiskVC {
         
     }
     
+    
+    
+}
+
+extension AnexietyRiskVC: UITableViewDataSource, UITableViewDelegate {
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return staticData.count
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Static_Anexiety_TextCell", for: indexPath) as! Static_Anexiety_TextCell
+            cell.lblTitle.text = "About Anxiety Risk"
+            cell.lblDescrip.text = "Anxiety risk refers to an individual's risk of anxiety-related mental health conditions. This reflects the risk at the time of the most recent mental health assessment score based on the Generalised Anxiety Disorder. \n \nQuestionnaire-7 (GAD-7). The GAD-7 is a tool doctors use to help screen for and measure someone's anxiety symptoms over a two-week period. A mental health questionnaire can be an important part of learning about what's impacting your mental health. Depending on your family history, biology or current life events, your anxiety risk may go up or down. \n \nAnxiety is a common and treatable condition. Your anxiety risk is not a diagnosis of any health condition. If you have any questions about your mental health, you should bring them up with a doctor. You can learn more about your current risk of anxiety by taking a mental health questionnaire in Health."
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Static_Anexiety_ImgCell", for: indexPath) as! Static_Anexiety_ImgCell
+            cell.imgView.image = staticData[indexPath.row].img
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+             
+            return 480
+            
+        } else {
+            
+            return 250
+            
+        }
+    }
     
     
 }

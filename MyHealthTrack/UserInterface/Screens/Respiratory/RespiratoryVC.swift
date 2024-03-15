@@ -43,6 +43,7 @@ extension RespiratoryVC: UITableViewDataSource, UITableViewDelegate {
         let cell = resporatoryTableView.dequeueReusableCell(withIdentifier: "RespiratoryTVCell", for: indexPath) as! RespiratoryTVCell
         
         cell.strLbl.text = myRecord[indexPath.row].strData
+        cell.selectionStyle = .none
         
         return cell
     }

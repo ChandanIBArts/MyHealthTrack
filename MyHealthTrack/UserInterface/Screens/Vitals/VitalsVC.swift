@@ -104,4 +104,16 @@ extension VitalsVC: UITableViewDataSource, UITableViewDelegate {
             return 65
         }
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsHartRateVC") as! DetailsHartRateVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
 }

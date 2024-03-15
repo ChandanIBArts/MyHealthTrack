@@ -51,6 +51,33 @@ class SummaryVC: BaseViewController {
     @IBAction private func editProfileTap(_ sender: UIButton) {
         CoordinatorManager.shared.mainCoordinator?.gotoEditProfile()
     }
+    
+    @IBAction func syncAction(_ sender: Any) {
+        let summaryData = self.viewModel.summaryData
+
+        //Call API sync
+        let parameters = "{\n    \"Activity\" : {\n        \"Move\" :\"22\",\n        \"Steps\":\"\(summaryData?.stepCount?.value ?? 0)\",\n        \"Walking\":\"0.33\",\n\"ActiveEnergy\":\"232.5\",\n\"RestingEnergy\":\"\(summaryData?.heartRateResting?.value ?? 0)\",\n\"StairsClimbed\":\"33.5\"\n    },\n    \"BodeMeasurements\" : {\n\"Weight\":\"34\",\n\"Height\":\"23\"\n    },\n     \"Hearing\" : {\n        \"AudioLevels\":\"ok\"\n    }, \"Heart\" : {\n        \"HeartRate\":\"\(summaryData?.heartRate?.value ?? 0)\"\n    }, \"MentalWellbeing\" : {\n        \n    }, \"Mobility\" : {\n        \"WalkingSteadliness\":\"OK\",\n        \"DoubleSupportTime\":\"343.7\",\n        \"WalkingAsymmetry\":\"0.43\",\n        \"WalkingSpeed\":\"44.3\",\n        \"WalkingStepLength\":\"3545\"\n    }, \"Respiratory\" : {\n        \n    }, \"Symptoms\" : {\n        \n    }, \"Vitals\" : {\n        \"HeartRate\":\"\(summaryData?.walkingHeartRate?.value ?? 0)\"\n    }\n    \n\n}"
+        let postData = parameters.data(using: .utf8)
+
+        var request = URLRequest(url: URL(string: "http://mht.demospace.cloud/api/process-data")!,timeoutInterval: Double.infinity)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        request.httpMethod = "POST"
+        request.httpBody = postData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+          print(String(data: data, encoding: .utf8)!)
+            
+        }
+
+        task.resume()
+
+    }
+    
 }
 
 //MARK: - Tableview Delegate and Datasources implementation -
