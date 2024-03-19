@@ -1,13 +1,13 @@
 //
-//  WeightChartCell.swift
+//  HeightStaticCell.swift
 //  MyHealthTrack
 //
-//  Created by IB Arts Mac on 15/03/24.
+//  Created by IB Arts Mac on 19/03/24.
 //
 
 import UIKit
 
-class WeightChartCell: UITableViewCell {
+class HeightStaticCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -1,13 +1,13 @@
 //
-//  DetailsWeightVC.swift
+//  DetailsHeightVC.swift
 //  MyHealthTrack
 //
-//  Created by IB Arts Mac on 15/03/24.
+//  Created by IB Arts Mac on 19/03/24.
 //
 
 import UIKit
 
-class DetailsWeightVC: UIViewController {
+class DetailsHeightVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
