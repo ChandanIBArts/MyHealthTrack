@@ -1,21 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="WalkingStepLengthStaticCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalkingStepLengthStaticCell" rowHeight="240" id="KGk-i7-Jjw" customClass="WalkingStepLengthStaticCell" customModule="MyHealthTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="240"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="450" height="240"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orB-D4-qQl">
+                        <rect key="frame" x="5" y="5" width="440" height="230"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mobility" translatesAutoresizingMaskIntoConstraints="NO" id="cr1-Op-YWb">
+                                <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7Ha-jv-toz"/>
+                                    <constraint firstAttribute="width" constant="30" id="Uwm-W5-dg5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Walking Step Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkz-Tj-eur">
+                                <rect key="frame" x="45" y="10" width="266" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="qnA-eC-N2y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" red="0.42097255589999999" green="0.77473664279999999" blue="0.53972315790000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On average, your steps this month are fewer than last month." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zg-hc-jmy">
+                                <rect key="frame" x="12" y="50" width="418" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="cr1-Op-YWb" firstAttribute="top" secondItem="orB-D4-qQl" secondAttribute="top" constant="10" id="2Ap-3G-6a3"/>
+                            <constraint firstItem="0Zg-hc-jmy" firstAttribute="top" secondItem="cr1-Op-YWb" secondAttribute="bottom" constant="10" id="Eoj-Il-ePh"/>
+                            <constraint firstItem="vkz-Tj-eur" firstAttribute="top" secondItem="orB-D4-qQl" secondAttribute="top" constant="10" id="Jot-7H-Xex"/>
+                            <constraint firstItem="0Zg-hc-jmy" firstAttribute="leading" secondItem="orB-D4-qQl" secondAttribute="leading" constant="12" id="KKt-mY-HNJ"/>
+                            <constraint firstItem="vkz-Tj-eur" firstAttribute="leading" secondItem="cr1-Op-YWb" secondAttribute="trailing" constant="5" id="Kwn-pB-Dq3"/>
+                            <constraint firstAttribute="trailing" secondItem="0Zg-hc-jmy" secondAttribute="trailing" constant="10" id="LpD-fg-mnj"/>
+                            <constraint firstItem="cr1-Op-YWb" firstAttribute="leading" secondItem="orB-D4-qQl" secondAttribute="leading" constant="10" id="O5E-iD-5Pk"/>
+                            <constraint firstAttribute="bottom" secondItem="0Zg-hc-jmy" secondAttribute="bottom" constant="10" id="tQb-WC-31L"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="orB-D4-qQl" secondAttribute="trailing" constant="5" id="Q1V-eG-YvD"/>
+                    <constraint firstAttribute="bottom" secondItem="orB-D4-qQl" secondAttribute="bottom" constant="5" id="WGZ-SC-oXd"/>
+                    <constraint firstItem="orB-D4-qQl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ctO-fZ-NpR"/>
+                    <constraint firstItem="orB-D4-qQl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="st4-Qg-XTF"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellView" destination="orB-D4-qQl" id="LDq-8t-eSE"/>
+                <outlet property="txtLbl" destination="0Zg-hc-jmy" id="Ww4-Yh-9PC"/>
+            </connections>
+            <point key="canvasLocation" x="-35.114503816793892" y="-45.774647887323944"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Mobility" width="75" height="80"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

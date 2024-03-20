@@ -81,21 +81,22 @@ extension ActivityVC: UITableViewDataSource, UITableViewDelegate {
             cell.lblActivity.text = myRecord[index].title
             cell.lblTime.text = myRecord[index].time
             cell.lblMesermentINT.text = (myRecord[index].datavalu ?? "") + " " + (myRecord[index].dataUnit ?? "")
-            
             cell.selectionStyle = .none
-            
+            cell.backgroundColor = .clear
             return cell
         } else if indexPath.section == 1 {
             let cell = activityTableView.dequeueReusableCell(withIdentifier: "ActivityInCell", for: indexPath) as! ActivityInCell
             
             cell.inLbl.text = "No Data Available"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         } else {
             let cell = activityTableView.dequeueReusableCell(withIdentifier: "ActivityStrCell", for: indexPath) as! ActivityStrCell
             
             cell.strLbl.text = strRecord[indexPath.row].strData
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         }
     }

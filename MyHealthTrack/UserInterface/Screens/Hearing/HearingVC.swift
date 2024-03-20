@@ -60,19 +60,22 @@ extension HearingVC: UITableViewDataSource, UITableViewDelegate {
             let cell = hearingTableview.dequeueReusableCell(withIdentifier: "DefultHearingTVCell", for: indexPath) as! DefultHearingTVCell
             cell.title.text = "Headphone Audio Levels"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
         } else {
             
             let cell = hearingTableview.dequeueReusableCell(withIdentifier: "HearingTVCell", for: indexPath) as! HearingTVCell
             cell.strLbl.text = myStrRecord[indexPath.row].strData
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 90
+            return 110
         } else {
             return 65
         }

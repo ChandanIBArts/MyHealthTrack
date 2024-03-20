@@ -13,13 +13,15 @@ class HearingBarchatTVCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var segmentBar: UISegmentedControl!
+    @IBOutlet weak var cellChartView: UIView!
+    
     var lineChartView = LineChartView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUi()
         fetchData()
-        // Initialization code
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,8 +62,8 @@ class HearingBarchatTVCell: UITableViewCell {
         ]
 
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemPink]
-
+        dataSet.colors = [UIColor.systemMint]
+        dataSet.circleColors = [UIColor.green]
         let data = LineChartData(dataSet: dataSet)
         lineChartView.data = data
         lineChartView.xAxis.labelPosition = .bottom
@@ -102,8 +104,8 @@ class HearingBarchatTVCell: UITableViewCell {
         ]
 
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemPink]
-
+        dataSet.colors = [UIColor.systemMint]
+        dataSet.circleColors = [UIColor.green]
         let data = LineChartData(dataSet: dataSet)
         lineChartView.data = data
         lineChartView.xAxis.labelPosition = .bottom
@@ -127,8 +129,8 @@ class HearingBarchatTVCell: UITableViewCell {
         ]
 
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemPink]
-
+        dataSet.colors = [UIColor.systemMint]
+        dataSet.circleColors = [UIColor.green]
         let data = LineChartData(dataSet: dataSet)
         lineChartView.data = data
         lineChartView.xAxis.labelPosition = .bottom
@@ -175,8 +177,8 @@ class HearingBarchatTVCell: UITableViewCell {
         ]
 
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemPink]
-
+        dataSet.colors = [UIColor.systemMint]
+        dataSet.circleColors = [UIColor.green]
         let data = LineChartData(dataSet: dataSet)
         lineChartView.data = data
         lineChartView.xAxis.labelPosition = .bottom
@@ -199,8 +201,8 @@ class HearingBarchatTVCell: UITableViewCell {
         ]
 
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemPink]
-
+        dataSet.colors = [UIColor.systemMint]
+        dataSet.circleColors = [UIColor.green]
         let data = LineChartData(dataSet: dataSet)
         lineChartView.data = data
         lineChartView.xAxis.labelPosition = .bottom
@@ -229,8 +231,8 @@ class HearingBarchatTVCell: UITableViewCell {
         ]
 
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemPink]
-
+        dataSet.colors = [UIColor.systemMint]
+        dataSet.circleColors = [UIColor.green]
         let data = LineChartData(dataSet: dataSet)
         lineChartView.data = data
         lineChartView.xAxis.labelPosition = .bottom
@@ -246,16 +248,19 @@ class HearingBarchatTVCell: UITableViewCell {
         cellView.layer.cornerRadius = 10
         cellView.clipsToBounds = true
         
+        cellChartView.layer.borderColor = UIColor.systemMint.cgColor
+        cellChartView.layer.borderWidth = 0.3
+        
         lineChartView = LineChartView()
         lineChartView.translatesAutoresizingMaskIntoConstraints = false
         cellView.addSubview(lineChartView)
 
         // Set up constraints
         NSLayoutConstraint.activate([
-            lineChartView.topAnchor.constraint(equalTo: segmentBar.bottomAnchor, constant: 10),
-            lineChartView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 20),
-            lineChartView.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -20),
-            lineChartView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -10)
+            lineChartView.topAnchor.constraint(equalTo: cellChartView.topAnchor, constant: 10),
+            lineChartView.leadingAnchor.constraint(equalTo: cellChartView.leadingAnchor, constant: 5),
+            lineChartView.trailingAnchor.constraint(equalTo: cellChartView.trailingAnchor, constant: -5),
+            lineChartView.bottomAnchor.constraint(equalTo: cellChartView.bottomAnchor, constant: -10)
         ])
         
         chartsManage()

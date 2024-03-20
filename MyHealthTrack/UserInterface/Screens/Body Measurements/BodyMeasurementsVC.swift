@@ -75,19 +75,20 @@ extension BodyMeasurementsVC: UITableViewDataSource, UITableViewDelegate {
             cell.lblData.text = myRecord[indexPath.row].data
             cell.lblUnit.text = myRecord[indexPath.row].unit
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BodyInCell", for: indexPath) as! BodyInCell
             cell.inLbl.text = "No Data Available"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BodyStrCell", for: indexPath) as! BodyStrCell
             cell.lblStr.text = strRecord[indexPath.row].strString
             cell.selectionStyle = .none
-            cell.layer.cornerRadius = 8
-            cell.clipsToBounds = true
+            cell.backgroundColor = .clear
             return cell
         }
     }
@@ -102,5 +103,18 @@ extension BodyMeasurementsVC: UITableViewDataSource, UITableViewDelegate {
             return 65
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsWeightVC") as! DetailsWeightVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 1 {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsHeightVC") as! DetailsHeightVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
 }
 

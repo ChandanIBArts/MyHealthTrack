@@ -30,7 +30,7 @@ class WeightChartCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUi()
-        let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .walkingSpeed)!]
+        let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!]
         healthKitManager.requestAuthorization(for: typesToRead) { [weak self] (success, error) in
             guard let self = self else { return }
             if success {
@@ -64,7 +64,7 @@ class WeightChartCell: UITableViewCell {
             
         case 0:
             //MARK: Daily Hrs Data
-            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .walkingSpeed)!]
+            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!]
             healthKitManager.requestAuthorization(for: typesToRead) { [weak self] (success, error) in
                 guard let self = self else { return }
                 if success {
@@ -85,7 +85,7 @@ class WeightChartCell: UITableViewCell {
             }
         case 1:
             //MARK: Weak Data
-            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .walkingSpeed)!]
+            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!]
             healthKitManager.requestAuthorization(for: typesToRead) { [weak self] (success, error) in
                 guard let self = self else { return }
                 if success {
@@ -108,7 +108,7 @@ class WeightChartCell: UITableViewCell {
             }
         case 2:
             //MARK: Monthly Data
-            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .walkingSpeed)!]
+            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!]
             healthKitManager.requestAuthorization(for: typesToRead) { [weak self] (success, error) in
                 guard let self = self else { return }
                 if success {
@@ -130,7 +130,7 @@ class WeightChartCell: UITableViewCell {
             }
         case 3:
             //MARK: HalfYearly Data
-            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .walkingSpeed)!]
+            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!]
             healthKitManager.requestAuthorization(for: typesToRead) { [weak self] (success, error) in
                 guard let self = self else { return }
                 if success {
@@ -152,7 +152,7 @@ class WeightChartCell: UITableViewCell {
             }
         case 4:
             //MARK: Yearly Data
-            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .walkingSpeed)!]
+            let typesToRead: Set<HKSampleType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!]
             healthKitManager.requestAuthorization(for: typesToRead) { [weak self] (success, error) in
                 guard let self = self else { return }
                 if success {

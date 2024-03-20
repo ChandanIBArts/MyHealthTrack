@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeP-xH-bMe">
-                        <rect key="frame" x="5" y="5" width="310" height="63"/>
+                        <rect key="frame" x="4" y="4" width="312" height="65"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5E-Lf-4HQ">
-                                <rect key="frame" x="5" y="5" width="300" height="53"/>
+                                <rect key="frame" x="5" y="5" width="302" height="55"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,13 +38,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="XeP-xH-bMe" secondAttribute="trailing" constant="5" id="1k5-jx-06h"/>
-                    <constraint firstItem="XeP-xH-bMe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="IA6-af-Vpw"/>
-                    <constraint firstItem="XeP-xH-bMe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="heg-H4-9m2"/>
-                    <constraint firstAttribute="bottom" secondItem="XeP-xH-bMe" secondAttribute="bottom" constant="5" id="mrc-if-P1B"/>
+                    <constraint firstAttribute="trailing" secondItem="XeP-xH-bMe" secondAttribute="trailing" constant="4" id="1k5-jx-06h"/>
+                    <constraint firstItem="XeP-xH-bMe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="IA6-af-Vpw"/>
+                    <constraint firstItem="XeP-xH-bMe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="heg-H4-9m2"/>
+                    <constraint firstAttribute="bottom" secondItem="XeP-xH-bMe" secondAttribute="bottom" constant="4" id="mrc-if-P1B"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <connections>
                 <outlet property="cellBackground" destination="XeP-xH-bMe" id="XqU-0I-A2e"/>
                 <outlet property="strLbl" destination="p5E-Lf-4HQ" id="YBR-Te-Wtu"/>

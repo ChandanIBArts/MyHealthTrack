@@ -59,6 +59,7 @@ extension MentalWellbeingVC: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AnxietyTVCell", for: indexPath) as! AnxietyTVCell
             cell.title.text = "Anxiety Risk"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
             
@@ -67,6 +68,7 @@ extension MentalWellbeingVC: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MentalNoDataTVCell", for: indexPath) as! MentalNoDataTVCell
             cell.nodataLvl.text = "No data Available"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
             
@@ -75,6 +77,7 @@ extension MentalWellbeingVC: UITableViewDataSource, UITableViewDelegate {
             
             cell.titleLbl.text = mentalRecords[indexPath.row].title
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
         }

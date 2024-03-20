@@ -115,10 +115,6 @@
 		F705F84C2B555F7700A2AE04 /* StrHeartRateTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705F84A2B555F7700A2AE04 /* StrHeartRateTVCell.swift */; };
 		F705F84D2B555F7700A2AE04 /* StrHeartRateTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F705F84B2B555F7700A2AE04 /* StrHeartRateTVCell.xib */; };
 		F70865EB2B8DBF4C005F188E /* StaticDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70865EA2B8DBF4C005F188E /* StaticDataModel.swift */; };
-		F70865EE2B8DC0EF005F188E /* RW_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70865ED2B8DC0EF005F188E /* RW_Static_Cell.swift */; };
-		F70865F12B8DC620005F188E /* Steps_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70865F02B8DC620005F188E /* Steps_Static_Cell.swift */; };
-		F70865F42B8DD615005F188E /* Active_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70865F32B8DD615005F188E /* Active_Static_Cell.swift */; };
-		F70865F72B8DDB73005F188E /* Resting_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70865F62B8DDB73005F188E /* Resting_Static_Cell.swift */; };
 		F714E3DA2B5FCBA300FC2AF7 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = F714E3D92B5FCBA300FC2AF7 /* DGCharts */; };
 		F71D57F22B56469A00EBDF98 /* InTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71D57F02B56469A00EBDF98 /* InTVCell.swift */; };
 		F71D57F32B56469A00EBDF98 /* InTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71D57F12B56469A00EBDF98 /* InTVCell.xib */; };
@@ -148,11 +144,23 @@
 		F735800C2BA311A600633477 /* HearingStaticTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735800A2BA311A600633477 /* HearingStaticTVCell.swift */; };
 		F735800D2BA311A600633477 /* HearingStaticTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F735800B2BA311A600633477 /* HearingStaticTVCell.xib */; };
 		F735D5862B6269DA0074040E /* DWRDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735D5852B6269DA0074040E /* DWRDViewModel.swift */; };
+		F73B51072BA95CB00030E8FF /* WeightStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B51052BA95CB00030E8FF /* WeightStaticCell.swift */; };
+		F73B51082BA95CB00030E8FF /* WeightStaticCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B51062BA95CB00030E8FF /* WeightStaticCell.xib */; };
+		F73B510A2BA95F880030E8FF /* WeightStrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B51092BA95F880030E8FF /* WeightStrModel.swift */; };
+		F73B510E2BA987040030E8FF /* HeightStrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B510D2BA987040030E8FF /* HeightStrModel.swift */; };
+		F73B51112BA9876B0030E8FF /* DetailsHeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B51102BA9876B0030E8FF /* DetailsHeightVC.swift */; };
+		F73B51132BA9877E0030E8FF /* DetailsHeightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B51122BA9877E0030E8FF /* DetailsHeightViewModel.swift */; };
+		F73B51162BA987A50030E8FF /* HeightChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B51142BA987A50030E8FF /* HeightChartCell.swift */; };
+		F73B51172BA987A50030E8FF /* HeightChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B51152BA987A50030E8FF /* HeightChartCell.xib */; };
+		F73B511E2BA988290030E8FF /* HeightStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B511C2BA988290030E8FF /* HeightStaticCell.swift */; };
+		F73B511F2BA988290030E8FF /* HeightStaticCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B511D2BA988290030E8FF /* HeightStaticCell.xib */; };
 		F73CBF962B68EF3100D0693B /* Details_StairsClimbedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73CBF952B68EF3100D0693B /* Details_StairsClimbedModel.swift */; };
 		F73EBABA2B837B36008D8BB7 /* DetailsHartRateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EBAB92B837B36008D8BB7 /* DetailsHartRateVC.swift */; };
-		F73EBABC2B837B54008D8BB7 /* DetailsHartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EBABB2B837B54008D8BB7 /* DetailsHartRateModel.swift */; };
+		F73EBABC2B837B54008D8BB7 /* DetailsHartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EBABB2B837B54008D8BB7 /* DetailsHartRateViewModel.swift */; };
 		F73EBABF2B838054008D8BB7 /* DetailsDoubleSupportModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EBABE2B838054008D8BB7 /* DetailsDoubleSupportModelView.swift */; };
 		F73EBAC12B838064008D8BB7 /* DetailsDoubleSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73EBAC02B838064008D8BB7 /* DetailsDoubleSupportVC.swift */; };
+		F7417EE52BAAD7EB002E1C65 /* SummaryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7417EE32BAAD7EB002E1C65 /* SummaryTVCell.swift */; };
+		F7417EE62BAAD7EB002E1C65 /* SummaryTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7417EE42BAAD7EB002E1C65 /* SummaryTVCell.xib */; };
 		F75BCDFB2B849A4F008082FD /* DefultHearingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75BCDF92B849A4F008082FD /* DefultHearingTVCell.swift */; };
 		F75BCDFC2B849A4F008082FD /* DefultHearingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75BCDFA2B849A4F008082FD /* DefultHearingTVCell.xib */; };
 		F75BCE032B84A415008082FD /* AnexietyRiskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75BCE022B84A415008082FD /* AnexietyRiskVC.swift */; };
@@ -164,11 +172,49 @@
 		F75E90D42B679A680040BC94 /* Details_StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E90D32B679A680040BC94 /* Details_StepsModel.swift */; };
 		F75E90D82B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E90D72B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift */; };
 		F75E90DB2B67B9360040BC94 /* DetailsRestingEnergyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E90DA2B67B9360040BC94 /* DetailsRestingEnergyModel.swift */; };
+		F7846CF22BA40A9E00AEAF16 /* StepsChrtTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846CF02BA40A9E00AEAF16 /* StepsChrtTVCell.swift */; };
+		F7846CF32BA40A9E00AEAF16 /* StepsChrtTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846CF12BA40A9E00AEAF16 /* StepsChrtTVCell.xib */; };
+		F7846CF62BA413E300AEAF16 /* Steps_Static_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846CF42BA413E300AEAF16 /* Steps_Static_TVCell.swift */; };
+		F7846CF72BA413E300AEAF16 /* Steps_Static_TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846CF52BA413E300AEAF16 /* Steps_Static_TVCell.xib */; };
+		F7846CFA2BA4194900AEAF16 /* RunningWalkingChartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846CF82BA4194900AEAF16 /* RunningWalkingChartTVCell.swift */; };
+		F7846CFB2BA4194900AEAF16 /* RunningWalkingChartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846CF92BA4194900AEAF16 /* RunningWalkingChartTVCell.xib */; };
+		F7846CFE2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846CFC2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.swift */; };
+		F7846CFF2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846CFD2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.xib */; };
+		F7846D022BA4205600AEAF16 /* ActiveEnrgyChartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D002BA4205600AEAF16 /* ActiveEnrgyChartTVCell.swift */; };
+		F7846D032BA4205600AEAF16 /* ActiveEnrgyChartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D012BA4205600AEAF16 /* ActiveEnrgyChartTVCell.xib */; };
+		F7846D0A2BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D082BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.swift */; };
+		F7846D0B2BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D092BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.xib */; };
+		F7846D0E2BA425E300AEAF16 /* RestingEnergyChartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D0C2BA425E300AEAF16 /* RestingEnergyChartTVCell.swift */; };
+		F7846D0F2BA425E300AEAF16 /* RestingEnergyChartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D0D2BA425E300AEAF16 /* RestingEnergyChartTVCell.xib */; };
+		F7846D122BA4260700AEAF16 /* RestingEnergy_Static_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D102BA4260700AEAF16 /* RestingEnergy_Static_TVCell.swift */; };
+		F7846D132BA4260700AEAF16 /* RestingEnergy_Static_TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D112BA4260700AEAF16 /* RestingEnergy_Static_TVCell.xib */; };
+		F7846D162BA42C1100AEAF16 /* StairsClimbedChartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D142BA42C1100AEAF16 /* StairsClimbedChartTVCell.swift */; };
+		F7846D172BA42C1100AEAF16 /* StairsClimbedChartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D152BA42C1100AEAF16 /* StairsClimbedChartTVCell.xib */; };
+		F7846D1A2BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D182BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.swift */; };
+		F7846D1B2BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D192BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.xib */; };
+		F7846D1F2BA440B200AEAF16 /* SleepChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D1D2BA440B200AEAF16 /* SleepChartCell.swift */; };
+		F7846D202BA440B200AEAF16 /* SleepChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D1E2BA440B200AEAF16 /* SleepChartCell.xib */; };
+		F7846D232BA448B800AEAF16 /* DoubleSupportChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D212BA448B800AEAF16 /* DoubleSupportChartCell.swift */; };
+		F7846D242BA448B800AEAF16 /* DoubleSupportChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D222BA448B800AEAF16 /* DoubleSupportChartCell.xib */; };
+		F7846D272BA44B6900AEAF16 /* DoubleSupport_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D252BA44B6900AEAF16 /* DoubleSupport_Static_Cell.swift */; };
+		F7846D282BA44B6900AEAF16 /* DoubleSupport_Static_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D262BA44B6900AEAF16 /* DoubleSupport_Static_Cell.xib */; };
+		F7846D2B2BA44FDE00AEAF16 /* HeartRateChartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D292BA44FDE00AEAF16 /* HeartRateChartTVCell.swift */; };
+		F7846D2C2BA44FDE00AEAF16 /* HeartRateChartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D2A2BA44FDE00AEAF16 /* HeartRateChartTVCell.xib */; };
+		F7846D2F2BA455AB00AEAF16 /* AnexietyChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D2D2BA455AB00AEAF16 /* AnexietyChartCell.swift */; };
+		F7846D302BA455AB00AEAF16 /* AnexietyChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D2E2BA455AB00AEAF16 /* AnexietyChartCell.xib */; };
+		F7846D332BA45D8A00AEAF16 /* AboutSleepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D312BA45D8A00AEAF16 /* AboutSleepCell.swift */; };
+		F7846D342BA45D8A00AEAF16 /* AboutSleepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D322BA45D8A00AEAF16 /* AboutSleepCell.xib */; };
+		F7846D3B2BA45DD200AEAF16 /* ImgSleepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D392BA45DD200AEAF16 /* ImgSleepCell.swift */; };
+		F7846D3C2BA45DD200AEAF16 /* ImgSleepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D3A2BA45DD200AEAF16 /* ImgSleepCell.xib */; };
+		F7846D3E2BA45F4E00AEAF16 /* SlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D3D2BA45F4E00AEAF16 /* SlipViewModel.swift */; };
+		F7846D412BA463EE00AEAF16 /* DetailsWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D402BA463EE00AEAF16 /* DetailsWeightVC.swift */; };
+		F7846D452BA4657700AEAF16 /* WeightChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D432BA4657700AEAF16 /* WeightChartCell.swift */; };
+		F7846D462BA4657700AEAF16 /* WeightChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D442BA4657700AEAF16 /* WeightChartCell.xib */; };
+		F7846D482BA4674700AEAF16 /* DetailsWeightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D472BA4674700AEAF16 /* DetailsWeightViewModel.swift */; };
 		F79BA1122B8F278A002B2770 /* Static_Heart_TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1112B8F278A002B2770 /* Static_Heart_TextCell.swift */; };
 		F79BA1142B8F27A3002B2770 /* Static_Heart_imgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1132B8F27A3002B2770 /* Static_Heart_imgCell.swift */; };
 		F79BA1172B8F3044002B2770 /* Static_Anexiety_TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1162B8F3044002B2770 /* Static_Anexiety_TextCell.swift */; };
 		F79BA1192B8F3055002B2770 /* Static_Anexiety_ImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA1182B8F3055002B2770 /* Static_Anexiety_ImgCell.swift */; };
-		F79BA11C2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79BA11B2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift */; };
 		F7B8D3CE2B4FF660001BB1C7 /* HealthCategoriesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8D3CC2B4FF660001BB1C7 /* HealthCategoriesTVCell.swift */; };
 		F7B8D3CF2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B8D3CD2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib */; };
 		F7B8D3D22B50014B001BB1C7 /* BrowserCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8D3D12B50014B001BB1C7 /* BrowserCategoriesModel.swift */; };
@@ -184,7 +230,24 @@
 		F7D5677C2B5A38F300A92DF0 /* HearingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5677B2B5A38F300A92DF0 /* HearingModel.swift */; };
 		F7D567802B5A3A4700A92DF0 /* HearingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5677E2B5A3A4700A92DF0 /* HearingTVCell.swift */; };
 		F7D567812B5A3A4700A92DF0 /* HearingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D5677F2B5A3A4700A92DF0 /* HearingTVCell.xib */; };
-		F7D79D952B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D79D942B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift */; };
+		F7D8C2602BA8038D0024BF9F /* DetailsWalkingSpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C25F2BA8038D0024BF9F /* DetailsWalkingSpeedVC.swift */; };
+		F7D8C2622BA807D40024BF9F /* DetailsWalkingSpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2612BA807D40024BF9F /* DetailsWalkingSpeedViewModel.swift */; };
+		F7D8C2692BA80B800024BF9F /* WalkingSpeedChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2672BA80B800024BF9F /* WalkingSpeedChartCell.swift */; };
+		F7D8C26A2BA80B800024BF9F /* WalkingSpeedChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D8C2682BA80B800024BF9F /* WalkingSpeedChartCell.xib */; };
+		F7D8C26F2BA83B660024BF9F /* WalkingAsymmetryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C26D2BA83B660024BF9F /* WalkingAsymmetryChartCell.swift */; };
+		F7D8C2702BA83B660024BF9F /* WalkingAsymmetryChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D8C26E2BA83B660024BF9F /* WalkingAsymmetryChartCell.xib */; };
+		F7D8C2732BA83B910024BF9F /* DetailsWalkingAsymmetryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2712BA83B910024BF9F /* DetailsWalkingAsymmetryVC.swift */; };
+		F7D8C2762BA83BBC0024BF9F /* DetailsWalkingAsymmetryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2752BA83BBC0024BF9F /* DetailsWalkingAsymmetryViewModel.swift */; };
+		F7D8C2802BA847C30024BF9F /* WalkingStepLengthChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C27E2BA847C30024BF9F /* WalkingStepLengthChartCell.swift */; };
+		F7D8C2812BA847C30024BF9F /* WalkingStepLengthChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D8C27F2BA847C30024BF9F /* WalkingStepLengthChartCell.xib */; };
+		F7D8C2832BA848610024BF9F /* DetailsWalkingStepLengthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2822BA848610024BF9F /* DetailsWalkingStepLengthVC.swift */; };
+		F7D8C2852BA848800024BF9F /* DetailsWalkingStepLengthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2842BA848800024BF9F /* DetailsWalkingStepLengthViewModel.swift */; };
+		F7D8C2882BA85AFB0024BF9F /* WalkingSpeedStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C2862BA85AFB0024BF9F /* WalkingSpeedStaticCell.swift */; };
+		F7D8C2892BA85AFB0024BF9F /* WalkingSpeedStaticCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D8C2872BA85AFB0024BF9F /* WalkingSpeedStaticCell.xib */; };
+		F7D8C28C2BA85D140024BF9F /* WalkingAsymmetryStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C28A2BA85D140024BF9F /* WalkingAsymmetryStaticCell.swift */; };
+		F7D8C28D2BA85D140024BF9F /* WalkingAsymmetryStaticCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D8C28B2BA85D140024BF9F /* WalkingAsymmetryStaticCell.xib */; };
+		F7D8C2902BA85F800024BF9F /* WalkingStepLengthStaticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8C28E2BA85F800024BF9F /* WalkingStepLengthStaticCell.swift */; };
+		F7D8C2912BA85F800024BF9F /* WalkingStepLengthStaticCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D8C28F2BA85F800024BF9F /* WalkingStepLengthStaticCell.xib */; };
 		F7E1DED72B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E1DED62B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift */; };
 		F7E683442B51016000AE6765 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E683432B51016000AE6765 /* ActivityVC.swift */; };
 		F7E683472B51021200AE6765 /* ActivityTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E683452B51021200AE6765 /* ActivityTVCell.swift */; };
@@ -322,10 +385,6 @@
 		F705F84A2B555F7700A2AE04 /* StrHeartRateTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrHeartRateTVCell.swift; sourceTree = "<group>"; };
 		F705F84B2B555F7700A2AE04 /* StrHeartRateTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StrHeartRateTVCell.xib; sourceTree = "<group>"; };
 		F70865EA2B8DBF4C005F188E /* StaticDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataModel.swift; sourceTree = "<group>"; };
-		F70865ED2B8DC0EF005F188E /* RW_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RW_Static_Cell.swift; sourceTree = "<group>"; };
-		F70865F02B8DC620005F188E /* Steps_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps_Static_Cell.swift; sourceTree = "<group>"; };
-		F70865F32B8DD615005F188E /* Active_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Active_Static_Cell.swift; sourceTree = "<group>"; };
-		F70865F62B8DDB73005F188E /* Resting_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resting_Static_Cell.swift; sourceTree = "<group>"; };
 		F71D57F02B56469A00EBDF98 /* InTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTVCell.swift; sourceTree = "<group>"; };
 		F71D57F12B56469A00EBDF98 /* InTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InTVCell.xib; sourceTree = "<group>"; };
 		F71D57F42B56485D00EBDF98 /* VitalsInTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsInTVCell.swift; sourceTree = "<group>"; };
@@ -354,11 +413,23 @@
 		F735800A2BA311A600633477 /* HearingStaticTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingStaticTVCell.swift; sourceTree = "<group>"; };
 		F735800B2BA311A600633477 /* HearingStaticTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HearingStaticTVCell.xib; sourceTree = "<group>"; };
 		F735D5852B6269DA0074040E /* DWRDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DWRDViewModel.swift; sourceTree = "<group>"; };
+		F73B51052BA95CB00030E8FF /* WeightStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightStaticCell.swift; sourceTree = "<group>"; };
+		F73B51062BA95CB00030E8FF /* WeightStaticCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightStaticCell.xib; sourceTree = "<group>"; };
+		F73B51092BA95F880030E8FF /* WeightStrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightStrModel.swift; sourceTree = "<group>"; };
+		F73B510D2BA987040030E8FF /* HeightStrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightStrModel.swift; sourceTree = "<group>"; };
+		F73B51102BA9876B0030E8FF /* DetailsHeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeightVC.swift; sourceTree = "<group>"; };
+		F73B51122BA9877E0030E8FF /* DetailsHeightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeightViewModel.swift; sourceTree = "<group>"; };
+		F73B51142BA987A50030E8FF /* HeightChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightChartCell.swift; sourceTree = "<group>"; };
+		F73B51152BA987A50030E8FF /* HeightChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeightChartCell.xib; sourceTree = "<group>"; };
+		F73B511C2BA988290030E8FF /* HeightStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightStaticCell.swift; sourceTree = "<group>"; };
+		F73B511D2BA988290030E8FF /* HeightStaticCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeightStaticCell.xib; sourceTree = "<group>"; };
 		F73CBF952B68EF3100D0693B /* Details_StairsClimbedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details_StairsClimbedModel.swift; sourceTree = "<group>"; };
 		F73EBAB92B837B36008D8BB7 /* DetailsHartRateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHartRateVC.swift; sourceTree = "<group>"; };
-		F73EBABB2B837B54008D8BB7 /* DetailsHartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHartRateModel.swift; sourceTree = "<group>"; };
+		F73EBABB2B837B54008D8BB7 /* DetailsHartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHartRateViewModel.swift; sourceTree = "<group>"; };
 		F73EBABE2B838054008D8BB7 /* DetailsDoubleSupportModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDoubleSupportModelView.swift; sourceTree = "<group>"; };
 		F73EBAC02B838064008D8BB7 /* DetailsDoubleSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDoubleSupportVC.swift; sourceTree = "<group>"; };
+		F7417EE32BAAD7EB002E1C65 /* SummaryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTVCell.swift; sourceTree = "<group>"; };
+		F7417EE42BAAD7EB002E1C65 /* SummaryTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTVCell.xib; sourceTree = "<group>"; };
 		F75BCDF92B849A4F008082FD /* DefultHearingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefultHearingTVCell.swift; sourceTree = "<group>"; };
 		F75BCDFA2B849A4F008082FD /* DefultHearingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefultHearingTVCell.xib; sourceTree = "<group>"; };
 		F75BCE022B84A415008082FD /* AnexietyRiskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnexietyRiskVC.swift; sourceTree = "<group>"; };
@@ -370,11 +441,49 @@
 		F75E90D32B679A680040BC94 /* Details_StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details_StepsModel.swift; sourceTree = "<group>"; };
 		F75E90D72B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsActiveEnergyModel.swift; sourceTree = "<group>"; };
 		F75E90DA2B67B9360040BC94 /* DetailsRestingEnergyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRestingEnergyModel.swift; sourceTree = "<group>"; };
+		F7846CF02BA40A9E00AEAF16 /* StepsChrtTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsChrtTVCell.swift; sourceTree = "<group>"; };
+		F7846CF12BA40A9E00AEAF16 /* StepsChrtTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepsChrtTVCell.xib; sourceTree = "<group>"; };
+		F7846CF42BA413E300AEAF16 /* Steps_Static_TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps_Static_TVCell.swift; sourceTree = "<group>"; };
+		F7846CF52BA413E300AEAF16 /* Steps_Static_TVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Steps_Static_TVCell.xib; sourceTree = "<group>"; };
+		F7846CF82BA4194900AEAF16 /* RunningWalkingChartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningWalkingChartTVCell.swift; sourceTree = "<group>"; };
+		F7846CF92BA4194900AEAF16 /* RunningWalkingChartTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningWalkingChartTVCell.xib; sourceTree = "<group>"; };
+		F7846CFC2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningWalking_Static_TVCell.swift; sourceTree = "<group>"; };
+		F7846CFD2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningWalking_Static_TVCell.xib; sourceTree = "<group>"; };
+		F7846D002BA4205600AEAF16 /* ActiveEnrgyChartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEnrgyChartTVCell.swift; sourceTree = "<group>"; };
+		F7846D012BA4205600AEAF16 /* ActiveEnrgyChartTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveEnrgyChartTVCell.xib; sourceTree = "<group>"; };
+		F7846D082BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEnergy_Static_TVCell.swift; sourceTree = "<group>"; };
+		F7846D092BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveEnergy_Static_TVCell.xib; sourceTree = "<group>"; };
+		F7846D0C2BA425E300AEAF16 /* RestingEnergyChartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingEnergyChartTVCell.swift; sourceTree = "<group>"; };
+		F7846D0D2BA425E300AEAF16 /* RestingEnergyChartTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestingEnergyChartTVCell.xib; sourceTree = "<group>"; };
+		F7846D102BA4260700AEAF16 /* RestingEnergy_Static_TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingEnergy_Static_TVCell.swift; sourceTree = "<group>"; };
+		F7846D112BA4260700AEAF16 /* RestingEnergy_Static_TVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestingEnergy_Static_TVCell.xib; sourceTree = "<group>"; };
+		F7846D142BA42C1100AEAF16 /* StairsClimbedChartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairsClimbedChartTVCell.swift; sourceTree = "<group>"; };
+		F7846D152BA42C1100AEAF16 /* StairsClimbedChartTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StairsClimbedChartTVCell.xib; sourceTree = "<group>"; };
+		F7846D182BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairsClimbed_Static_TVCell.swift; sourceTree = "<group>"; };
+		F7846D192BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StairsClimbed_Static_TVCell.xib; sourceTree = "<group>"; };
+		F7846D1D2BA440B200AEAF16 /* SleepChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepChartCell.swift; sourceTree = "<group>"; };
+		F7846D1E2BA440B200AEAF16 /* SleepChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepChartCell.xib; sourceTree = "<group>"; };
+		F7846D212BA448B800AEAF16 /* DoubleSupportChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSupportChartCell.swift; sourceTree = "<group>"; };
+		F7846D222BA448B800AEAF16 /* DoubleSupportChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleSupportChartCell.xib; sourceTree = "<group>"; };
+		F7846D252BA44B6900AEAF16 /* DoubleSupport_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSupport_Static_Cell.swift; sourceTree = "<group>"; };
+		F7846D262BA44B6900AEAF16 /* DoubleSupport_Static_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleSupport_Static_Cell.xib; sourceTree = "<group>"; };
+		F7846D292BA44FDE00AEAF16 /* HeartRateChartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateChartTVCell.swift; sourceTree = "<group>"; };
+		F7846D2A2BA44FDE00AEAF16 /* HeartRateChartTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeartRateChartTVCell.xib; sourceTree = "<group>"; };
+		F7846D2D2BA455AB00AEAF16 /* AnexietyChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnexietyChartCell.swift; sourceTree = "<group>"; };
+		F7846D2E2BA455AB00AEAF16 /* AnexietyChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnexietyChartCell.xib; sourceTree = "<group>"; };
+		F7846D312BA45D8A00AEAF16 /* AboutSleepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSleepCell.swift; sourceTree = "<group>"; };
+		F7846D322BA45D8A00AEAF16 /* AboutSleepCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutSleepCell.xib; sourceTree = "<group>"; };
+		F7846D392BA45DD200AEAF16 /* ImgSleepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgSleepCell.swift; sourceTree = "<group>"; };
+		F7846D3A2BA45DD200AEAF16 /* ImgSleepCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImgSleepCell.xib; sourceTree = "<group>"; };
+		F7846D3D2BA45F4E00AEAF16 /* SlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipViewModel.swift; sourceTree = "<group>"; };
+		F7846D402BA463EE00AEAF16 /* DetailsWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWeightVC.swift; sourceTree = "<group>"; };
+		F7846D432BA4657700AEAF16 /* WeightChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartCell.swift; sourceTree = "<group>"; };
+		F7846D442BA4657700AEAF16 /* WeightChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightChartCell.xib; sourceTree = "<group>"; };
+		F7846D472BA4674700AEAF16 /* DetailsWeightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWeightViewModel.swift; sourceTree = "<group>"; };
 		F79BA1112B8F278A002B2770 /* Static_Heart_TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Heart_TextCell.swift; sourceTree = "<group>"; };
 		F79BA1132B8F27A3002B2770 /* Static_Heart_imgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Heart_imgCell.swift; sourceTree = "<group>"; };
 		F79BA1162B8F3044002B2770 /* Static_Anexiety_TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Anexiety_TextCell.swift; sourceTree = "<group>"; };
 		F79BA1182B8F3055002B2770 /* Static_Anexiety_ImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_Anexiety_ImgCell.swift; sourceTree = "<group>"; };
-		F79BA11B2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static_DoubleSupport_TextCell.swift; sourceTree = "<group>"; };
 		F7B8D3CC2B4FF660001BB1C7 /* HealthCategoriesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCategoriesTVCell.swift; sourceTree = "<group>"; };
 		F7B8D3CD2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthCategoriesTVCell.xib; sourceTree = "<group>"; };
 		F7B8D3D12B50014B001BB1C7 /* BrowserCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserCategoriesModel.swift; sourceTree = "<group>"; };
@@ -390,7 +499,24 @@
 		F7D5677B2B5A38F300A92DF0 /* HearingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingModel.swift; sourceTree = "<group>"; };
 		F7D5677E2B5A3A4700A92DF0 /* HearingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearingTVCell.swift; sourceTree = "<group>"; };
 		F7D5677F2B5A3A4700A92DF0 /* HearingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HearingTVCell.xib; sourceTree = "<group>"; };
-		F7D79D942B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StairsClimbed_Static_Cell.swift; sourceTree = "<group>"; };
+		F7D8C25F2BA8038D0024BF9F /* DetailsWalkingSpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWalkingSpeedVC.swift; sourceTree = "<group>"; };
+		F7D8C2612BA807D40024BF9F /* DetailsWalkingSpeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWalkingSpeedViewModel.swift; sourceTree = "<group>"; };
+		F7D8C2672BA80B800024BF9F /* WalkingSpeedChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSpeedChartCell.swift; sourceTree = "<group>"; };
+		F7D8C2682BA80B800024BF9F /* WalkingSpeedChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkingSpeedChartCell.xib; sourceTree = "<group>"; };
+		F7D8C26D2BA83B660024BF9F /* WalkingAsymmetryChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingAsymmetryChartCell.swift; sourceTree = "<group>"; };
+		F7D8C26E2BA83B660024BF9F /* WalkingAsymmetryChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkingAsymmetryChartCell.xib; sourceTree = "<group>"; };
+		F7D8C2712BA83B910024BF9F /* DetailsWalkingAsymmetryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWalkingAsymmetryVC.swift; sourceTree = "<group>"; };
+		F7D8C2752BA83BBC0024BF9F /* DetailsWalkingAsymmetryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWalkingAsymmetryViewModel.swift; sourceTree = "<group>"; };
+		F7D8C27E2BA847C30024BF9F /* WalkingStepLengthChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStepLengthChartCell.swift; sourceTree = "<group>"; };
+		F7D8C27F2BA847C30024BF9F /* WalkingStepLengthChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkingStepLengthChartCell.xib; sourceTree = "<group>"; };
+		F7D8C2822BA848610024BF9F /* DetailsWalkingStepLengthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWalkingStepLengthVC.swift; sourceTree = "<group>"; };
+		F7D8C2842BA848800024BF9F /* DetailsWalkingStepLengthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWalkingStepLengthViewModel.swift; sourceTree = "<group>"; };
+		F7D8C2862BA85AFB0024BF9F /* WalkingSpeedStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingSpeedStaticCell.swift; sourceTree = "<group>"; };
+		F7D8C2872BA85AFB0024BF9F /* WalkingSpeedStaticCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkingSpeedStaticCell.xib; sourceTree = "<group>"; };
+		F7D8C28A2BA85D140024BF9F /* WalkingAsymmetryStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingAsymmetryStaticCell.swift; sourceTree = "<group>"; };
+		F7D8C28B2BA85D140024BF9F /* WalkingAsymmetryStaticCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkingAsymmetryStaticCell.xib; sourceTree = "<group>"; };
+		F7D8C28E2BA85F800024BF9F /* WalkingStepLengthStaticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingStepLengthStaticCell.swift; sourceTree = "<group>"; };
+		F7D8C28F2BA85F800024BF9F /* WalkingStepLengthStaticCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkingStepLengthStaticCell.xib; sourceTree = "<group>"; };
 		F7E1DED62B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details_Walking_RunningDistanceVC.swift; sourceTree = "<group>"; };
 		F7E683432B51016000AE6765 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		F7E683452B51021200AE6765 /* ActivityTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTVCell.swift; sourceTree = "<group>"; };
@@ -421,6 +547,7 @@
 				170172822B52BB1B008189A8 /* BodyMeasurementsVC.swift */,
 				170172842B52BB3D008189A8 /* BodyMeasurementsModel.swift */,
 				170172862B52BB55008189A8 /* BodyMeasurementsViewModel.swift */,
+				F7846D3F2BA462FC00AEAF16 /* Details Body Measurements */,
 			);
 			path = "Body Measurements";
 			sourceTree = "<group>";
@@ -479,7 +606,6 @@
 				F722B6122B593A7A002F6803 /* Respiratory */,
 				F722B61C2B5947DD002F6803 /* Sleep */,
 				F7D567782B5A380D00A92DF0 /* Hearing */,
-				F7357FFE2BA30B0600633477 /* DetailsScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -708,6 +834,7 @@
 		55B66C3E2B21E5310007B94C /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				F7417EE22BAAD7CB002E1C65 /* TVCell */,
 				55B66C222B21E2E10007B94C /* SummaryVC.swift */,
 				55B66C492B21E7910007B94C /* SummaryVM.swift */,
 				559204A52B25E4C9002FB6BA /* SummaryHealthDataCell.swift */,
@@ -847,7 +974,10 @@
 		F70865EC2B8DC0BD005F188E /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
-				F70865ED2B8DC0EF005F188E /* RW_Static_Cell.swift */,
+				F7846CF82BA4194900AEAF16 /* RunningWalkingChartTVCell.swift */,
+				F7846CF92BA4194900AEAF16 /* RunningWalkingChartTVCell.xib */,
+				F7846CFC2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.swift */,
+				F7846CFD2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -855,7 +985,10 @@
 		F70865EF2B8DC5FD005F188E /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
-				F70865F02B8DC620005F188E /* Steps_Static_Cell.swift */,
+				F7846CF02BA40A9E00AEAF16 /* StepsChrtTVCell.swift */,
+				F7846CF12BA40A9E00AEAF16 /* StepsChrtTVCell.xib */,
+				F7846CF42BA413E300AEAF16 /* Steps_Static_TVCell.swift */,
+				F7846CF52BA413E300AEAF16 /* Steps_Static_TVCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -863,7 +996,10 @@
 		F70865F22B8DD5D7005F188E /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
-				F70865F32B8DD615005F188E /* Active_Static_Cell.swift */,
+				F7846D002BA4205600AEAF16 /* ActiveEnrgyChartTVCell.swift */,
+				F7846D012BA4205600AEAF16 /* ActiveEnrgyChartTVCell.xib */,
+				F7846D082BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.swift */,
+				F7846D092BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -871,7 +1007,10 @@
 		F70865F52B8DDB2C005F188E /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
-				F70865F62B8DDB73005F188E /* Resting_Static_Cell.swift */,
+				F7846D0C2BA425E300AEAF16 /* RestingEnergyChartTVCell.swift */,
+				F7846D0D2BA425E300AEAF16 /* RestingEnergyChartTVCell.xib */,
+				F7846D102BA4260700AEAF16 /* RestingEnergy_Static_TVCell.swift */,
+				F7846D112BA4260700AEAF16 /* RestingEnergy_Static_TVCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -918,10 +1057,14 @@
 		F722B5FD2B58E936002F6803 /* Mobility */ = {
 			isa = PBXGroup;
 			children = (
+				F7D8C2772BA8467C0024BF9F /* Details */,
 				F722B5FE2B58E97B002F6803 /* MobilityVC.swift */,
 				F722B6002B58E9A6002F6803 /* MobilityModel.swift */,
 				F722B6102B58F3C3002F6803 /* MobilityViewModel.swift */,
 				F73EBABD2B83802E008D8BB7 /* Details DoubleSupport Time */,
+				F7D8C25D2BA803130024BF9F /* Details Walhing Speed */,
+				F7D8C26B2BA83B030024BF9F /* Details Walking Asymmetry */,
+				F7D8C2782BA846A40024BF9F /* Details Walking Step Lengthg */,
 			);
 			path = Mobility;
 			sourceTree = "<group>";
@@ -960,7 +1103,9 @@
 		F722B61C2B5947DD002F6803 /* Sleep */ = {
 			isa = PBXGroup;
 			children = (
+				F7846D1C2BA4409300AEAF16 /* TVCell */,
 				F722B61D2B5947FF002F6803 /* SleepVC.swift */,
+				F7846D3D2BA45F4E00AEAF16 /* SlipViewModel.swift */,
 			);
 			path = Sleep;
 			sourceTree = "<group>";
@@ -995,6 +1140,39 @@
 			path = "Details Walking Running Distance";
 			sourceTree = "<group>";
 		};
+		F73B510B2BA986AA0030E8FF /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				F73B51092BA95F880030E8FF /* WeightStrModel.swift */,
+				F7846D422BA4655600AEAF16 /* TVCell */,
+				F7846D402BA463EE00AEAF16 /* DetailsWeightVC.swift */,
+				F7846D472BA4674700AEAF16 /* DetailsWeightViewModel.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
+		F73B510C2BA986E60030E8FF /* Height */ = {
+			isa = PBXGroup;
+			children = (
+				F73B510D2BA987040030E8FF /* HeightStrModel.swift */,
+				F73B510F2BA9873B0030E8FF /* TVCell */,
+				F73B51102BA9876B0030E8FF /* DetailsHeightVC.swift */,
+				F73B51122BA9877E0030E8FF /* DetailsHeightViewModel.swift */,
+			);
+			path = Height;
+			sourceTree = "<group>";
+		};
+		F73B510F2BA9873B0030E8FF /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F73B51142BA987A50030E8FF /* HeightChartCell.swift */,
+				F73B51152BA987A50030E8FF /* HeightChartCell.xib */,
+				F73B511C2BA988290030E8FF /* HeightStaticCell.swift */,
+				F73B511D2BA988290030E8FF /* HeightStaticCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
 		F73CBF942B68EEDF00D0693B /* Details Stairs Climbed */ = {
 			isa = PBXGroup;
 			children = (
@@ -1010,7 +1188,7 @@
 			children = (
 				F79BA1102B8F2760002B2770 /* TVCell */,
 				F73EBAB92B837B36008D8BB7 /* DetailsHartRateVC.swift */,
-				F73EBABB2B837B54008D8BB7 /* DetailsHartRateModel.swift */,
+				F73EBABB2B837B54008D8BB7 /* DetailsHartRateViewModel.swift */,
 			);
 			path = "Details Heart Rate";
 			sourceTree = "<group>";
@@ -1023,6 +1201,15 @@
 				F73EBABE2B838054008D8BB7 /* DetailsDoubleSupportModelView.swift */,
 			);
 			path = "Details DoubleSupport Time";
+			sourceTree = "<group>";
+		};
+		F7417EE22BAAD7CB002E1C65 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7417EE32BAAD7EB002E1C65 /* SummaryTVCell.swift */,
+				F7417EE42BAAD7EB002E1C65 /* SummaryTVCell.xib */,
+			);
+			path = TVCell;
 			sourceTree = "<group>";
 		};
 		F75BCDFD2B84A213008082FD /* Anexiety Risk */ = {
@@ -1065,11 +1252,46 @@
 			path = "Details RestingEnergy";
 			sourceTree = "<group>";
 		};
+		F7846D1C2BA4409300AEAF16 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7846D1D2BA440B200AEAF16 /* SleepChartCell.swift */,
+				F7846D1E2BA440B200AEAF16 /* SleepChartCell.xib */,
+				F7846D312BA45D8A00AEAF16 /* AboutSleepCell.swift */,
+				F7846D322BA45D8A00AEAF16 /* AboutSleepCell.xib */,
+				F7846D392BA45DD200AEAF16 /* ImgSleepCell.swift */,
+				F7846D3A2BA45DD200AEAF16 /* ImgSleepCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
+		F7846D3F2BA462FC00AEAF16 /* Details Body Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				F73B510C2BA986E60030E8FF /* Height */,
+				F73B510B2BA986AA0030E8FF /* Weight */,
+			);
+			path = "Details Body Measurements";
+			sourceTree = "<group>";
+		};
+		F7846D422BA4655600AEAF16 /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7846D432BA4657700AEAF16 /* WeightChartCell.swift */,
+				F7846D442BA4657700AEAF16 /* WeightChartCell.xib */,
+				F73B51052BA95CB00030E8FF /* WeightStaticCell.swift */,
+				F73B51062BA95CB00030E8FF /* WeightStaticCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
 		F79BA1102B8F2760002B2770 /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
 				F79BA1112B8F278A002B2770 /* Static_Heart_TextCell.swift */,
 				F79BA1132B8F27A3002B2770 /* Static_Heart_imgCell.swift */,
+				F7846D292BA44FDE00AEAF16 /* HeartRateChartTVCell.swift */,
+				F7846D2A2BA44FDE00AEAF16 /* HeartRateChartTVCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -1079,6 +1301,8 @@
 			children = (
 				F79BA1162B8F3044002B2770 /* Static_Anexiety_TextCell.swift */,
 				F79BA1182B8F3055002B2770 /* Static_Anexiety_ImgCell.swift */,
+				F7846D2D2BA455AB00AEAF16 /* AnexietyChartCell.swift */,
+				F7846D2E2BA455AB00AEAF16 /* AnexietyChartCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -1086,7 +1310,10 @@
 		F79BA11A2B8F362E002B2770 /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
-				F79BA11B2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift */,
+				F7846D212BA448B800AEAF16 /* DoubleSupportChartCell.swift */,
+				F7846D222BA448B800AEAF16 /* DoubleSupportChartCell.xib */,
+				F7846D252BA44B6900AEAF16 /* DoubleSupport_Static_Cell.swift */,
+				F7846D262BA44B6900AEAF16 /* DoubleSupport_Static_Cell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -1132,6 +1359,7 @@
 			children = (
 				F7D567792B5A383400A92DF0 /* HearingVC.swift */,
 				F7D5677B2B5A38F300A92DF0 /* HearingModel.swift */,
+				F7357FFE2BA30B0600633477 /* DetailsScreen */,
 			);
 			path = Hearing;
 			sourceTree = "<group>";
@@ -1150,7 +1378,80 @@
 		F7D79D932B8F106F000FABE0 /* TVCell */ = {
 			isa = PBXGroup;
 			children = (
-				F7D79D942B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift */,
+				F7846D142BA42C1100AEAF16 /* StairsClimbedChartTVCell.swift */,
+				F7846D152BA42C1100AEAF16 /* StairsClimbedChartTVCell.xib */,
+				F7846D182BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.swift */,
+				F7846D192BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
+		F7D8C25D2BA803130024BF9F /* Details Walhing Speed */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8C25E2BA803570024BF9F /* TVCell */,
+				F7D8C25F2BA8038D0024BF9F /* DetailsWalkingSpeedVC.swift */,
+				F7D8C2612BA807D40024BF9F /* DetailsWalkingSpeedViewModel.swift */,
+			);
+			path = "Details Walhing Speed";
+			sourceTree = "<group>";
+		};
+		F7D8C25E2BA803570024BF9F /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8C2672BA80B800024BF9F /* WalkingSpeedChartCell.swift */,
+				F7D8C2682BA80B800024BF9F /* WalkingSpeedChartCell.xib */,
+				F7D8C2862BA85AFB0024BF9F /* WalkingSpeedStaticCell.swift */,
+				F7D8C2872BA85AFB0024BF9F /* WalkingSpeedStaticCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
+		F7D8C26B2BA83B030024BF9F /* Details Walking Asymmetry */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8C26C2BA83B280024BF9F /* TVCell */,
+				F7D8C2712BA83B910024BF9F /* DetailsWalkingAsymmetryVC.swift */,
+				F7D8C2752BA83BBC0024BF9F /* DetailsWalkingAsymmetryViewModel.swift */,
+			);
+			path = "Details Walking Asymmetry";
+			sourceTree = "<group>";
+		};
+		F7D8C26C2BA83B280024BF9F /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8C26D2BA83B660024BF9F /* WalkingAsymmetryChartCell.swift */,
+				F7D8C26E2BA83B660024BF9F /* WalkingAsymmetryChartCell.xib */,
+				F7D8C28A2BA85D140024BF9F /* WalkingAsymmetryStaticCell.swift */,
+				F7D8C28B2BA85D140024BF9F /* WalkingAsymmetryStaticCell.xib */,
+			);
+			path = TVCell;
+			sourceTree = "<group>";
+		};
+		F7D8C2772BA8467C0024BF9F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		F7D8C2782BA846A40024BF9F /* Details Walking Step Lengthg */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8C2792BA846D80024BF9F /* TVCell */,
+				F7D8C2822BA848610024BF9F /* DetailsWalkingStepLengthVC.swift */,
+				F7D8C2842BA848800024BF9F /* DetailsWalkingStepLengthViewModel.swift */,
+			);
+			path = "Details Walking Step Lengthg";
+			sourceTree = "<group>";
+		};
+		F7D8C2792BA846D80024BF9F /* TVCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8C27E2BA847C30024BF9F /* WalkingStepLengthChartCell.swift */,
+				F7D8C27F2BA847C30024BF9F /* WalkingStepLengthChartCell.xib */,
+				F7D8C28E2BA85F800024BF9F /* WalkingStepLengthStaticCell.swift */,
+				F7D8C28F2BA85F800024BF9F /* WalkingStepLengthStaticCell.xib */,
 			);
 			path = TVCell;
 			sourceTree = "<group>";
@@ -1247,30 +1548,58 @@
 				F7D567812B5A3A4700A92DF0 /* HearingTVCell.xib in Resources */,
 				F75BCE092B84AAFC008082FD /* MentalNoDataTVCell.xib in Resources */,
 				F722B61B2B593EFB002F6803 /* RespiratoryTVCell.xib in Resources */,
+				F7846D302BA455AB00AEAF16 /* AnexietyChartCell.xib in Resources */,
+				F7846D172BA42C1100AEAF16 /* StairsClimbedChartTVCell.xib in Resources */,
 				F71D58002B564E2900EBDF98 /* BodyStrCell.xib in Resources */,
+				F7846D0B2BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.xib in Resources */,
+				F7846D0F2BA425E300AEAF16 /* RestingEnergyChartTVCell.xib in Resources */,
 				F71D57F72B56485D00EBDF98 /* VitalsInTVCell.xib in Resources */,
+				F7D8C2892BA85AFB0024BF9F /* WalkingSpeedStaticCell.xib in Resources */,
+				F7846D462BA4657700AEAF16 /* WeightChartCell.xib in Resources */,
 				F75BCDFC2B849A4F008082FD /* DefultHearingTVCell.xib in Resources */,
 				17BD23202B52FFD2001CD06B /* HeartRateTVCell.xib in Resources */,
 				1701728B2B52BCCC008189A8 /* BodyMeasurementsTVCell.xib in Resources */,
+				F7846D2C2BA44FDE00AEAF16 /* HeartRateChartTVCell.xib in Resources */,
+				F7846D032BA4205600AEAF16 /* ActiveEnrgyChartTVCell.xib in Resources */,
 				F73580092BA3119400633477 /* HearingBarchatTVCell.xib in Resources */,
+				F73B51172BA987A50030E8FF /* HeightChartCell.xib in Resources */,
+				F7417EE62BAAD7EB002E1C65 /* SummaryTVCell.xib in Resources */,
+				F7846D1B2BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.xib in Resources */,
+				F7846D202BA440B200AEAF16 /* SleepChartCell.xib in Resources */,
 				F7E683482B51021200AE6765 /* ActivityTVCell.xib in Resources */,
 				F705F8432B5554BA00A2AE04 /* VitalsTVCell.xib in Resources */,
+				F7846D342BA45D8A00AEAF16 /* AboutSleepCell.xib in Resources */,
 				F705F8482B555C6D00A2AE04 /* StrVitalsTVCell.xib in Resources */,
 				F75BCE0D2B84ABC1008082FD /* AnxietyTVCell.xib in Resources */,
+				F7846CFF2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.xib in Resources */,
+				F7D8C26A2BA80B800024BF9F /* WalkingSpeedChartCell.xib in Resources */,
 				F722B60F2B58EB5F002F6803 /* MobilityInTVCell.xib in Resources */,
 				F7C32C0A2B57ECC500E11528 /* ActivityStrCell.xib in Resources */,
+				F7846D132BA4260700AEAF16 /* RestingEnergy_Static_TVCell.xib in Resources */,
+				F7846D242BA448B800AEAF16 /* DoubleSupportChartCell.xib in Resources */,
+				F7D8C2912BA85F800024BF9F /* WalkingStepLengthStaticCell.xib in Resources */,
+				F7846CF72BA413E300AEAF16 /* Steps_Static_TVCell.xib in Resources */,
 				F7C32C062B57ECAF00E11528 /* ActivityInCell.xib in Resources */,
 				F71D57FC2B564D7100EBDF98 /* BodyInCell.xib in Resources */,
+				F7846CFB2BA4194900AEAF16 /* RunningWalkingChartTVCell.xib in Resources */,
+				F7846D282BA44B6900AEAF16 /* DoubleSupport_Static_Cell.xib in Resources */,
 				55B66C2E2B21E2E40007B94C /* LaunchScreen.storyboard in Resources */,
+				F7846CF32BA40A9E00AEAF16 /* StepsChrtTVCell.xib in Resources */,
+				F7D8C2702BA83B660024BF9F /* WalkingAsymmetryChartCell.xib in Resources */,
 				F7B8D3CF2B4FF660001BB1C7 /* HealthCategoriesTVCell.xib in Resources */,
 				55B66C2B2B21E2E40007B94C /* Assets.xcassets in Resources */,
+				F73B51082BA95CB00030E8FF /* WeightStaticCell.xib in Resources */,
 				55B66C262B21E2E10007B94C /* Main.storyboard in Resources */,
 				F722B6072B58EAF9002F6803 /* MobilityTVCell.xib in Resources */,
 				F7B8D3DB2B5012D7001BB1C7 /* MentalWellbeingTVCell.xib in Resources */,
 				F71D57F32B56469A00EBDF98 /* InTVCell.xib in Resources */,
 				F722B60B2B58EB2F002F6803 /* StrMobilityTVCell.xib in Resources */,
+				F7D8C28D2BA85D140024BF9F /* WalkingAsymmetryStaticCell.xib in Resources */,
+				F7D8C2812BA847C30024BF9F /* WalkingStepLengthChartCell.xib in Resources */,
+				F73B511F2BA988290030E8FF /* HeightStaticCell.xib in Resources */,
 				F705F84D2B555F7700A2AE04 /* StrHeartRateTVCell.xib in Resources */,
 				F735800D2BA311A600633477 /* HearingStaticTVCell.xib in Resources */,
+				F7846D3C2BA45DD200AEAF16 /* ImgSleepCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,29 +1621,38 @@
 				F79BA1142B8F27A3002B2770 /* Static_Heart_imgCell.swift in Sources */,
 				F7EF82D62B62338C000C80FB /* Details_ActiveEnrgyVC.swift in Sources */,
 				F722B61A2B593EFB002F6803 /* RespiratoryTVCell.swift in Sources */,
+				F7846CF22BA40A9E00AEAF16 /* StepsChrtTVCell.swift in Sources */,
 				F75E90D82B67AE7B0040BC94 /* DetailsActiveEnergyModel.swift in Sources */,
+				F7D8C2732BA83B910024BF9F /* DetailsWalkingAsymmetryVC.swift in Sources */,
 				F7EF82D42B622D82000C80FB /* Details_StepsVC.swift in Sources */,
 				F722B60A2B58EB2F002F6803 /* StrMobilityTVCell.swift in Sources */,
 				F75BCE082B84AAFC008082FD /* MentalNoDataTVCell.swift in Sources */,
 				F722B6162B593D8F002F6803 /* RespiratoryVC.swift in Sources */,
+				F7846D162BA42C1100AEAF16 /* StairsClimbedChartTVCell.swift in Sources */,
 				559204F92B28377B002FB6BA /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
 				559205112B284513002FB6BA /* AppConstants.swift in Sources */,
+				F7846D3B2BA45DD200AEAF16 /* ImgSleepCell.swift in Sources */,
 				17BD23162B52EA1F001CD06B /* HeartRateVC.swift in Sources */,
 				55F3321E2B28C08200BD6C14 /* OtpVM.swift in Sources */,
 				F75E90D42B679A680040BC94 /* Details_StepsModel.swift in Sources */,
 				F75BCE052B84A43C008082FD /* AnexietyRiskViewModel.swift in Sources */,
 				559204C52B277711002FB6BA /* UIViewControllerExtension.swift in Sources */,
 				559205032B28377B002FB6BA /* ProgressHUD+CircleDotSpinFade.swift in Sources */,
+				F7D8C2902BA85F800024BF9F /* WalkingStepLengthStaticCell.swift in Sources */,
 				F75BCE0C2B84ABC1008082FD /* AnxietyTVCell.swift in Sources */,
 				F75BCDFB2B849A4F008082FD /* DefultHearingTVCell.swift in Sources */,
 				55F3257A2B458BE900479BEF /* BrowseCategoriesVM.swift in Sources */,
 				559205072B28377B002FB6BA /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
 				559204F52B28377B002FB6BA /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
+				F73B51132BA9877E0030E8FF /* DetailsHeightViewModel.swift in Sources */,
 				5592050D2B2841D8002FB6BA /* RegisterVC.swift in Sources */,
+				F7846D272BA44B6900AEAF16 /* DoubleSupport_Static_Cell.swift in Sources */,
 				55B66C232B21E2E10007B94C /* SummaryVC.swift in Sources */,
 				559204F22B28377B002FB6BA /* ProgressHUD+LiveIcon.swift in Sources */,
 				559204FA2B28377B002FB6BA /* ProgressHUD+DualDotSidestep.swift in Sources */,
 				F7E1DED72B5F916700B2376E /* Details_Walking_RunningDistanceVC.swift in Sources */,
+				F73B51162BA987A50030E8FF /* HeightChartCell.swift in Sources */,
+				F7D8C2852BA848800024BF9F /* DetailsWalkingStepLengthViewModel.swift in Sources */,
 				559204F02B28377B002FB6BA /* ProgressHUD+Public.swift in Sources */,
 				F705F8472B555C6D00A2AE04 /* StrVitalsTVCell.swift in Sources */,
 				55B66C572B21F3AC0007B94C /* CoordinatorManager.swift in Sources */,
@@ -1325,19 +1663,24 @@
 				F7EF82D82B6236BC000C80FB /* Details_StairsClimbedVC.swift in Sources */,
 				55F325772B458AF500479BEF /* BrowseCategoriesVC.swift in Sources */,
 				55903EC42B2A3DF500CDA361 /* NotificationManager.swift in Sources */,
-				F70865F72B8DDB73005F188E /* Resting_Static_Cell.swift in Sources */,
 				55B66C4E2B21E9EF0007B94C /* HealthKitManager.swift in Sources */,
-				F79BA11C2B8F371E002B2770 /* Static_DoubleSupport_TextCell.swift in Sources */,
+				F7846D0E2BA425E300AEAF16 /* RestingEnergyChartTVCell.swift in Sources */,
 				55F332102B28B68400BD6C14 /* EditProfileVM.swift in Sources */,
+				F7D8C2602BA8038D0024BF9F /* DetailsWalkingSpeedVC.swift in Sources */,
 				559204B62B2704FB002FB6BA /* LoginResponse.swift in Sources */,
-				F70865F12B8DC620005F188E /* Steps_Static_Cell.swift in Sources */,
+				F7D8C2622BA807D40024BF9F /* DetailsWalkingSpeedViewModel.swift in Sources */,
 				559205152B28462A002FB6BA /* RegisterResponse.swift in Sources */,
+				F7D8C2802BA847C30024BF9F /* WalkingStepLengthChartCell.swift in Sources */,
 				559205172B2848B7002FB6BA /* Response.swift in Sources */,
 				55F332112B28B68400BD6C14 /* EditProfileVC.swift in Sources */,
 				559204EF2B28377B002FB6BA /* ProgressHUD+Enums.swift in Sources */,
+				F7D8C2882BA85AFB0024BF9F /* WalkingSpeedStaticCell.swift in Sources */,
+				F7846D412BA463EE00AEAF16 /* DetailsWeightVC.swift in Sources */,
 				F73EBAC12B838064008D8BB7 /* DetailsDoubleSupportVC.swift in Sources */,
 				559204F32B28377B002FB6BA /* ProgressHUD+Banner.swift in Sources */,
+				F7846D332BA45D8A00AEAF16 /* AboutSleepCell.swift in Sources */,
 				F71D57FB2B564D7100EBDF98 /* BodyInCell.swift in Sources */,
+				F7846CFE2BA41E4900AEAF16 /* RunningWalking_Static_TVCell.swift in Sources */,
 				559204CD2B2791D0002FB6BA /* ShadowView.swift in Sources */,
 				F71D57FF2B564E2900EBDF98 /* BodyStrCell.swift in Sources */,
 				558580122B22273F00A1B7E7 /* ColorScheme.swift in Sources */,
@@ -1348,18 +1691,22 @@
 				170172832B52BB1B008189A8 /* BodyMeasurementsVC.swift in Sources */,
 				559205012B28377B002FB6BA /* ProgressHUD+PacmanProgress.swift in Sources */,
 				559204F72B28377B002FB6BA /* ProgressHUD+CircleRotateChase.swift in Sources */,
-				F70865EE2B8DC0EF005F188E /* RW_Static_Cell.swift in Sources */,
+				F7846CFA2BA4194900AEAF16 /* RunningWalkingChartTVCell.swift in Sources */,
 				F735800C2BA311A600633477 /* HearingStaticTVCell.swift in Sources */,
 				55B66C722B21FB410007B94C /* SwiftyJSON.swift in Sources */,
 				559204C02B27703A002FB6BA /* DTTextField.swift in Sources */,
 				559205022B28377B002FB6BA /* ProgressHUD+SemiRingRotation.swift in Sources */,
 				55F3321A2B28BE9A00BD6C14 /* OTPRequest.swift in Sources */,
 				F7E6834F2B510A2900AE6765 /* ActivityModel.swift in Sources */,
-				F70865F42B8DD615005F188E /* Active_Static_Cell.swift in Sources */,
+				F7846D1F2BA440B200AEAF16 /* SleepChartCell.swift in Sources */,
+				F7D8C28C2BA85D140024BF9F /* WalkingAsymmetryStaticCell.swift in Sources */,
+				F73B510A2BA95F880030E8FF /* WeightStrModel.swift in Sources */,
 				F73580082BA3119400633477 /* HearingBarchatTVCell.swift in Sources */,
 				559204C82B2783AA002FB6BA /* Manageable.swift in Sources */,
 				F7B8D3D72B501179001BB1C7 /*  MentalWellbeingModel.swift in Sources */,
 				559204F12B28377B002FB6BA /* ProgressHUD.swift in Sources */,
+				F7846D2F2BA455AB00AEAF16 /* AnexietyChartCell.swift in Sources */,
+				F73B51072BA95CB00030E8FF /* WeightStaticCell.swift in Sources */,
 				170172852B52BB3D008189A8 /* BodyMeasurementsModel.swift in Sources */,
 				F705F83D2B554D5800A2AE04 /* VitalsModel.swift in Sources */,
 				555A24952B29EB4300F8F7CE /* GetProfileResponse.swift in Sources */,
@@ -1370,6 +1717,7 @@
 				5592050F2B2841ED002FB6BA /* RegisterVM.swift in Sources */,
 				559204F42B28377B002FB6BA /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				55F332182B28BE7700BD6C14 /* OTPResponse.swift in Sources */,
+				F7846D0A2BA423E600AEAF16 /* ActiveEnergy_Static_TVCell.swift in Sources */,
 				F79BA1192B8F3055002B2770 /* Static_Anexiety_ImgCell.swift in Sources */,
 				5592050A2B2837AB002FB6BA /* AppLoader.swift in Sources */,
 				F722B5FF2B58E97B002F6803 /* MobilityVC.swift in Sources */,
@@ -1378,41 +1726,55 @@
 				F722B6012B58E9A6002F6803 /* MobilityModel.swift in Sources */,
 				55F3320C2B28B49100BD6C14 /* UserDefaultBacked.swift in Sources */,
 				F75E90DB2B67B9360040BC94 /* DetailsRestingEnergyModel.swift in Sources */,
+				F7D8C2692BA80B800024BF9F /* WalkingSpeedChartCell.swift in Sources */,
 				559204A82B25E90B002FB6BA /* SummaryItem.swift in Sources */,
 				F73EBABA2B837B36008D8BB7 /* DetailsHartRateVC.swift in Sources */,
 				55F332152B28B80300BD6C14 /* EditProfileRequest.swift in Sources */,
-				F7D79D952B8F10EC000FABE0 /* StairsClimbed_Static_Cell.swift in Sources */,
+				F7D8C2832BA848610024BF9F /* DetailsWalkingStepLengthVC.swift in Sources */,
 				F7B8D3D52B500CD5001BB1C7 /* MentalWellbeingVC.swift in Sources */,
 				F722B60E2B58EB5F002F6803 /* MobilityInTVCell.swift in Sources */,
 				F722B6112B58F3C3002F6803 /* MobilityViewModel.swift in Sources */,
+				F73B510E2BA987040030E8FF /* HeightStrModel.swift in Sources */,
 				F705F84C2B555F7700A2AE04 /* StrHeartRateTVCell.swift in Sources */,
 				559204AC2B26E794002FB6BA /* CellExtension.swift in Sources */,
 				F705F8422B5554BA00A2AE04 /* VitalsTVCell.swift in Sources */,
 				559204FF2B28377B002FB6BA /* ProgressHUD+BallVerticalBounce.swift in Sources */,
 				5585800B2B2205D300A1B7E7 /* UIViewExtension.swift in Sources */,
+				F7846D122BA4260700AEAF16 /* RestingEnergy_Static_TVCell.swift in Sources */,
 				559204B82B2710DE002FB6BA /* ValidationCheck.swift in Sources */,
 				17BD23182B52EA30001CD06B /* HeartRateModel.swift in Sources */,
 				F79BA1172B8F3044002B2770 /* Static_Anexiety_TextCell.swift in Sources */,
+				F7D8C26F2BA83B660024BF9F /* WalkingAsymmetryChartCell.swift in Sources */,
 				559205062B28377B002FB6BA /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				170172872B52BB55008189A8 /* BodyMeasurementsViewModel.swift in Sources */,
 				557D5FBD2B2B393700A22B1E /* SampleData.swift in Sources */,
 				F705F83F2B554D6A00A2AE04 /* VitalsViewModel.swift in Sources */,
 				F7E683442B51016000AE6765 /* ActivityVC.swift in Sources */,
 				559204FD2B28377B002FB6BA /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
+				F7417EE52BAAD7EB002E1C65 /* SummaryTVCell.swift in Sources */,
 				17BD231C2B52FB3A001CD06B /* HeartRateViewModel.swift in Sources */,
+				F7846D452BA4657700AEAF16 /* WeightChartCell.swift in Sources */,
 				559204F62B28377B002FB6BA /* ProgressHUD+ActivityIndicator.swift in Sources */,
+				F7D8C2762BA83BBC0024BF9F /* DetailsWalkingAsymmetryViewModel.swift in Sources */,
 				F7B8D3D22B50014B001BB1C7 /* BrowserCategoriesModel.swift in Sources */,
-				F73EBABC2B837B54008D8BB7 /* DetailsHartRateModel.swift in Sources */,
+				F7846D482BA4674700AEAF16 /* DetailsWeightViewModel.swift in Sources */,
+				F73EBABC2B837B54008D8BB7 /* DetailsHartRateViewModel.swift in Sources */,
 				559204F82B28377B002FB6BA /* ProgressHUD+BarSweepToggle.swift in Sources */,
 				F73EBABF2B838054008D8BB7 /* DetailsDoubleSupportModelView.swift in Sources */,
 				F7C32C092B57ECC500E11528 /* ActivityStrCell.swift in Sources */,
 				F722B6062B58EAF9002F6803 /* MobilityTVCell.swift in Sources */,
 				F7D5677A2B5A383400A92DF0 /* HearingVC.swift in Sources */,
+				F73B51112BA9876B0030E8FF /* DetailsHeightVC.swift in Sources */,
 				559204C92B2783AA002FB6BA /* Quantum.swift in Sources */,
 				1701728A2B52BCCC008189A8 /* BodyMeasurementsTVCell.swift in Sources */,
 				55B66C562B21F3AC0007B94C /* NavigationCoordinator.swift in Sources */,
+				F7846D232BA448B800AEAF16 /* DoubleSupportChartCell.swift in Sources */,
+				F7846D022BA4205600AEAF16 /* ActiveEnrgyChartTVCell.swift in Sources */,
+				F7846CF62BA413E300AEAF16 /* Steps_Static_TVCell.swift in Sources */,
 				55B66C4C2B21E8C00007B94C /* SummaryData.swift in Sources */,
+				F7846D2B2BA44FDE00AEAF16 /* HeartRateChartTVCell.swift in Sources */,
 				17BD231F2B52FFD2001CD06B /* HeartRateTVCell.swift in Sources */,
+				F7846D3E2BA45F4E00AEAF16 /* SlipViewModel.swift in Sources */,
 				55B66C6B2B21F4850007B94C /* APIManager.swift in Sources */,
 				F7D5677C2B5A38F300A92DF0 /* HearingModel.swift in Sources */,
 				559204B32B2704C2002FB6BA /* LoginRequest.swift in Sources */,
@@ -1435,6 +1797,8 @@
 				559204FE2B28377B002FB6BA /* ProgressHUD+TriangleDotShift.swift in Sources */,
 				F73CBF962B68EF3100D0693B /* Details_StairsClimbedModel.swift in Sources */,
 				55F3321D2B28C08200BD6C14 /* OtpVC.swift in Sources */,
+				F73B511E2BA988290030E8FF /* HeightStaticCell.swift in Sources */,
+				F7846D1A2BA42D8B00AEAF16 /* StairsClimbed_Static_TVCell.swift in Sources */,
 				559205042B28377B002FB6BA /* ProgressHUD+QuintupleDotDance.swift in Sources */,
 				55B66C672B21F4850007B94C /* Reachability.swift in Sources */,
 				559205002B28377B002FB6BA /* ProgressHUD+CircleRippleSingle.swift in Sources */,

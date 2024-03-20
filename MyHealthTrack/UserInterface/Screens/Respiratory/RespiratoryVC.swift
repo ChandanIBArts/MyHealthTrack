@@ -44,7 +44,7 @@ extension RespiratoryVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.strLbl.text = myRecord[indexPath.row].strData
         cell.selectionStyle = .none
-        
+        cell.backgroundColor = .clear
         return cell
     }
     

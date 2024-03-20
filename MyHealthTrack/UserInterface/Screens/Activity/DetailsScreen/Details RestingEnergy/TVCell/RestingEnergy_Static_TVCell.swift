@@ -9,8 +9,14 @@ import UIKit
 
 class RestingEnergy_Static_TVCell: UITableViewCell {
 
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var txtLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        cellView.layer.cornerRadius = 10
+        cellView.clipsToBounds = true
         // Initialization code
     }
 

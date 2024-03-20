@@ -72,6 +72,7 @@ extension MobilityVC: UITableViewDataSource, UITableViewDelegate {
             cell.dataLBL.text = (mobilityRecord[indexPath.row].data ?? "") + " " + (mobilityRecord[indexPath.row].unit ?? "")
             cell.timeLbl.text = mobilityRecord[indexPath.row].time
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         } else if indexPath.section == 1 {
             
@@ -79,6 +80,7 @@ extension MobilityVC: UITableViewDataSource, UITableViewDelegate {
             
             cell.inLbl.text = "No Data Available"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
         } else {
@@ -87,6 +89,7 @@ extension MobilityVC: UITableViewDataSource, UITableViewDelegate {
 
             cell.strLbl.text = strRecord[indexPath.row].strData
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         }
     }
@@ -103,14 +106,28 @@ extension MobilityVC: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //DetailsDoubleSupportVC
+        //MARK: DetailsDoubleSupportVC
         if indexPath.section == 0 {
             let str = mobilityRecord[indexPath.row].title
             if str == "Double Support Time" {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsDoubleSupportVC") as! DetailsDoubleSupportVC
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+            if str == "Walking Speed" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsWalkingSpeedVC") as! DetailsWalkingSpeedVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            if str == "Walking Asymmetry" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsWalkingAsymmetryVC") as! DetailsWalkingAsymmetryVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            if str == "Walking Step Length" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsWalkingStepLengthVC") as! DetailsWalkingStepLengthVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         }
+        
     }
     
     

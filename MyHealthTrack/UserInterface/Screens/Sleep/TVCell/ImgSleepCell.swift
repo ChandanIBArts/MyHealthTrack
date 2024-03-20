@@ -9,8 +9,13 @@ import UIKit
 
 class ImgSleepCell: UITableViewCell {
 
+    
+    @IBOutlet weak var imgView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        imgView.layer.cornerRadius = 10
+        imgView.clipsToBounds = true
         // Initialization code
     }
 

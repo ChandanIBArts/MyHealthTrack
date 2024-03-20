@@ -8,9 +8,20 @@
 import UIKit
 
 class SummaryTVCell: UITableViewCell {
-
+    
+    @IBOutlet weak var cellview: UIView!
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var cellData: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        cellview.layer.cornerRadius = 10
+        cellview.clipsToBounds = true
+        imgView.layer.cornerRadius = 10
+        imgView.clipsToBounds = true
         // Initialization code
     }
 

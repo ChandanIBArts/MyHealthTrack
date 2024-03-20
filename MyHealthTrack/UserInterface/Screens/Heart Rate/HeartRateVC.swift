@@ -69,18 +69,19 @@ extension HeartRateVC: UITableViewDataSource, UITableViewDelegate {
             cell.lblTime.text = heartbitRecord[indexPath.row].time
             cell.lblData.text = (heartbitRecord[indexPath.row].data ?? "") + " " + (heartbitRecord[indexPath.row].unit ?? "")
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InTVCell", for: indexPath) as! InTVCell
             cell.inLbl.text = "No Data Available"
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "StrHeartRateTVCell", for: indexPath) as! StrHeartRateTVCell
             cell.strLbl.text = strRecord[indexPath.row].strData
             cell.selectionStyle = .none
-            cell.layer.cornerRadius = 8
-            cell.clipsToBounds = true
+            cell.backgroundColor = .clear
             return cell
         }
     }

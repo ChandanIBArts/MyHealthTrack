@@ -15,6 +15,10 @@ class MobilityHealthKitManager {
     var arr = [MobilityRecord]()
     var mTime: String?
     var mDate: String?
+    static var todayDoubleSupport: String!
+    static var todayWalkingSpeed: String!
+    static var todayWalkingStepLength: String!
+    static var todayWalkingAsymmetry: String!
     
     func requestAuthorization(comp: @escaping (([MobilityRecord]?)->Void)) {
         if HKHealthStore.isHealthDataAvailable() {
@@ -122,6 +126,7 @@ class MobilityHealthKitManager {
                 var model = MobilityRecord()
                 model.title = "Double Support Time"
                 model.data = String(format: "%.2f", letestData * 100)
+                MobilityHealthKitManager.todayDoubleSupport = String(format: "%.2f", letestData * 100)
                 model.unit = "%"
                 model.date = self.mDate
                 model.time = self.mTime
@@ -175,6 +180,7 @@ class MobilityHealthKitManager {
                 var model = MobilityRecord()
                 model.title = "Walking Asymmetry"
                 model.data = String(format: "%.2f", letestData)
+                MobilityHealthKitManager.todayWalkingAsymmetry = String(format: "%.2f", letestData)
                 model.unit = "%"
                 model.date = self.mDate
                 model.time = self.mTime
@@ -237,6 +243,7 @@ class MobilityHealthKitManager {
                 model.data = String(format: "%.2f", km)
                 model.unit = "KM/H"
                 model.date = self.mDate
+                MobilityHealthKitManager.todayWalkingSpeed = String(format: "%.2f", km)
                 model.time = self.mTime
                 self.arr.append(model)
                 comp(self.arr)
@@ -286,6 +293,7 @@ class MobilityHealthKitManager {
                 var model = MobilityRecord()
                 model.title = "Walking Step Length"
                 model.data = String(format: "%.2f", stepCount * 100)
+                MobilityHealthKitManager.todayWalkingStepLength = String(format: "%.2f", stepCount * 100)
                 model.unit = "cm"
                 model.date = self.mDate
                 model.time = self.mTime

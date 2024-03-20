@@ -8,9 +8,14 @@
 import UIKit
 
 class Steps_Static_TVCell: UITableViewCell {
-
+    
+    @IBOutlet weak var textLbl: UILabel!
+    @IBOutlet weak var cellView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        cellView.layer.cornerRadius = 10
+        cellView.clipsToBounds = true
         // Initialization code
     }
 

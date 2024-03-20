@@ -35,9 +35,16 @@
                                     <action selector="segmentBar:" destination="KGk-i7-Jjw" eventType="valueChanged" id="9BH-bA-1DL"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgE-7c-Sqr">
+                                <rect key="frame" x="5" y="46" width="542" height="311"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DgE-7c-Sqr" secondAttribute="trailing" constant="5" id="A4H-jh-eA9"/>
+                            <constraint firstItem="DgE-7c-Sqr" firstAttribute="leading" secondItem="BbV-h8-822" secondAttribute="leading" constant="5" id="Mo2-vE-o1M"/>
+                            <constraint firstItem="DgE-7c-Sqr" firstAttribute="top" secondItem="EXO-Q5-iql" secondAttribute="bottom" constant="10" id="Odc-oG-Qqy"/>
+                            <constraint firstAttribute="bottom" secondItem="DgE-7c-Sqr" secondAttribute="bottom" constant="5" id="P4S-hQ-GxQ"/>
                             <constraint firstAttribute="trailing" secondItem="EXO-Q5-iql" secondAttribute="trailing" constant="10" id="dnu-Vr-b22"/>
                             <constraint firstItem="EXO-Q5-iql" firstAttribute="leading" secondItem="BbV-h8-822" secondAttribute="leading" constant="10" id="iIF-na-K3E"/>
                             <constraint firstItem="EXO-Q5-iql" firstAttribute="top" secondItem="BbV-h8-822" secondAttribute="top" constant="5" id="t6y-ot-dLB"/>
@@ -53,6 +60,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellChartView" destination="DgE-7c-Sqr" id="Wkl-UI-Gst"/>
                 <outlet property="cellView" destination="BbV-h8-822" id="AjK-zz-pE5"/>
                 <outlet property="segmentBar" destination="EXO-Q5-iql" id="8fC-a4-uXp"/>
             </connections>
@@ -60,8 +68,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

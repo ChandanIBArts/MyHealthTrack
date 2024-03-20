@@ -79,17 +79,19 @@ extension VitalsVC: UITableViewDataSource, UITableViewDelegate {
             cell.lblData.text = (vitalsRecord[indexPath.row].data ?? "") + " " + (vitalsRecord[indexPath.row].unit ?? "")
             cell.lblTitle.text = vitalsRecord[indexPath.row].title
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         } else if indexPath.section == 1 {
             let cell = vitalsTableView.dequeueReusableCell(withIdentifier: "VitalsInTVCell", for: indexPath) as! VitalsInTVCell
             cell.inLbl.text = "No Data Available"
             cell.selectionStyle = .none
-            
+            cell.backgroundColor = .clear
             return cell
         } else {
             let cell = vitalsTableView.dequeueReusableCell(withIdentifier: "StrVitalsTVCell", for: indexPath) as! StrVitalsTVCell
             cell.strLbl.text = strRecord[indexPath.row].strData
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
             
         }

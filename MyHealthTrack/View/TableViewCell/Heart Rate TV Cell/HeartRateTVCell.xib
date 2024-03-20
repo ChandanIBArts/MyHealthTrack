@@ -57,14 +57,24 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aG7-AC-CFX">
+                                <rect key="frame" x="313" y="33.666666666666664" width="23" height="19.333333333333336"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="BAf-FS-cei"/>
+                                    <constraint firstAttribute="width" constant="23" id="CoT-s5-9bb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OoA-U9-MGh" secondAttribute="trailing" constant="8" id="02s-SE-GdO"/>
                             <constraint firstItem="N6k-RQ-mSi" firstAttribute="top" secondItem="MWC-RJ-fqg" secondAttribute="top" constant="8" id="5l5-nU-UIW"/>
+                            <constraint firstItem="aG7-AC-CFX" firstAttribute="centerY" secondItem="MWC-RJ-fqg" secondAttribute="centerY" id="8TG-FJ-tYV"/>
                             <constraint firstItem="S1l-99-kPp" firstAttribute="top" secondItem="MWC-RJ-fqg" secondAttribute="top" constant="8" id="Boq-SB-WUZ"/>
                             <constraint firstItem="ubn-Oq-TWB" firstAttribute="leading" secondItem="MWC-RJ-fqg" secondAttribute="leading" constant="10" id="Fd3-W3-fI0"/>
                             <constraint firstAttribute="bottom" secondItem="ubn-Oq-TWB" secondAttribute="bottom" constant="8" id="TCw-9v-Oyl"/>
+                            <constraint firstAttribute="trailing" secondItem="aG7-AC-CFX" secondAttribute="trailing" constant="8" id="bn9-Ee-31h"/>
                             <constraint firstItem="OoA-U9-MGh" firstAttribute="top" secondItem="MWC-RJ-fqg" secondAttribute="top" constant="8" id="eFO-Oz-g77"/>
                             <constraint firstAttribute="trailing" secondItem="ubn-Oq-TWB" secondAttribute="trailing" constant="150" id="gnv-ek-CTY"/>
                             <constraint firstItem="S1l-99-kPp" firstAttribute="leading" secondItem="N6k-RQ-mSi" secondAttribute="trailing" constant="5" id="qCS-mQ-mHp"/>
@@ -90,11 +100,12 @@
     </objects>
     <resources>
         <image name="Heart" width="36" height="31.5"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -322,7 +322,7 @@ class DetailsDoubleSupportHealthKitManager{
 
         healthStore.execute(query)
     }
-    
+   
 }
 
 
