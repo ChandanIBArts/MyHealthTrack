@@ -2,36 +2,6 @@
 import UIKit
 import HealthKit
 
-
-struct DataModel{
-    
-    var stepCounts: String!
-    var distances: String!
-    var activeEnergies: String!
-    var restingEnergies: String!
-    var heart: String!
-    var height: String!
-    var weight: String!
-    var doubleSupport: String!
-    var walkingSpeed: String!
-    var walkingAsmmetry: String!
-    var walkingStepLength: String!
-    
-    init(stepCounts: String!, distances: String!, activeEnergies: String!, restingEnergies: String!, heart: String!, height: String!, weight: String!, doubleSupport: String!, walkingSpeed: String!, walkingAsmmetry: String!, walkingStepLength: String!) {
-        self.stepCounts = stepCounts
-        self.distances = distances
-        self.activeEnergies = activeEnergies
-        self.restingEnergies = restingEnergies
-        self.heart = heart
-        self.height = height
-        self.weight = weight
-        self.doubleSupport = doubleSupport
-        self.walkingSpeed = walkingSpeed
-        self.walkingAsmmetry = walkingAsmmetry
-        self.walkingStepLength = walkingStepLength
-    }
-}
-
 struct ImgDataModel {
     
     var stepCounts: UIImage!
@@ -45,20 +15,6 @@ struct ImgDataModel {
     var walkingSpeed: UIImage!
     var walkingAsmmetry: UIImage!
     var walkingStepLength: UIImage!
-    
-    init(stepCounts: UIImage!, distances: UIImage!, activeEnergies: UIImage!, restingEnergies: UIImage!, heart: UIImage!, height: UIImage!, weight: UIImage!, doubleSupport: UIImage!, walkingSpeed: UIImage!, walkingAsmmetry: UIImage!, walkingStepLength: UIImage!) {
-        self.stepCounts = stepCounts
-        self.distances = distances
-        self.activeEnergies = activeEnergies
-        self.restingEnergies = restingEnergies
-        self.heart = heart
-        self.height = height
-        self.weight = weight
-        self.doubleSupport = doubleSupport
-        self.walkingSpeed = walkingSpeed
-        self.walkingAsmmetry = walkingAsmmetry
-        self.walkingStepLength = walkingStepLength
-    }
     
     
     static var imageData : [ImgDataModel] = [
@@ -96,7 +52,7 @@ class SummaryVC: BaseViewController {
     var walkingAsmmetry: String!
     var walkingStepLength: String!
     
-    var helthKitDataModel = [DataModel]()
+   // var helthKitDataModel = [DataModel]()
     var imgArr = ImgDataModel.imageData
     var titleArr = ["Step","Running & Walking Distance","Active Energies","Resting Energies","Heart Rate","Height","Weight","Double Support","Walking Speed","Walking Asmmetry","Walking StepLength"]
     
@@ -109,6 +65,7 @@ class SummaryVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchHelkitData()
        // fetchDataAndUpload()
     }
     
@@ -166,47 +123,111 @@ extension SummaryVC: UITableViewDelegate, UITableViewDataSource {
             
         if indexPath.row == 0 {
             cell.imgView.image = imgArr[0].stepCounts
-            cell.cellData.text = helthKitDataModel[0].stepCounts
+            if stepCounts == nil {
+                cell.cellData.text = "0 Steps"
+            } else {
+                cell.cellData.text = stepCounts
+            }
             cell.titleText.textColor = UIColor(red: 127.0/255.0, green: 226.0/255.0, blue: 95.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 1 {
+        } 
+        
+        else if indexPath.row == 1 {
             cell.imgView.image = imgArr[0].distances
-            cell.cellData.text = helthKitDataModel[0].distances
+            if distances == nil {
+                cell.cellData.text = "0 Km"
+            } else {
+                cell.cellData.text = distances
+            }
             cell.titleText.textColor = UIColor(red: 108.0/255.0, green: 195.0/255.0, blue: 138.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 2 {
+        } 
+        
+        else if indexPath.row == 2 {
             cell.imgView.image = imgArr[0].activeEnergies
-            cell.cellData.text = helthKitDataModel[0].activeEnergies
+            if activeEnergies == nil {
+                cell.cellData.text = "0 Kcal"
+            } else {
+                cell.cellData.text = activeEnergies
+            }
             cell.titleText.textColor = UIColor(red: 130.0/255.0, green: 177.0/255.0, blue: 72.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 3 {
+        }
+        
+        else if indexPath.row == 3 {
             cell.imgView.image = imgArr[0].restingEnergies
-            cell.cellData.text = helthKitDataModel[0].restingEnergies
+            if restingEnergies == nil {
+                cell.cellData.text = "0 Kcal"
+            } else {
+                cell.cellData.text = restingEnergies
+            }
             cell.titleText.textColor = UIColor(red: 245.0/255.0, green: 204.0/255.0, blue: 96.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 4 {
+        } 
+        
+        else if indexPath.row == 4 {
             cell.imgView.image = imgArr[0].heart
-            cell.cellData.text = helthKitDataModel[0].heart
+            if heart == nil {
+                cell.cellData.text = "0 bpm"
+            } else {
+                cell.cellData.text = heart
+            }
             cell.titleText.textColor = UIColor(red: 324.0/255.0, green: 51.0/255.0, blue: 87.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 5 {
+        } 
+        
+        else if indexPath.row == 5 {
             cell.imgView.image = imgArr[0].height
-            cell.cellData.text = helthKitDataModel[0].height
+            if height == nil {
+                cell.cellData.text = "0 Centimeter"
+            } else {
+                cell.cellData.text = height
+            }
             cell.titleText.textColor = UIColor(red: 171.0/255.0, green: 204.0/255.0, blue: 94.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 6 {
+        } 
+        
+        else if indexPath.row == 6 {
             cell.imgView.image = imgArr[0].weight
-            cell.cellData.text = helthKitDataModel[0].weight
+            if weight == nil {
+                cell.cellData.text = "0 Kg"
+            } else {
+                cell.cellData.text = weight
+            }
             cell.titleText.textColor = UIColor(red: 171.0/255.0, green: 204.0/255.0, blue: 94.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 7 {
+        } 
+        
+        else if indexPath.row == 7 {
             cell.imgView.image = imgArr[0].doubleSupport
-            cell.cellData.text = helthKitDataModel[0].doubleSupport
+            if doubleSupport == nil {
+                cell.cellData.text = "0 %"
+            } else {
+                cell.cellData.text = doubleSupport
+            }
             cell.titleText.textColor = UIColor(red: 108.0/255.0, green: 197.0/255.0, blue: 138.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 8 {
+        }
+        
+        else if indexPath.row == 8 {
             cell.imgView.image = imgArr[0].walkingSpeed
-            cell.cellData.text = helthKitDataModel[0].walkingSpeed
+            if walkingSpeed == nil {
+                cell.cellData.text = "0 m/h"
+            } else {
+                cell.cellData.text = walkingSpeed
+            }
             cell.titleText.textColor = UIColor(red: 95.0/255.0, green: 194.0/255.0, blue: 184.0/255.0, alpha: 1.0)
-        } else if indexPath.row == 9 {
+        } 
+        
+        else if indexPath.row == 9 {
             cell.imgView.image = imgArr[0].walkingAsmmetry
-            cell.cellData.text = helthKitDataModel[0].walkingAsmmetry
+            if walkingAsmmetry == nil {
+                cell.cellData.text = "0 %"
+            } else {
+                cell.cellData.text = walkingAsmmetry
+            }
             cell.titleText.textColor = UIColor(red: 113.0/255.0, green: 227.0/255.0, blue: 216.0/255.0, alpha: 1.0)
-        } else {
+        } 
+        
+        else {
             cell.imgView.image = imgArr[0].walkingStepLength
-            cell.cellData.text = helthKitDataModel[0].walkingStepLength
+            if walkingStepLength == nil {
+                cell.cellData.text = "0 Centimeter"
+            } else {
+                cell.cellData.text = walkingStepLength
+            }
             cell.titleText.textColor = UIColor(red: 171.0/255.0, green: 204.0/255.0, blue: 94.0/255.0, alpha: 1.0)
         }
         cell.backgroundColor = .clear
@@ -218,7 +239,6 @@ extension SummaryVC: UITableViewDelegate, UITableViewDataSource {
         let formattedTime = dateFormatter.string(from: currentTime)
         cell.time.text = formattedTime
         
-
         return cell
     }
     
@@ -625,19 +645,6 @@ extension SummaryVC {
             let wStepLength = String(format: "%.0f", walkingStepLength * 100)
             self.walkingStepLength = "\(wStepLength) Centimeter"
             
-    
-            self.helthKitDataModel.append(DataModel(
-                stepCounts: self.stepCounts as? String ?? "0 Steps",
-                distances: self.distances as? String ?? "0 Km",
-                activeEnergies: self.activeEnergies as? String ?? "0 Kcal",
-                restingEnergies: self.restingEnergies as? String ?? "0 Kcal",
-                heart: self.heart as? String ?? "0 bpm",
-                height: self.height as? String ?? "0 Centimeter",
-                weight: self.weight as? String ?? "0 Kg",
-                doubleSupport: self.doubleSupport as? String ?? "0 %",
-                walkingSpeed: self.walkingSpeed as? String ?? "0 m/h",
-                walkingAsmmetry: self.walkingAsmmetry as? String ?? "0 %",
-                walkingStepLength: self.walkingStepLength as? String ?? "0 Centimeter"))
             DispatchQueue.main.async {
                 self.tblViewSummary.reloadData()
             }

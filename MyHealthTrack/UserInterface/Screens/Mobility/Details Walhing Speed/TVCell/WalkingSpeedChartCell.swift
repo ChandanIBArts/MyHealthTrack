@@ -42,7 +42,7 @@ class WalkingSpeedChartCell: UITableViewCell {
                     self.dailyWalkingSpeedData = dailyData
                     DispatchQueue.main.async {
                         self.updateBarChart()
-                        self.lblData.text = "\(String(format: "%.2f", self.dailyTotalCount))" //"\(MobilityHealthKitManager.todayWalkingSpeed!) KM/H"
+                        self.lblData.text = "\(String(format: "%.0f", self.dailyTotalCount))" //"\(MobilityHealthKitManager.todayWalkingSpeed!) KM/H"
                     }
                 }
             } else {
@@ -79,7 +79,7 @@ class WalkingSpeedChartCell: UITableViewCell {
                         self.dailyWalkingSpeedData = dailyData
                         DispatchQueue.main.async {
                             self.updateBarChart()
-                            self.lblData.text = "\(String(format: "%.2f", self.dailyTotalCount))" // "\(MobilityHealthKitManager.todayWalkingSpeed!) KM/H"
+                            self.lblData.text = "\(String(format: "%.0f", self.dailyTotalCount))" // "\(MobilityHealthKitManager.todayWalkingSpeed!) KM/H"
                             self.dailyTotalCount = 0
                             
                         }
@@ -104,7 +104,7 @@ class WalkingSpeedChartCell: UITableViewCell {
                         self.dailyWalkingSpeedData = dailyData
                         DispatchQueue.main.async {
                             self.updateBarChart1()
-                            self.lblData.text = "\(String(format: "%.2f", self.weeklyTotalCount/7)) KM/H"//"\(String(self.weeklyTotalCount/7)) KM/H"
+                            self.lblData.text = "\(String(format: "%.0f", self.weeklyTotalCount/7)) KM/H"//"\(String(self.weeklyTotalCount/7)) KM/H"
                             self.weeklyTotalCount = 0
                         }
                     }
@@ -128,7 +128,7 @@ class WalkingSpeedChartCell: UITableViewCell {
                         self.dailyWalkingSpeedData = dailyData
                         DispatchQueue.main.async {
                             self.updateBarChart2()
-                            self.lblData.text = "\(String(format: "%.2f", self.monthlyTotalCount/30)) KM/H"
+                            self.lblData.text = "\(String(format: "%.0f", self.monthlyTotalCount/30)) KM/H"
                             self.monthlyTotalCount = 0
                         }
                     }
@@ -152,7 +152,7 @@ class WalkingSpeedChartCell: UITableViewCell {
                         self.dailyWalkingSpeedData = dailyData
                         DispatchQueue.main.async {
                             self.updateBarChart3()
-                            self.lblData.text = "\(String(format: "%.2f", self.halfYearlyTotalCount/180)) KM/H"
+                            self.lblData.text = "\(String(format: "%.0f", self.halfYearlyTotalCount/180)) KM/H"
                             self.halfYearlyTotalCount = 0
                         }
                     }
@@ -176,7 +176,7 @@ class WalkingSpeedChartCell: UITableViewCell {
                         self.dailyWalkingSpeedData = dailyData
                         DispatchQueue.main.async {
                             self.updateBarChart4()
-                            self.lblData.text = "\(String(format: "%.2f", self.yearlyTotalCount/360)) KM/H"
+                            self.lblData.text = "\(String(format: "%.0f", self.yearlyTotalCount/360)) KM/H"
                             self.yearlyTotalCount = 0
                         }
                     }

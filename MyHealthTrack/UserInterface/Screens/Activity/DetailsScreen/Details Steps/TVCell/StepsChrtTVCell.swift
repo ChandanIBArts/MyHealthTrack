@@ -26,7 +26,7 @@ class StepsChrtTVCell: UITableViewCell {
     
     let healthKitManager = DetailsStepsHealthKitManager()
     var barChartView = BarChartView()
-    var dailyData = [DataModel]()
+   // var dailyData = [DataModel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()

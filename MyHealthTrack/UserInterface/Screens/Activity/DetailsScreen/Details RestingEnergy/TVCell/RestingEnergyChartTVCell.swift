@@ -36,7 +36,7 @@ class RestingEnergyChartTVCell: UITableViewCell {
                     self.updateBarChart(with: activeEnergyBurnedData)
                     self.barChartView.xAxis.labelPosition = .bottom
                     DispatchQueue.main.async {
-                        self.lblData.text =  "\(String(format: "%.2f",(self.dailyTotalCount))) Kcal" //"\(HealthKitmanager.dailyRestingEnergy!) Kcal"
+                        self.lblData.text =  "\(String(format: "%.0f",(self.dailyTotalCount))) Kcal" //"\(HealthKitmanager.dailyRestingEnergy!) Kcal"
                         self.dailyTotalCount = 0
                     }
                 }
@@ -62,7 +62,7 @@ class RestingEnergyChartTVCell: UITableViewCell {
                         self.updateBarChart(with: restingEnergyBurnedData)
                         self.barChartView.xAxis.labelPosition = .bottom
                         DispatchQueue.main.async {
-                            self.lblData.text = "\(String(format: "%.2f",(self.dailyTotalCount))) Kcal" //"\(HealthKitmanager.dailyRestingEnergy!) Kcal"
+                            self.lblData.text = "\(String(format: "%.0f",(self.dailyTotalCount))) Kcal" //"\(HealthKitmanager.dailyRestingEnergy!) Kcal"
                             self.dailyTotalCount = 0
                         }
                     }
@@ -78,7 +78,7 @@ class RestingEnergyChartTVCell: UITableViewCell {
                         self.updateBarChart1(with: restingEnergyBurnedData)
                         self.barChartView.xAxis.labelPosition = .bottom
                         DispatchQueue.main.async {
-                            self.lblData.text = "\(String(format: "%.2f",(self.weeklyTotalCount/7))) Kcal"
+                            self.lblData.text = "\(String(format: "%.0f",(self.weeklyTotalCount/7))) Kcal"
                             self.weeklyTotalCount = 0
                         }
                     }
@@ -95,7 +95,7 @@ class RestingEnergyChartTVCell: UITableViewCell {
                         self.updateBarChart2(with: restingEnergyBurnedData)
                         self.barChartView.xAxis.labelPosition = .bottom
                         DispatchQueue.main.async {
-                            self.lblData.text = "\(String(format: "%.2f",(self.monthlyTotalCount/30))) Kcal"
+                            self.lblData.text = "\(String(format: "%.0f",(self.monthlyTotalCount/30))) Kcal"
                             self.monthlyTotalCount = 0
                         }
                     }
@@ -112,7 +112,7 @@ class RestingEnergyChartTVCell: UITableViewCell {
                         self.updateBarChart3(with: restingEnergyBurnedData)
                         self.barChartView.xAxis.labelPosition = .bottomInside
                         DispatchQueue.main.async {
-                            self.lblData.text = "\(String(format: "%.2f",(self.halfYearlyTotalCount/180))) Kcal"
+                            self.lblData.text = "\(String(format: "%.0f",(self.halfYearlyTotalCount/180))) Kcal"
                             self.halfYearlyTotalCount = 0
                         }
                     }
@@ -129,7 +129,7 @@ class RestingEnergyChartTVCell: UITableViewCell {
                         self.updateBarChart4(with: restingEnergyBurnedData)
                         self.barChartView.xAxis.labelPosition = .bottomInside
                         DispatchQueue.main.async {
-                            self.lblData.text = "\(String(format: "%.2f",(self.yearlyTotalCount/365))) Kcal"
+                            self.lblData.text = "\(String(format: "%.0f",(self.yearlyTotalCount/365))) Kcal"
                             self.yearlyTotalCount = 0
                         }
                     }

@@ -18,41 +18,53 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-Qg-gNy">
-                        <rect key="frame" x="292" y="22" width="23" height="19.333333333333329"/>
-                        <color key="tintColor" systemColor="systemGrayColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvX-h8-eGG">
+                        <rect key="frame" x="5" y="5" width="310" height="53"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Measurements" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-vk-0sl">
+                                <rect key="frame" x="48" y="17.666666666666668" width="229" height="18.000000000000004"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="xgd-mG-mrY">
+                                <rect key="frame" x="5" y="7.6666666666666643" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="3Vl-HO-vuS"/>
+                                    <constraint firstAttribute="height" constant="38" id="eJM-JI-fbl"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-Qg-gNy">
+                                <rect key="frame" x="282" y="17" width="23" height="19.333333333333329"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="4jL-0a-2U8"/>
+                                    <constraint firstAttribute="height" constant="23" id="eTw-L8-o49"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="23" id="4jL-0a-2U8"/>
-                            <constraint firstAttribute="height" constant="23" id="eTw-L8-o49"/>
+                            <constraint firstItem="e8n-vk-0sl" firstAttribute="leading" secondItem="xgd-mG-mrY" secondAttribute="trailing" constant="5" id="1rV-af-Nkq"/>
+                            <constraint firstAttribute="trailing" secondItem="yoP-Qg-gNy" secondAttribute="trailing" constant="5" id="3Ov-O7-EcD"/>
+                            <constraint firstItem="xgd-mG-mrY" firstAttribute="centerY" secondItem="EvX-h8-eGG" secondAttribute="centerY" id="d1N-f7-1q0"/>
+                            <constraint firstItem="xgd-mG-mrY" firstAttribute="leading" secondItem="EvX-h8-eGG" secondAttribute="leading" constant="5" id="fC3-Xm-IeN"/>
+                            <constraint firstItem="yoP-Qg-gNy" firstAttribute="centerY" secondItem="EvX-h8-eGG" secondAttribute="centerY" id="g22-iB-qDZ"/>
+                            <constraint firstItem="e8n-vk-0sl" firstAttribute="centerY" secondItem="EvX-h8-eGG" secondAttribute="centerY" id="qMl-N5-hNo"/>
+                            <constraint firstItem="yoP-Qg-gNy" firstAttribute="leading" secondItem="e8n-vk-0sl" secondAttribute="trailing" constant="5" id="rhb-KG-cJg"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Measurements" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-vk-0sl">
-                        <rect key="frame" x="56" y="10" width="226" height="43"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="xgd-mG-mrY">
-                        <rect key="frame" x="8" y="12.666666666666664" width="38" height="38"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="38" id="3Vl-HO-vuS"/>
-                            <constraint firstAttribute="height" constant="38" id="eJM-JI-fbl"/>
-                        </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="yoP-Qg-gNy" secondAttribute="trailing" constant="5" id="5Cl-UH-kl6"/>
-                    <constraint firstItem="e8n-vk-0sl" firstAttribute="leading" secondItem="xgd-mG-mrY" secondAttribute="trailing" constant="10" id="Jm7-UO-cfw"/>
-                    <constraint firstItem="xgd-mG-mrY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Kbs-1I-TYe"/>
-                    <constraint firstItem="xgd-mG-mrY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="QS0-L5-H3U"/>
-                    <constraint firstItem="e8n-vk-0sl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mnK-QF-L6s"/>
-                    <constraint firstAttribute="bottom" secondItem="e8n-vk-0sl" secondAttribute="bottom" constant="10" id="qjZ-ge-CLZ"/>
-                    <constraint firstItem="yoP-Qg-gNy" firstAttribute="leading" secondItem="e8n-vk-0sl" secondAttribute="trailing" constant="10" id="uZx-su-pJI"/>
-                    <constraint firstItem="yoP-Qg-gNy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zxi-LB-SsR"/>
+                    <constraint firstItem="EvX-h8-eGG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="85R-yO-2Eh"/>
+                    <constraint firstItem="EvX-h8-eGG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Ib7-07-2ID"/>
+                    <constraint firstAttribute="bottom" secondItem="EvX-h8-eGG" secondAttribute="bottom" constant="5" id="ZoO-Hq-OWY"/>
+                    <constraint firstAttribute="trailing" secondItem="EvX-h8-eGG" secondAttribute="trailing" constant="5" id="kcx-55-Hiw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellView" destination="EvX-h8-eGG" id="ppo-8L-0dl"/>
                 <outlet property="titleIMG" destination="xgd-mG-mrY" id="vG7-w9-pNU"/>
                 <outlet property="titleLbl" destination="e8n-vk-0sl" id="NZI-FI-MnG"/>
             </connections>
@@ -62,6 +74,9 @@
     <resources>
         <image name="Heart" width="36" height="31.5"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

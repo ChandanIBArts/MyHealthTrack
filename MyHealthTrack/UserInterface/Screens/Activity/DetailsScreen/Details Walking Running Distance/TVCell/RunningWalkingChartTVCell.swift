@@ -26,7 +26,7 @@ class RunningWalkingChartTVCell: UITableViewCell {
     
     let healthKitManager = DWRDHealthKitManager()
     var barChartView = BarChartView()
-    var dailyData = [DataModel]()
+   // var dailyData = [DataModel]()
 
     override func awakeFromNib() {
         super.awakeFromNib()

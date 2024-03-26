@@ -10,17 +10,19 @@ class BrowseCategoriesVC: BaseViewController {
     
     var records = BrowseRecords.browsercategoriesRecord
     var selectIndx: Int = 0
-    
+    var filterData = [BrowseRecords]()
   //  private let viewModel = BrowseCategoriesVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterData = records
         tblViewCategories.delegate = self
         tblViewCategories.dataSource = self
         tblViewCategories.register(UINib(nibName: "HealthCategoriesTVCell", bundle: nil), forCellReuseIdentifier: "HealthCategoriesTVCell")
         customeTblViewBorder()
         customView(view: userImageView)
         tblViewCategories.reloadData()
+        tblViewCategories.backgroundColor = .clear
     }
  
     //MARK: do not tuch it
@@ -41,16 +43,16 @@ class BrowseCategoriesVC: BaseViewController {
 }
 
 
-extension BrowseCategoriesVC: UITableViewDataSource, UITableViewDelegate {
+extension BrowseCategoriesVC: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return records.count
+        return filterData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblViewCategories.dequeueReusableCell(withIdentifier: "HealthCategoriesTVCell", for: indexPath) as! HealthCategoriesTVCell
-        
-        cell.titleLbl.text = records[indexPath.row].title
-        cell.titleIMG.image = records[indexPath.row].image
+        cell.titleLbl.text = filterData[indexPath.row].title
+        cell.titleIMG.image = filterData[indexPath.row].image
+        cell.backgroundColor = .clear
         cell.selectionStyle = .none
         return cell
     }
@@ -59,76 +61,84 @@ extension BrowseCategoriesVC: UITableViewDataSource, UITableViewDelegate {
         return 70
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      
+        if searchText != "" {
+            filterData = records.filter{ $0.title?.contains(searchText) ?? false }
+            tblViewCategories.reloadData()
+        } else {
+            filterData = records
+            tblViewCategories.reloadData()
+        }
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectIndx = indexPath.row
         
-        if indexPath.row == 0 {
-    
+        if filterData[indexPath.row].title == "Activity" {
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVC") as! ActivityVC
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
         
-        if indexPath.row == 1 {
+        if filterData[indexPath.row].title == "Heart" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "HeartRateVC") as! HeartRateVC
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
         
-        if indexPath.row == 2 {
+        if filterData[indexPath.row].title == "Body measurement" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "BodyMeasurementsVC") as! BodyMeasurementsVC
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
         
-        if indexPath.row == 3 {
+        if filterData[indexPath.row].title == "Vitals" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "VitalsVC") as! VitalsVC
             self.navigationController?.pushViewController(vc, animated: true)
             
-            
         }
         
-        
-        if indexPath.row == 4 {
+        if filterData[indexPath.row].title == "Mental" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MentalWellbeingVC") as! MentalWellbeingVC
             self.navigationController?.pushViewController(vc, animated: true)
             
-            
         }
         
-        if indexPath.row == 5 {
+        if filterData[indexPath.row].title == "Mobility" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MobilityVC") as! MobilityVC
             self.navigationController?.pushViewController(vc, animated: true)
             
-            
         }
         
-        if indexPath.row == 6 {
+        
+        if filterData[indexPath.row].title == "Respiratory" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "RespiratoryVC") as! RespiratoryVC
             self.navigationController?.pushViewController(vc, animated: true)
             
-            
         }
         
-        if indexPath.row == 7 {
+        if filterData[indexPath.row].title == "Sleep" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SleepVC") as! SleepVC
             self.navigationController?.pushViewController(vc, animated: true)
             
-            
         }
         
-        if indexPath.row == 8 {
+        
+        if filterData[indexPath.row].title == "Hearing" {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "HearingVC") as! HearingVC
             self.navigationController?.pushViewController(vc, animated: true)
-            
             
         }
         
@@ -137,6 +147,11 @@ extension BrowseCategoriesVC: UITableViewDataSource, UITableViewDelegate {
     
     
 }
+
+
+
+
+
 
 
 /*
