@@ -33,7 +33,7 @@
                                     <segment title="6M"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentBar:" destination="KGk-i7-Jjw" eventType="valueChanged" id="yKO-9T-K3y"/>
+                                    <action selector="segmentBar:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Lha-4f-YIx"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb5-Nj-8Sm">
@@ -98,6 +98,7 @@
                 <outlet property="btnTapQuestion" destination="yb5-Nj-8Sm" id="c5d-PQ-dx0"/>
                 <outlet property="cellView" destination="EUp-s2-Qmv" id="lkx-gJ-hxs"/>
                 <outlet property="chartView" destination="0kt-k2-neo" id="Pup-3K-QvO"/>
+                <outlet property="lblData" destination="KqO-21-eni" id="u23-pu-ZHk"/>
                 <outlet property="lblUpdateDate" destination="M2V-86-sUm" id="jTv-L1-fSJ"/>
                 <outlet property="segmentBar" destination="vFY-QD-Rzr" id="Xqt-Lw-77V"/>
             </connections>

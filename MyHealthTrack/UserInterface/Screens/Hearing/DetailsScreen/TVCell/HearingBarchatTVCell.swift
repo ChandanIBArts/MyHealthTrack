@@ -7,20 +7,41 @@
 
 import UIKit
 import DGCharts
+import HealthKit
 
 class HearingBarchatTVCell: UITableViewCell {
-    
-    
+
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var segmentBar: UISegmentedControl!
     @IBOutlet weak var cellChartView: UIView!
     
     var lineChartView = LineChartView()
+    var hearingHealthKitManager = HearingHealthKitManager()
 
+    var hearingData: [(Date, Double)] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUi()
-        fetchData()
+        //fetchData()
+        hearingHealthKitManager.requestAuthorization(for: [HKObjectType.categoryType(forIdentifier: .audioExposureEvent)!]) { (success, error) in
+            if success {
+                self.hearingHealthKitManager.fetchDailyHearingData { (hearingData) in
+                    self.hearingData = hearingData
+                    DispatchQueue.main.async {
+                        if hearingData.count == 0 {
+                            print("No Data Available")
+                        } else {
+                            self.updateChart()
+                        }
+        
+                    }
+                    print("Daily sleep data: \(hearingData)")
+                }
+            } else {
+                print("Failed to authorize or error occurred: \(error?.localizedDescription ?? "")")
+            }
+        }
        
     }
 
@@ -33,216 +54,106 @@ class HearingBarchatTVCell: UITableViewCell {
     @IBAction func segmentBar(_ sender: UISegmentedControl) {
         switch segmentBar.selectedSegmentIndex {
         case 0:
-            fetchData()
+            hearingHealthKitManager.requestAuthorization(for: [HKObjectType.categoryType(forIdentifier: .audioExposureEvent)!]) { (success, error) in
+                if success {
+                    self.hearingHealthKitManager.fetchDailyHearingData { (hearingData) in
+                        self.hearingData = hearingData
+                        DispatchQueue.main.async {
+                            if hearingData.count == 0 {
+                                print("No Data Available")
+                            } else {
+                                self.updateChart()
+                            }
+                        }
+                        print("Daily sleep data: \(hearingData)")
+                    }
+                } else {
+                    print("Failed to authorize or error occurred: \(error?.localizedDescription ?? "")")
+                }
+            }
         case 1:
-            fetchData1()
+            hearingHealthKitManager.requestAuthorization(for: [HKObjectType.categoryType(forIdentifier: .audioExposureEvent)!]) { (success, error) in
+                if success {
+                    self.hearingHealthKitManager.fetchWeeklyHearingData{ (hearingData) in
+                        self.hearingData = hearingData
+                        DispatchQueue.main.async {
+                            if hearingData.count == 0 {
+                               print("No Data Available")
+                            } else {
+                                self.updateChart1()
+                            }
+                        }
+                        print("Daily sleep data: \(hearingData)")
+                    }
+                } else {
+                    print("Failed to authorize or error occurred: \(error?.localizedDescription ?? "")")
+                }
+            }
         case 2:
-            fetchData2()
+            hearingHealthKitManager.requestAuthorization(for: [HKObjectType.categoryType(forIdentifier: .audioExposureEvent)!]) { (success, error) in
+                if success {
+                    self.hearingHealthKitManager.fetchMonthlyHearingData { (hearingData) in
+                        self.hearingData = hearingData
+                        DispatchQueue.main.async {
+                            if hearingData.count == 0 {
+                                print("No Data Available")
+                            } else {
+                                self.updateChart2()
+                            }
+                        }
+                        print("Daily sleep data: \(hearingData)")
+                    }
+                } else {
+                    print("Failed to authorize or error occurred: \(error?.localizedDescription ?? "")")
+                }
+            }
         case 3:
-            fetchData3()
+            hearingHealthKitManager.requestAuthorization(for: [HKObjectType.categoryType(forIdentifier: .audioExposureEvent)!]) { (success, error) in
+                if success {
+                    self.hearingHealthKitManager.fetchHalfYearlyHearingData { (hearingData) in
+                        self.hearingData = hearingData
+                        DispatchQueue.main.async {
+                            if hearingData.count == 0 {
+                                print("No Data Available")
+                            } else {
+                                self.updateChart3()
+                            }
+                        }
+                        print("Daily sleep data: \(hearingData)")
+                    }
+                } else {
+                    print("Failed to authorize or error occurred: \(error?.localizedDescription ?? "")")
+                }
+            }
         case 4:
-            fetchData4()
-        case 5:
-            fetchData5()
-            
+            hearingHealthKitManager.requestAuthorization(for: [HKObjectType.categoryType(forIdentifier: .audioExposureEvent)!]) { (success, error) in
+                if success {
+                    self.hearingHealthKitManager.fetchYearlyHearingData { (hearingData) in
+                        self.hearingData = hearingData
+                        DispatchQueue.main.async {
+                            if hearingData.count == 0 {
+                                print("No Data Available")
+                            } else {
+                                self.updateChart4()
+                            }
+                        }
+                        print("Daily sleep data: \(hearingData)")
+                    }
+                } else {
+                    print("Failed to authorize or error occurred: \(error?.localizedDescription ?? "")")
+                }
+            }
         default:
             break
         }
     }
     
-    
-    func fetchData(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 20.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 22.0)
-        ]
+  
+   
 
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemMint]
-        dataSet.circleColors = [UIColor.green]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData1(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 5.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 10.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 22.0),
-            ChartDataEntry(x: 5.0, y: 25.0),
-            ChartDataEntry(x: 6.0, y: 10.0),
-            ChartDataEntry(x: 7.0, y: 15.0),
-            ChartDataEntry(x: 8.0, y: 25.0),
-            ChartDataEntry(x: 9.0, y: 5.0),
-            ChartDataEntry(x: 10.0, y: 30.0),
-            ChartDataEntry(x: 11.0, y: 22.0),
-            ChartDataEntry(x: 12.0, y: 25.0),
-            ChartDataEntry(x: 13.0, y: 12.0),
-            ChartDataEntry(x: 14.0, y: 20.0),
-            ChartDataEntry(x: 15.0, y: 40.0),
-            ChartDataEntry(x: 16.0, y: 18.0),
-            ChartDataEntry(x: 17.0, y: 25.0),
-            ChartDataEntry(x: 18.0, y: 20.0),
-            ChartDataEntry(x: 19.0, y: 25.0),
-            ChartDataEntry(x: 20.0, y: 18.0),
-            ChartDataEntry(x: 21.0, y: 30.0),
-            ChartDataEntry(x: 22.0, y: 22.0),
-            ChartDataEntry(x: 23.0, y: 35.0)
-        ]
+}
 
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemMint]
-        dataSet.circleColors = [UIColor.green]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData2(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 20.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 22.0),
-            ChartDataEntry(x: 5.0, y: 25.0),
-            ChartDataEntry(x: 6.0, y: 18.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemMint]
-        dataSet.circleColors = [UIColor.green]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData3(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 5.0),
-            ChartDataEntry(x: 1.0, y: 10.0),
-            ChartDataEntry(x: 2.0, y: 15.0),
-            ChartDataEntry(x: 3.0, y: 20.0),
-            ChartDataEntry(x: 4.0, y: 5.0),
-            ChartDataEntry(x: 5.0, y: 30.0),
-            ChartDataEntry(x: 6.0, y: 15.0),
-            ChartDataEntry(x: 7.0, y: 40.0),
-            ChartDataEntry(x: 8.0, y: 45.0),
-            ChartDataEntry(x: 9.0, y: 50.0),
-            ChartDataEntry(x: 10.0, y: 40.0),
-            ChartDataEntry(x: 11.0, y: 30.0),
-            ChartDataEntry(x: 12.0, y: 5.0),
-            ChartDataEntry(x: 13.0, y: 15.0),
-            ChartDataEntry(x: 14.0, y: 20.0),
-            ChartDataEntry(x: 15.0, y: 25.0),
-            ChartDataEntry(x: 16.0, y: 30.0),
-            ChartDataEntry(x: 17.0, y: 45.0),
-            ChartDataEntry(x: 18.0, y: 15.0),
-            ChartDataEntry(x: 19.0, y: 20.0),
-            ChartDataEntry(x: 20.0, y: 25.0),
-            ChartDataEntry(x: 21.0, y: 50.0),
-            ChartDataEntry(x: 22.0, y: 5.0),
-            ChartDataEntry(x: 23.0, y: 25.0),
-            ChartDataEntry(x: 24.0, y: 10.0),
-            ChartDataEntry(x: 25.0, y: 30.0),
-            ChartDataEntry(x: 26.0, y: 35.0),
-            ChartDataEntry(x: 27.0, y: 45.0),
-            ChartDataEntry(x: 28.0, y: 15.0),
-            ChartDataEntry(x: 29.0, y: 30.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemMint]
-        dataSet.circleColors = [UIColor.green]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData4(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 20.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 18.0),
-            ChartDataEntry(x: 5.0, y: 40.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemMint]
-        dataSet.circleColors = [UIColor.green]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData5(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 10.0),
-            ChartDataEntry(x: 1.0, y: 5.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 20.0),
-            ChartDataEntry(x: 5.0, y: 18.0),
-            ChartDataEntry(x: 6.0, y: 10.0),
-            ChartDataEntry(x: 7.0, y: 25.0),
-            ChartDataEntry(x: 8.0, y: 18.0),
-            ChartDataEntry(x: 9.0, y: 30.0),
-            ChartDataEntry(x: 10.0, y: 22.0),
-            ChartDataEntry(x: 11.0, y: 15.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
-        dataSet.colors = [UIColor.systemMint]
-        dataSet.circleColors = [UIColor.green]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
+extension HearingBarchatTVCell {
     
     func setUpUi(){
         cellView.layer.cornerRadius = 10
@@ -284,7 +195,271 @@ class HearingBarchatTVCell: UITableViewCell {
     }
     
     
+    //MARK: Daily Hrs Data
+    func updateChart() {
+        //var count = 0
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in hearingData.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+//            print(dataPoint.1)
+//            dailyData = dailyData + Int(dataPoint.1)
+//            count = index + index
+            dataEntries.append(entry)
+        }
+        
+//        if count == 0 {
+//            self.lblData.text = "\(String(self.dailyData)) min"
+//            dailyData = 0
+//        } else {
+//            self.lblData.text = "\(String(self.dailyData)) min"
+//            dailyData = 0
+//        }
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemCyan]
+        chartDataSet.circleColors = [UIColor.green]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.cellChartView.addSubview(lineChart)
+            lineChart.center = self.cellChartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
     
     
+    //MARK: Weak Data
+    func updateChart1() {
+//        var count = 0
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in hearingData.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+//            weeklyData = weeklyData + Int(dataPoint.1)
+//            print(dataPoint.1)
+//            count = index + index
+            dataEntries.append(entry)
+        }
+//        if count == 0 {
+//            self.lblData.text = "\(String(self.weeklyData)) min"
+//            weeklyData = 0
+//        } else {
+//            self.lblData.text = "\(String(self.weeklyData)) min"
+//            weeklyData = 0
+//        }
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemCyan]
+        chartDataSet.circleColors = [UIColor.green]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.cellChartView.addSubview(lineChart)
+            lineChart.center = self.cellChartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEE"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+        
+    
+    }
+    
+    
+    //MARK: Monthly Data
+    func updateChart2() {
+    
+//        var count = 0
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in hearingData.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+//            monthlyData = monthlyData + Int(dataPoint.1)
+//            print(dataPoint.1)
+//            count = index + index
+            dataEntries.append(entry)
+        }
+//        if count == 0 {
+//            self.lblData.text = "\(String(self.monthlyData)) min"
+//            monthlyData = 0
+//        } else {
+//            self.lblData.text = "\(String(self.monthlyData)) min"
+//            monthlyData = 0
+//        }
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemCyan]
+        chartDataSet.circleColors = [UIColor.green]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.cellChartView.addSubview(lineChart)
+            lineChart.center = self.cellChartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .day, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+  
+    }
+    
+    
+    //MARK: HalfYearly Data
+    func updateChart3() {
+       // var count = 0
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in hearingData.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+//            halfYearlyData = halfYearlyData + Int(dataPoint.1)
+//            print(dataPoint.1)
+//            count = index + index
+            dataEntries.append(entry)
+        }
+//        if count == 0 {
+//            self.lblData.text = "\(String(self.halfYearlyData)) min"
+//            halfYearlyData = 0
+//        } else {
+//            self.lblData.text = "\(String(self.halfYearlyData)) min"
+//            halfYearlyData = 0
+//        }
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemCyan]
+        chartDataSet.circleColors = [UIColor.green]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.cellChartView.addSubview(lineChart)
+            lineChart.center = self.cellChartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    
+    //MARK: Yearly Data
+    func updateChart4() {
+       // var count = 0
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in hearingData.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+//            halfYearlyData = halfYearlyData + Int(dataPoint.1)
+//            print(dataPoint.1)
+//            count = index + index
+            dataEntries.append(entry)
+        }
+//        if count == 0 {
+//            self.lblData.text = "\(String(self.halfYearlyData)) min"
+//            halfYearlyData = 0
+//        } else {
+//            self.lblData.text = "\(String(self.halfYearlyData)) min"
+//            halfYearlyData = 0
+//        }
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Hearing")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemCyan]
+        chartDataSet.circleColors = [UIColor.green]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.cellChartView.addSubview(lineChart)
+            lineChart.center = self.cellChartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .month, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
     
 }

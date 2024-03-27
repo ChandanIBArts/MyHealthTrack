@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutSleepCell" rowHeight="168" id="KGk-i7-Jjw" customClass="AboutSleepCell" customModule="MyHealthTrack" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutSleepCell" rowHeight="136" id="KGk-i7-Jjw" customClass="AboutSleepCell" customModule="MyHealthTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-oO-Xp0">
-                        <rect key="frame" x="5" y="5" width="310" height="158"/>
+                        <rect key="frame" x="5" y="5" width="310" height="126"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleep" translatesAutoresizingMaskIntoConstraints="NO" id="IsU-Qg-xNV">
                                 <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU5-nl-AWh">
-                                <rect key="frame" x="10" y="50" width="290" height="98"/>
+                                <rect key="frame" x="10" y="50" width="290" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,13 +67,13 @@
                 <outlet property="cellView" destination="WPI-oO-Xp0" id="xhb-XO-AQV"/>
                 <outlet property="txtLbl" destination="WU5-nl-AWh" id="L7k-uh-vQM"/>
             </connections>
-            <point key="canvasLocation" x="-87.022900763358777" y="-25.35211267605634"/>
+            <point key="canvasLocation" x="-87.022900763358777" y="-36.619718309859159"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="sleep" width="75" height="80"/>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -114,6 +114,8 @@
 		F705F8482B555C6D00A2AE04 /* StrVitalsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F705F8462B555C6D00A2AE04 /* StrVitalsTVCell.xib */; };
 		F705F84C2B555F7700A2AE04 /* StrHeartRateTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705F84A2B555F7700A2AE04 /* StrHeartRateTVCell.swift */; };
 		F705F84D2B555F7700A2AE04 /* StrHeartRateTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F705F84B2B555F7700A2AE04 /* StrHeartRateTVCell.xib */; };
+		F706E33A2BB3F9ED00DE34F4 /* SleepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706E3392BB3F9ED00DE34F4 /* SleepViewModel.swift */; };
+		F706E33C2BB42D2000DE34F4 /* DetailsHearingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706E33B2BB42D2000DE34F4 /* DetailsHearingViewModel.swift */; };
 		F70865EB2B8DBF4C005F188E /* StaticDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70865EA2B8DBF4C005F188E /* StaticDataModel.swift */; };
 		F714E3DA2B5FCBA300FC2AF7 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = F714E3D92B5FCBA300FC2AF7 /* DGCharts */; };
 		F71D57F22B56469A00EBDF98 /* InTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71D57F02B56469A00EBDF98 /* InTVCell.swift */; };
@@ -206,7 +208,7 @@
 		F7846D342BA45D8A00AEAF16 /* AboutSleepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D322BA45D8A00AEAF16 /* AboutSleepCell.xib */; };
 		F7846D3B2BA45DD200AEAF16 /* ImgSleepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D392BA45DD200AEAF16 /* ImgSleepCell.swift */; };
 		F7846D3C2BA45DD200AEAF16 /* ImgSleepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D3A2BA45DD200AEAF16 /* ImgSleepCell.xib */; };
-		F7846D3E2BA45F4E00AEAF16 /* SlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D3D2BA45F4E00AEAF16 /* SlipViewModel.swift */; };
+		F7846D3E2BA45F4E00AEAF16 /* SlipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D3D2BA45F4E00AEAF16 /* SlipModel.swift */; };
 		F7846D412BA463EE00AEAF16 /* DetailsWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D402BA463EE00AEAF16 /* DetailsWeightVC.swift */; };
 		F7846D452BA4657700AEAF16 /* WeightChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7846D432BA4657700AEAF16 /* WeightChartCell.swift */; };
 		F7846D462BA4657700AEAF16 /* WeightChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7846D442BA4657700AEAF16 /* WeightChartCell.xib */; };
@@ -384,6 +386,8 @@
 		F705F8462B555C6D00A2AE04 /* StrVitalsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StrVitalsTVCell.xib; sourceTree = "<group>"; };
 		F705F84A2B555F7700A2AE04 /* StrHeartRateTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrHeartRateTVCell.swift; sourceTree = "<group>"; };
 		F705F84B2B555F7700A2AE04 /* StrHeartRateTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StrHeartRateTVCell.xib; sourceTree = "<group>"; };
+		F706E3392BB3F9ED00DE34F4 /* SleepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewModel.swift; sourceTree = "<group>"; };
+		F706E33B2BB42D2000DE34F4 /* DetailsHearingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHearingViewModel.swift; sourceTree = "<group>"; };
 		F70865EA2B8DBF4C005F188E /* StaticDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataModel.swift; sourceTree = "<group>"; };
 		F71D57F02B56469A00EBDF98 /* InTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTVCell.swift; sourceTree = "<group>"; };
 		F71D57F12B56469A00EBDF98 /* InTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InTVCell.xib; sourceTree = "<group>"; };
@@ -475,7 +479,7 @@
 		F7846D322BA45D8A00AEAF16 /* AboutSleepCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutSleepCell.xib; sourceTree = "<group>"; };
 		F7846D392BA45DD200AEAF16 /* ImgSleepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgSleepCell.swift; sourceTree = "<group>"; };
 		F7846D3A2BA45DD200AEAF16 /* ImgSleepCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImgSleepCell.xib; sourceTree = "<group>"; };
-		F7846D3D2BA45F4E00AEAF16 /* SlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipViewModel.swift; sourceTree = "<group>"; };
+		F7846D3D2BA45F4E00AEAF16 /* SlipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipModel.swift; sourceTree = "<group>"; };
 		F7846D402BA463EE00AEAF16 /* DetailsWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWeightVC.swift; sourceTree = "<group>"; };
 		F7846D432BA4657700AEAF16 /* WeightChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartCell.swift; sourceTree = "<group>"; };
 		F7846D442BA4657700AEAF16 /* WeightChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightChartCell.xib; sourceTree = "<group>"; };
@@ -1105,7 +1109,8 @@
 			children = (
 				F7846D1C2BA4409300AEAF16 /* TVCell */,
 				F722B61D2B5947FF002F6803 /* SleepVC.swift */,
-				F7846D3D2BA45F4E00AEAF16 /* SlipViewModel.swift */,
+				F7846D3D2BA45F4E00AEAF16 /* SlipModel.swift */,
+				F706E3392BB3F9ED00DE34F4 /* SleepViewModel.swift */,
 			);
 			path = Sleep;
 			sourceTree = "<group>";
@@ -1115,6 +1120,7 @@
 			children = (
 				F73580052BA3115300633477 /* TVCell */,
 				F7357FFF2BA30D5100633477 /* DetailsHearingVC.swift */,
+				F706E33B2BB42D2000DE34F4 /* DetailsHearingViewModel.swift */,
 			);
 			path = DetailsScreen;
 			sourceTree = "<group>";
@@ -1610,6 +1616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F706E33C2BB42D2000DE34F4 /* DetailsHearingViewModel.swift in Sources */,
 				555A24992B2A3BDA00F8F7CE /* LogoutResponse.swift in Sources */,
 				F71D57F62B56485D00EBDF98 /* VitalsInTVCell.swift in Sources */,
 				F722B61E2B5947FF002F6803 /* SleepVC.swift in Sources */,
@@ -1774,7 +1781,7 @@
 				55B66C4C2B21E8C00007B94C /* SummaryData.swift in Sources */,
 				F7846D2B2BA44FDE00AEAF16 /* HeartRateChartTVCell.swift in Sources */,
 				17BD231F2B52FFD2001CD06B /* HeartRateTVCell.swift in Sources */,
-				F7846D3E2BA45F4E00AEAF16 /* SlipViewModel.swift in Sources */,
+				F7846D3E2BA45F4E00AEAF16 /* SlipModel.swift in Sources */,
 				55B66C6B2B21F4850007B94C /* APIManager.swift in Sources */,
 				F7D5677C2B5A38F300A92DF0 /* HearingModel.swift in Sources */,
 				559204B32B2704C2002FB6BA /* LoginRequest.swift in Sources */,
@@ -1790,6 +1797,7 @@
 				559205132B28461A002FB6BA /* RegisterRequest.swift in Sources */,
 				559204AF2B26FFA1002FB6BA /* LoginVC.swift in Sources */,
 				F73580002BA30D5100633477 /* DetailsHearingVC.swift in Sources */,
+				F706E33A2BB3F9ED00DE34F4 /* SleepViewModel.swift in Sources */,
 				559204B12B26FFED002FB6BA /* LoginVM.swift in Sources */,
 				F705F83B2B554D2F00A2AE04 /* VitalsVC.swift in Sources */,
 				559205052B28377B002FB6BA /* ProgressHUD+CirclePulseSingle.swift in Sources */,

@@ -62,14 +62,17 @@ extension SleepVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SleepChartCell", for: indexPath) as! SleepChartCell
             cell.btnTapQuestion.tag = indexPath.row
             cell.btnTapQuestion.addTarget(self, action: #selector(playAlert), for: .touchUpInside)
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AboutSleepCell", for: indexPath) as! AboutSleepCell
             cell.txtLbl.text = strTxtArr[indexPath.row]
+            cell.selectionStyle = .none
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImgSleepCell", for: indexPath) as! ImgSleepCell
             cell.imgView.image = img[indexPath.row].img
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -86,8 +89,8 @@ extension SleepVC: UITableViewDelegate, UITableViewDataSource {
     
     
     @objc func playAlert(_ sender: UIButton){
-        let alert = UIAlertController(title: "My Health Track", message: "No record found", preferredStyle: .alert)
-        let Ok = UIAlertAction(title: "Ok", style: .destructive)
+        let alert = UIAlertController(title: "My Health Track", message: "While we sleep, our brains and bodies restore themselves. Each sleep stage plays a different role, but they're all essential to waking up refreshed.", preferredStyle: .alert)
+        let Ok = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(Ok)
         present(alert, animated: true)
     }
