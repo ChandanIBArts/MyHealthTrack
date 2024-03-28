@@ -7,24 +7,52 @@
 
 import UIKit
 import DGCharts
+import HealthKit
 
 class HeartRateChartTVCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var segmentBar: UISegmentedControl!
-    @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
     @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var lblAverage: UILabel!
     
-    
-    let healthKitManager = DetailsHeartRateHealthKitManager()
+    let healthStore = HKHealthStore()
+    let heartRateManager = HeartRateHealthKitManager()
     var lineChartView = LineChartView()
-
+    
+    //Average Heart Rate
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUi()
-        fetchData()
+        heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+            (success, error) in
+            if success {
+                self.heartRateManager.fetchHoursHeartRateData{ (heartRateData) in
+                    DispatchQueue.main.async {
+                        self.updateLineChart(with: heartRateData)
+                        if heartRateData.count == 0 {
+                            self.lblData.text = "0 bpm"
+                            self.lblDay.text = ""
+                            self.lblAverage.text = ""
+                        } else {
+                            for (index, dataPoint) in heartRateData.enumerated() {
+                                self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                self.last1Hrs()
+                                self.lblAverage.text = ""
+                            }
+                        }
+                    }
+                    
+                }
+               
+            } else {
+                print("Faild to authorize")
+            }
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,215 +64,168 @@ class HeartRateChartTVCell: UITableViewCell {
     @IBAction func segmentBar(_ sender: UISegmentedControl) {
         switch segmentBar.selectedSegmentIndex {
         case 0:
-            fetchData()
-        case 1:
-            fetchData1()
-        case 2:
-            fetchData2()
-        case 3:
-            fetchData3()
-        case 4:
-            fetchData4()
-        case 5:
-            fetchData5()
+            heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+                (success, error) in
+                if success {
+                    self.heartRateManager.fetchHoursHeartRateData{ (heartRateData) in
+                        DispatchQueue.main.async {
+                            self.updateLineChart(with: heartRateData)
+                            if heartRateData.count == 0 {
+                                self.lblData.text = "0 bpm"
+                                self.lblDay.text = ""
+                                self.lblAverage.text = ""
+                            } else {
+                                for (index, dataPoint) in heartRateData.enumerated() {
+                                    self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                    self.last1Hrs()
+                                    self.lblAverage.text = ""
+                                }
+                            }
+                        }
+                        
+                    }
+                   
+                } else {
+                    print("Faild to authorize")
+                }
+            }
             
+        case 1:
+            heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+                (success, error) in
+                if success {
+                    self.heartRateManager.fetchDailyHeartRateData{ (heartRateData) in
+                        DispatchQueue.main.async {
+                            self.updateLineChart1(with: heartRateData)
+                            if heartRateData.count == 0 {
+                                self.lblData.text = "0 bpm"
+                                self.lblDay.text = ""
+                                self.lblAverage.text = ""
+                            } else {
+                                for (index, dataPoint) in heartRateData.enumerated() {
+                                    self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                    self.lastDay()
+                                    self.lblAverage.text = ""
+                                }
+                            }
+                        }
+                        
+                    }
+                   
+                } else {
+                    print("Faild to authorize")
+                }
+            }
+        case 2:
+            heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+                (success, error) in
+                if success {
+                    self.heartRateManager.fetchWeeklyHeartRateData{ (heartRateData) in
+                        DispatchQueue.main.async {
+                            self.updateLineChart2(with: heartRateData)
+                            if heartRateData.count == 0 {
+                                self.lblData.text = "0 bpm"
+                                self.lblDay.text = ""
+                                self.lblAverage.text = ""
+                            } else {
+                                for (index, dataPoint) in heartRateData.enumerated() {
+                                    self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                    self.lastWeek()
+                                    self.lblAverage.text = ""
+                                }
+                            }
+                        }
+                        
+                    }
+                   
+                } else {
+                    print("Faild to authorize")
+                }
+            }
+        case 3:
+            heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+                (success, error) in
+                if success {
+                    self.heartRateManager.fetchMonthlyHeartRateData{ (heartRateData) in
+                        DispatchQueue.main.async {
+                            self.updateLineChart3(with: heartRateData)
+                            if heartRateData.count == 0 {
+                                self.lblData.text = "0 bpm"
+                                self.lblDay.text = ""
+                                self.lblAverage.text = ""
+                            } else {
+                                for (index, dataPoint) in heartRateData.enumerated() {
+                                    self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                    self.lastMonth()
+                                    self.lblAverage.text = "Average"
+                                }
+                            }
+                        }
+                        
+                    }
+                   
+                } else {
+                    print("Faild to authorize")
+                }
+            }
+        case 4:
+            heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+                (success, error) in
+                if success {
+                    self.heartRateManager.fetchHalfYearlyHeartRateData{ (heartRateData) in
+                        DispatchQueue.main.async {
+                            self.updateLineChart4(with: heartRateData)
+                            if heartRateData.count == 0 {
+                                self.lblData.text = "0 bpm"
+                                self.lblDay.text = ""
+                                self.lblAverage.text = ""
+                            } else {
+                                for (index, dataPoint) in heartRateData.enumerated() {
+                                    self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                    self.last6Month()
+                                    self.lblAverage.text = "Average"
+                                }
+                            }
+                        }
+                        
+                    }
+                   
+                } else {
+                    print("Faild to authorize")
+                }
+            }
+        case 5:
+            heartRateManager.requestAuthorization(for: [HKObjectType.quantityType(forIdentifier: .heartRate)!]) {
+                (success, error) in
+                if success {
+                    self.heartRateManager.fetchYearlyHeartRateData{ (heartRateData) in
+                        DispatchQueue.main.async {
+                            self.updateLineChart5(with: heartRateData)
+                            if heartRateData.count == 0 {
+                                self.lblData.text = "0 bpm"
+                                self.lblDay.text = ""
+                                self.lblAverage.text = ""
+                            } else {
+                                for (index, dataPoint) in heartRateData.enumerated() {
+                                    self.lblData.text = "\(String(format: "%.0f",dataPoint.1)) bpm"
+                                    self.lastYear()
+                                    self.lblAverage.text = "Average"
+                                }
+                            }
+                        }
+                        
+                    }
+                   
+                } else {
+                    print("Faild to authorize")
+                }
+            }
         default:
             break
         }
     }
    
-    func fetchData(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 20.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 22.0)
-        ]
 
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
-        dataSet.colors = [UIColor.systemPink]
-        dataSet.circleColors = [UIColor.systemPink]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData1(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 5.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 10.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 22.0),
-            ChartDataEntry(x: 5.0, y: 25.0),
-            ChartDataEntry(x: 6.0, y: 10.0),
-            ChartDataEntry(x: 7.0, y: 15.0),
-            ChartDataEntry(x: 8.0, y: 25.0),
-            ChartDataEntry(x: 9.0, y: 5.0),
-            ChartDataEntry(x: 10.0, y: 30.0),
-            ChartDataEntry(x: 11.0, y: 22.0),
-            ChartDataEntry(x: 12.0, y: 25.0),
-            ChartDataEntry(x: 13.0, y: 12.0),
-            ChartDataEntry(x: 14.0, y: 20.0),
-            ChartDataEntry(x: 15.0, y: 40.0),
-            ChartDataEntry(x: 16.0, y: 18.0),
-            ChartDataEntry(x: 17.0, y: 25.0),
-            ChartDataEntry(x: 18.0, y: 20.0),
-            ChartDataEntry(x: 19.0, y: 25.0),
-            ChartDataEntry(x: 20.0, y: 18.0),
-            ChartDataEntry(x: 21.0, y: 30.0),
-            ChartDataEntry(x: 22.0, y: 22.0),
-            ChartDataEntry(x: 23.0, y: 35.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
-        dataSet.colors = [UIColor.systemPink]
-        dataSet.circleColors = [UIColor.systemPink]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData2(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 20.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 22.0),
-            ChartDataEntry(x: 5.0, y: 25.0),
-            ChartDataEntry(x: 6.0, y: 18.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
-        dataSet.colors = [UIColor.systemPink]
-        dataSet.circleColors = [UIColor.systemPink]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData3(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 5.0),
-            ChartDataEntry(x: 1.0, y: 10.0),
-            ChartDataEntry(x: 2.0, y: 15.0),
-            ChartDataEntry(x: 3.0, y: 20.0),
-            ChartDataEntry(x: 4.0, y: 5.0),
-            ChartDataEntry(x: 5.0, y: 30.0),
-            ChartDataEntry(x: 6.0, y: 15.0),
-            ChartDataEntry(x: 7.0, y: 40.0),
-            ChartDataEntry(x: 8.0, y: 45.0),
-            ChartDataEntry(x: 9.0, y: 50.0),
-            ChartDataEntry(x: 10.0, y: 40.0),
-            ChartDataEntry(x: 11.0, y: 30.0),
-            ChartDataEntry(x: 12.0, y: 5.0),
-            ChartDataEntry(x: 13.0, y: 15.0),
-            ChartDataEntry(x: 14.0, y: 20.0),
-            ChartDataEntry(x: 15.0, y: 25.0),
-            ChartDataEntry(x: 16.0, y: 30.0),
-            ChartDataEntry(x: 17.0, y: 45.0),
-            ChartDataEntry(x: 18.0, y: 15.0),
-            ChartDataEntry(x: 19.0, y: 20.0),
-            ChartDataEntry(x: 20.0, y: 25.0),
-            ChartDataEntry(x: 21.0, y: 50.0),
-            ChartDataEntry(x: 22.0, y: 5.0),
-            ChartDataEntry(x: 23.0, y: 25.0),
-            ChartDataEntry(x: 24.0, y: 10.0),
-            ChartDataEntry(x: 25.0, y: 30.0),
-            ChartDataEntry(x: 26.0, y: 35.0),
-            ChartDataEntry(x: 27.0, y: 45.0),
-            ChartDataEntry(x: 28.0, y: 15.0),
-            ChartDataEntry(x: 29.0, y: 30.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
-        dataSet.colors = [UIColor.systemPink]
-        dataSet.circleColors = [UIColor.systemPink]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData4(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 20.0),
-            ChartDataEntry(x: 1.0, y: 25.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 18.0),
-            ChartDataEntry(x: 5.0, y: 40.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
-        dataSet.colors = [UIColor.systemPink]
-        dataSet.circleColors = [UIColor.systemPink]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
-    func fetchData5(){
-        // Dummy data
-        let dataEntries: [ChartDataEntry] = [
-            ChartDataEntry(x: 0.0, y: 10.0),
-            ChartDataEntry(x: 1.0, y: 5.0),
-            ChartDataEntry(x: 2.0, y: 18.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 20.0),
-            ChartDataEntry(x: 5.0, y: 18.0),
-            ChartDataEntry(x: 6.0, y: 10.0),
-            ChartDataEntry(x: 7.0, y: 25.0),
-            ChartDataEntry(x: 8.0, y: 18.0),
-            ChartDataEntry(x: 9.0, y: 30.0),
-            ChartDataEntry(x: 10.0, y: 22.0),
-            ChartDataEntry(x: 11.0, y: 15.0)
-        ]
-
-        let dataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
-        dataSet.colors = [UIColor.systemPink]
-        dataSet.circleColors = [UIColor.systemPink]
-        let data = LineChartData(dataSet: dataSet)
-        lineChartView.data = data
-        lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelTextColor = .black
-        lineChartView.leftAxis.labelTextColor = .black
-        lineChartView.rightAxis.enabled = false
-        lineChartView.legend.enabled = true
-        
-    }
-    
     func setUpUi(){
         
         lineChartView = LineChartView()
@@ -265,6 +246,8 @@ class HeartRateChartTVCell: UITableViewCell {
         
     }
     
+    
+    
     func chartsManage(){
         let xAxis = lineChartView.xAxis
         let leftAxis = lineChartView.leftAxis
@@ -277,7 +260,387 @@ class HeartRateChartTVCell: UITableViewCell {
         leftAxis.enabled = false
         xAxis.drawLabelsEnabled = true
         lineChartView.scaleYEnabled = false
-        //lineChartView.zoomToCenter(scaleX: 2.5, scaleY: 0)
+    }
+    
+    //MARK: PerHours Data
+    func updateLineChart(with data: [(Date, Double)]) {
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in data.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+            dataEntries.append(entry)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.circleColors = [UIColor.systemPink]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.chartView.addSubview(lineChart)
+            lineChart.center = self.chartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    func last1Hrs(){
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h a"
+
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let startDate = calendar.date(bySettingHour: 15, minute: 0, second: 0, of: currentDate)!
+        let endDate = calendar.date(bySettingHour: 16, minute: 0, second: 0, of: currentDate)!
+
+        let startTime = dateFormatter.string(from: startDate)
+        let endTime = dateFormatter.string(from: endDate)
+
+        let formattedTime = "Today \(startTime) - \(endTime)"
+        lblDay.text = formattedTime
+        
+    }
+    
+    
+    //MARK: Daily Data
+    func updateLineChart1(with data: [(Date, Double)]) {
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in data.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+            dataEntries.append(entry)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.circleColors = [UIColor.systemPink]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.chartView.addSubview(lineChart)
+            lineChart.center = self.chartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    func lastDay(){
+        func formatDate() -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "E, dd MMM yyyy"
+            let dateString = dateFormatter.string(from: Date())
+            return dateString
+        }
+        lblDay.text = formatDate()
+    }
+    
+    //MARK: Weekly Data
+    func updateLineChart2(with data: [(Date, Double)]) {
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in data.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+            dataEntries.append(entry)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.circleColors = [UIColor.systemPink]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.chartView.addSubview(lineChart)
+            lineChart.center = self.chartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEE"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    func lastWeek(){
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .day, value: -6, to: endDate)!
+            return (startDate, endDate)
+        }
+
+        func StartDateFormat(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd"
+            return dateFormatter.string(from: date)
+        }
+        
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = StartDateFormat(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+    }
+        
+    //MARK: Monthly Data
+    func updateLineChart3(with data: [(Date, Double)]) {
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in data.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+            dataEntries.append(entry)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.circleColors = [UIColor.systemPink]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.chartView.addSubview(lineChart)
+            lineChart.center = self.chartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    func lastMonth(){
+        
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .day, value: -30, to: endDate)!
+            return (startDate, endDate)
+        }
+
+        func StartDateFormat(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM"
+            return dateFormatter.string(from: date)
+        }
+        
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = StartDateFormat(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+        
+    }
+    
+    //MARK: HalfYearly Data
+    func updateLineChart4(with data: [(Date, Double)]) {
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in data.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+            dataEntries.append(entry)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.circleColors = [UIColor.systemPink]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.chartView.addSubview(lineChart)
+            lineChart.center = self.chartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    func last6Month(){
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .month, value: -6, to: endDate)!
+            return (startDate, endDate)
+        }
+
+    
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = formatDate(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+    }
+    
+    //MARK: Yearly Data
+    func updateLineChart5(with data: [(Date, Double)]) {
+        var dataEntries: [ChartDataEntry] = []
+        for (index, dataPoint) in data.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: dataPoint.1)
+            dataEntries.append(entry)
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Heart Rate")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.circleColors = [UIColor.systemPink]
+        lineChartView.data = chartData
+        chartDataSet.drawValuesEnabled = false
+        let lineChart = lineChartView
+        DispatchQueue.main.async {
+            self.lineChartView.data = chartData
+            self.chartView.addSubview(lineChart)
+            lineChart.center = self.chartView.center
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM"
+            var time = [String]()
+            
+            time = dataEntries.map { entry in
+                let date = Calendar.current.date(byAdding: .hour, value: Int(-entry.x), to: Date())!
+                return dateFormatter.string(from: date)
+            }
+            time.reverse()
+            self.lineChartView.xAxis.labelPosition = .bottom
+            self.lineChartView.xAxis.labelTextColor = .black
+            self.lineChartView.leftAxis.labelTextColor = .black
+            self.lineChartView.rightAxis.enabled = false
+            self.lineChartView.legend.enabled = true
+            let xValuesFormatter = IndexAxisValueFormatter(values: time)
+            self.lineChartView.xAxis.valueFormatter = xValuesFormatter
+            self.lineChartView.xAxis.granularity = 1
+            self.lineChartView.notifyDataSetChanged()
+        }
+    
+    }
+    
+    func lastYear(){
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .year, value: -1, to: endDate)!
+            return (startDate, endDate)
+        }
+
+    
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = formatDate(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
         
     }
     

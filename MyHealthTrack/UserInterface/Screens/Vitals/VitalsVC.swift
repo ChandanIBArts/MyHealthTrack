@@ -9,8 +9,8 @@ import UIKit
 
 class VitalsVC: UIViewController {
     
-    let vitalshealthStore = VitalsHealthKitManager()
-    var vitalsRecord = [VitalsRecord]()
+    let vitalshealthStore = HeartHealthKitManager()
+    var vitalsRecord = [HearRateRecord]()
     var strRecord = strVitalsRecord.strVitalsData
 
     @IBOutlet weak var vitalsTableView: UITableView!

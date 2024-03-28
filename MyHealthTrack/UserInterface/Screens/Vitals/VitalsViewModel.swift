@@ -18,9 +18,9 @@ class VitalsHealthKitManager {
         if HKHealthStore.isHealthDataAvailable() {
             let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
 
-            let typesToRead: Set<HKObjectType> = [heartRateType]
+            //let typesToRead: Set<HKObjectType> = [heartRateType]
 
-            vitalshealthStore.requestAuthorization(toShare: nil, read: typesToRead) { (success, error) in
+            vitalshealthStore.requestAuthorization(toShare: nil, read: [heartRateType]) { (success, error) in
                 if success {
                     // Authorization granted, you can now access health data.
                     self.vitalsData{
@@ -51,7 +51,16 @@ class VitalsHealthKitManager {
     func vitalsData(comp: @escaping (([VitalsRecord]?)->Void)) {
         let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
 
-        let query = HKSampleQuery(sampleType: heartRateType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+        let query = HKSampleQuery(sampleType: heartRateType, 
+                                  predicate: nil,
+                                  limit: 1,
+                                  sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)]) { (query, results, error) in
+            if let error = error {
+                // Handle error
+                print("Error querying steps data: \(error)")
+                return
+            }
+            // Process retrieved samples (steps data)
             if let samples = results as? [HKQuantitySample], let heartRateSample = samples.first {
                 let heartRate = heartRateSample.quantity.doubleValue(for: HKUnit(from: "count/min"))
                 let date = heartRateSample.startDate
