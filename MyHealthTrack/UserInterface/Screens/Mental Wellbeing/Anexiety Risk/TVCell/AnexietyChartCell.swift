@@ -13,9 +13,9 @@ class AnexietyChartCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var segmentBar: UISegmentedControl!
-    @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var lblDay: UILabel!
+    @IBOutlet weak var chartView: UIView!
     
     var dailyTotalCount = 0
     var weeklyTotalCount = 0
@@ -23,12 +23,42 @@ class AnexietyChartCell: UITableViewCell {
     var halfYearlyTotalCount = 0
     var yearlyTotalCount = 0
     
-    let healthKitManager = DetailsAnexietyRiskHealthKitManager()
+    let healthTrackManager = DetailsAnexietyRiskHealthKitManager()
+    
     var barChartView = BarChartView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUi()
+        healthTrackManager.requestAuthorization { [self] (success, error) in
+            if success {
+                healthTrackManager.fetchAppleStandHourData(for: .daily) { (data, error) in
+                    if let data = data {
+                        DispatchQueue.main.async { [self] in
+                            print("Anxiety Risk data: \(data)")
+                            let chartData = data
+                            self.lastDay()
+                            if data.count != 0 {
+                                for (index, data) in data.enumerated() {
+                                    let entry = BarChartDataEntry(x: Double(index), y: data.1)
+                                    self.dailyTotalCount = self.dailyTotalCount + Int(data.1)
+                                    self.lblData.text = "\(String(format: "%.0f",self.dailyTotalCount)) bpm"
+                                    self.updateBarChart(with: chartData)
+                                }
+                            } else {
+                                self.lblData.text = "No data found"
+                                self.barChartView.data = []
+                            }
+                        }
+                    } else if let error = error {
+                        print("Error fetching Anxiety Risk data: \(error.localizedDescription)")
+                    }
+                        
+                }
+            }
+        }
+       
+        /*
         //MARK: Daily Hrs Data
         healthKitManager.requestDailyAuthorization { success, _ in
             if success {
@@ -42,6 +72,7 @@ class AnexietyChartCell: UITableViewCell {
                 }
             }
         }
+         */
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -53,97 +84,151 @@ class AnexietyChartCell: UITableViewCell {
     @IBAction func segmentBar(_ sender: UISegmentedControl) {
  
         switch segmentBar.selectedSegmentIndex {
+            
         case 0:
-            //MARK: Daily Hrs Data
-            lblTotal.text = "TOTAL"
-            lblDay.text = "Today"
-            healthKitManager.requestDailyAuthorization { success, _ in
+            
+            healthTrackManager.requestAuthorization { [self] (success, error) in
                 if success {
-                    self.healthKitManager.fetchDailyStepCount { stepCountData in
-                        self.updateBarChart(with: stepCountData)
-                        self.barChartView.xAxis.labelPosition = .bottom
-                        DispatchQueue.main.async {
-                            self.lblData.text = "80"//"\(HealthKitmanager.dailySteps!) Steps"
-                            self.dailyTotalCount = 0
+                    healthTrackManager.fetchAppleStandHourData(for: .daily) { (data, error) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                print("Anxiety Risk data: \(data)")
+                                let chartData = data
+                                self.lastDay()
+                                if data.count != 0 {
+                                    for (index, data) in data.enumerated() {
+                                        let entry = BarChartDataEntry(x: Double(index), y: data.1)
+                                        self.dailyTotalCount = self.dailyTotalCount + Int(data.1)
+                                        self.lblData.text = "\(String(format: "%.0f",self.dailyTotalCount)) bpm"
+                                        self.updateBarChart(with: chartData)
+                                    }
+                                } else {
+                                    self.lblData.text = "No data found"
+                                    self.barChartView.data = []
+                                }
+                            }
+                        } else if let error = error {
+                            print("Error fetching Anxiety Risk data: \(error.localizedDescription)")
                         }
                     }
                 }
             }
         case 1:
-            //MARK: Weak Data
-            lblTotal.text = "AVERAGE"
-            lblDay.text = "Last 7 Day"
-            healthKitManager.requestWeeklyAuthorization { success, _ in
+            healthTrackManager.requestAuthorization { [self] (success, error) in
                 if success {
-                    self.healthKitManager.fetchWeeklyStepCount { stepCountData in
-                        self.updateBarChart1(with: stepCountData)
-                        self.barChartView.xAxis.labelPosition = .bottom
-                        DispatchQueue.main.async {
-                            self.lblData.text = "80"//"\(String(self.weeklyTotalCount/7)) Steps"
-                            self.weeklyTotalCount = 0
+                    healthTrackManager.fetchAppleStandHourData(for: .weekly) { (data, error) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                print("Anxiety Risk data: \(data)")
+                                let chartData = data
+                                self.lastWeek()
+                                if data.count != 0 {
+                                    for (index, data) in data.enumerated() {
+                                        let entry = BarChartDataEntry(x: Double(index), y: data.1)
+                                        self.dailyTotalCount = self.dailyTotalCount + Int(data.1)
+                                        self.lblData.text = "\(String(format: "%.0f",self.dailyTotalCount)) bpm"
+                                        self.updateBarChart1(with: chartData)
+                                    }
+                                } else {
+                                    self.lblData.text = "No data found"
+                                    self.barChartView.data = []
+                                }
+                            }
+                        } else if let error = error {
+                            print("Error fetching Anxiety Risk data: \(error.localizedDescription)")
                         }
                     }
                 }
             }
-           
+            
         case 2:
-            //MARK: Monthly Data
-            lblTotal.text = "AVERAGE"
-            lblDay.text = "Last 30 Day"
-            healthKitManager.requestMonthlyAuthorization { success, _ in
+            healthTrackManager.requestAuthorization { [self] (success, error) in
                 if success {
-                    self.healthKitManager.fetchMonthlyStepCount { stepCountData in
-                        self.updateBarChart2(with: stepCountData)
-                        self.barChartView.xAxis.labelPosition = .bottom
-                        DispatchQueue.main.async {
-                            self.lblData.text = "80"//"\(String(self.monthlyTotalCount/30)) Steps"
-                            self.monthlyTotalCount = 0
+                    healthTrackManager.fetchAppleStandHourData(for: .monthly) { (data, error) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                print("Anxiety Risk data: \(data)")
+                                let chartData = data
+                                self.lastMonth()
+                                if data.count != 0 {
+                                    for (index, data) in data.enumerated() {
+                                        let entry = BarChartDataEntry(x: Double(index), y: data.1)
+                                        self.dailyTotalCount = self.dailyTotalCount + Int(data.1)
+                                        self.lblData.text = "\(String(format: "%.0f",self.dailyTotalCount)) bpm"
+                                        self.updateBarChart2(with: chartData)
+                                    }
+                                } else {
+                                    self.lblData.text = "No data found"
+                                    self.barChartView.data = []
+                                }
+                            }
+                        } else if let error = error {
+                            print("Error fetching Anxiety Risk data: \(error.localizedDescription)")
                         }
                     }
                 }
             }
             
         case 3:
-            //MARK: HalfYearly Data
-            lblTotal.text = "DAILY AVERAGE"
-            lblDay.text = "Last 6 Month"
-            healthKitManager.requestHalfYearlyAuthorization { success, _ in
+            healthTrackManager.requestAuthorization { [self] (success, error) in
                 if success {
-                    self.healthKitManager.fetchHalfYearlyStepCount { stepCountData in
-                        self.updateBarChart3(with: stepCountData)
-                        self.barChartView.xAxis.labelPosition = .bottom
-                        DispatchQueue.main.async {
-                            self.lblData.text = "80"//"\(String(self.halfYearlyTotalCount/180)) Steps"
-                            self.halfYearlyTotalCount = 0
+                    healthTrackManager.fetchAppleStandHourData(for: .halfYearly) { (data, error) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                print("Anxiety Risk data: \(data)")
+                                let chartData = data
+                                self.last6Month()
+                                if data.count != 0 {
+                                    for (index, data) in data.enumerated() {
+                                        let entry = BarChartDataEntry(x: Double(index), y: data.1)
+                                        self.dailyTotalCount = self.dailyTotalCount + Int(data.1)
+                                        self.lblData.text = "\(String(format: "%.0f",self.dailyTotalCount)) bpm"
+                                        self.updateBarChart3(with: chartData)
+                                    }
+                                } else {
+                                    self.lblData.text = "No data found"
+                                    self.barChartView.data = []
+                                }
+                            }
+                        } else if let error = error {
+                            print("Error fetching Anxiety Risk data: \(error.localizedDescription)")
                         }
                     }
                 }
             }
-            
             
         case 4:
-            //MARK: Yearly Data
-            lblTotal.text = "DAILY AVERAGE"
-            lblDay.text = "Last 1 Year"
-            healthKitManager.requestYearlyAuthorization { success, _ in
+            healthTrackManager.requestAuthorization { [self] (success, error) in
                 if success {
-                    self.healthKitManager.fetchYearlyStepCount { stepCountData in
-                        self.updateBarChart4(with: stepCountData)
-                        self.barChartView.xAxis.labelPosition = .bottom
-                        DispatchQueue.main.async {
-                            self.lblData.text = "80"//"\(String(self.yearlyTotalCount/365)) Steps"
-                            self.yearlyTotalCount = 0
+                    healthTrackManager.fetchAppleStandHourData(for: .yearly) { (data, error) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                print("Anxiety Risk data: \(data)")
+                                let chartData = data
+                                self.lastYear()
+                                if data.count != 0 {
+                                    for (index, data) in data.enumerated() {
+                                        let entry = BarChartDataEntry(x: Double(index), y: data.1)
+                                        self.dailyTotalCount = self.dailyTotalCount + Int(data.1)
+                                        self.lblData.text = "\(String(format: "%.0f",self.dailyTotalCount)) bpm"
+                                        self.updateBarChart4(with: chartData)
+                                    }
+                                } else {
+                                    self.lblData.text = "No data found"
+                                    self.barChartView.data = []
+                                }
+                            }
+                        } else if let error = error {
+                            print("Error fetching Anxiety Risk data: \(error.localizedDescription)")
                         }
                     }
                 }
             }
-            
-            
             
         default:
             break
         }
-
+       
     }
     
     
@@ -359,16 +444,20 @@ class AnexietyChartCell: UITableViewCell {
      }
  
     func setUpUi(){
+        chartView.layer.borderWidth = 0.8
+        chartView.layer.borderColor = UIColor.systemGreen.cgColor
+        chartView.clipsToBounds = true
+        chartView.layer.cornerRadius = 8
         cellView.layer.cornerRadius = 10
         cellView.clipsToBounds = true
         barChartView.translatesAutoresizingMaskIntoConstraints = false
-        cellView.addSubview(barChartView)
+        chartView.addSubview(barChartView)
         // Set up constraints
         NSLayoutConstraint.activate([
-            barChartView.topAnchor.constraint(equalTo: lblDay.bottomAnchor, constant: 5),
-            barChartView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 5),
-            barChartView.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -5),
-            barChartView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -5)
+            barChartView.topAnchor.constraint(equalTo: chartView.topAnchor, constant: 1),
+            barChartView.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: 1),
+            barChartView.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: -1),
+            barChartView.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -1)
         ])
         
         chartsManage()
@@ -389,5 +478,118 @@ class AnexietyChartCell: UITableViewCell {
         barChartView.zoomToCenter(scaleX: 2.5, scaleY: 0)
         
     }
+    
+    
+    func lastDay(){
+        func formatDate() -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "E, dd MMM yyyy"
+            let dateString = dateFormatter.string(from: Date())
+            return dateString
+        }
+        lblDay.text = formatDate()
+    }
+    
+    func lastWeek(){
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .day, value: -6, to: endDate)!
+            return (startDate, endDate)
+        }
+
+        func StartDateFormat(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd"
+            return dateFormatter.string(from: date)
+        }
+        
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = StartDateFormat(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+    }
+    
+    func lastMonth(){
+        
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .day, value: -30, to: endDate)!
+            return (startDate, endDate)
+        }
+
+        func StartDateFormat(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM"
+            return dateFormatter.string(from: date)
+        }
+        
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = StartDateFormat(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+        
+    }
+    
+    func last6Month(){
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .month, value: -6, to: endDate)!
+            return (startDate, endDate)
+        }
+
+    
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = formatDate(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+    }
+    
+    func lastYear(){
+        func getLastWeekDates() -> (startDate: Date, endDate: Date) {
+            let calendar = Calendar.current
+            let endDate = calendar.startOfDay(for: Date())
+            let startDate = calendar.date(byAdding: .year, value: -1, to: endDate)!
+            return (startDate, endDate)
+        }
+
+    
+        func formatDate(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            return dateFormatter.string(from: date)
+        }
+
+        let (startDate, endDate) = getLastWeekDates()
+        let formattedStartDate = formatDate(date: startDate)
+        let formattedEndDate = formatDate(date: endDate)
+
+        lblDay.text = "\(formattedStartDate) - \(formattedEndDate)"
+        
+    }
+    
     
 }

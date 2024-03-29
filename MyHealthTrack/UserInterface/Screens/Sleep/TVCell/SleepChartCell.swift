@@ -42,7 +42,12 @@ class SleepChartCell: UITableViewCell {
                 self.sleepHealthKitManager.fetchDailySleepData { (sleepData) in
                     self.dailySleepData = sleepData
                     DispatchQueue.main.async {
-                        self.updateBarChart()
+                        if sleepData.count != 0{
+                            self.updateBarChart()
+                        } else {
+                            print("No data available")
+                            self.lineChartView.data = []
+                        }
                       //  self.fetchTodayDate()
                     }
                     print("Daily sleep data: \(sleepData)")
@@ -71,7 +76,13 @@ class SleepChartCell: UITableViewCell {
                     self.sleepHealthKitManager.fetchDailySleepData { (sleepData) in
                         self.dailySleepData = sleepData
                         DispatchQueue.main.async {
-                            self.updateBarChart()
+                            if sleepData.count != 0{
+                                self.updateBarChart()
+                            } else {
+                                print("No data available")
+                                self.lineChartView.data = []
+                                
+                            }
                           //  self.fetchTodayDate()
                         }
                         print("Daily sleep data: \(sleepData)")
@@ -86,7 +97,12 @@ class SleepChartCell: UITableViewCell {
                     self.sleepHealthKitManager.fetchWeeklySleepData { (sleepData) in
                         self.weeklySleepData = sleepData
                         DispatchQueue.main.async {
-                            self.updateBarChart1()
+                            if sleepData.count != 0 {
+                                self.updateBarChart1()
+                            } else {
+                                print("No data available")
+                                self.lineChartView.data = []
+                            }
                           //  self.fetchLastWeekDate()
                         }
                         print("Daily sleep data: \(sleepData)")
@@ -102,7 +118,12 @@ class SleepChartCell: UITableViewCell {
                     self.sleepHealthKitManager.fetchMonthlySleepData { (sleepData) in
                         self.monthlySleepData = sleepData
                         DispatchQueue.main.async {
-                            self.updateBarChart2()
+                            if sleepData.count != 0 {
+                                self.updateBarChart2()
+                            } else {
+                                print("No data available")
+                                self.lineChartView.data = []
+                            }
                            // self.fetchLastMonthDate()
                         }
                         print("Daily sleep data: \(sleepData)")
@@ -117,7 +138,12 @@ class SleepChartCell: UITableViewCell {
                     self.sleepHealthKitManager.fetchHalfYearlySleepData { (sleepData) in
                         self.halfyearlySleepData = sleepData
                         DispatchQueue.main.async {
-                            self.updateBarChart3()
+                            if sleepData.count != 0 {
+                                self.updateBarChart3()
+                            } else {
+                                print("No data available")
+                                self.lineChartView.data = []
+                            }
                           //  self.fetch6MonthData()
                         }
                         print("Daily sleep data: \(sleepData)")

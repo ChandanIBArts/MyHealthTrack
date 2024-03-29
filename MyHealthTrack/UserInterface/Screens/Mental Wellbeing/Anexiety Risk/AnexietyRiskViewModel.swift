@@ -5,11 +5,85 @@ import Charts
 
 class DetailsAnexietyRiskHealthKitManager{
     
-    let healthStore = HKHealthStore()
-
-    //stepCount
-    //HKUnit.count()
     
+    let healthStore = HKHealthStore()
+        
+    func requestAuthorization(completion: @escaping (Bool, Error?) -> Void) {
+        // Request authorization to access Apple Stand Hour data
+        let typesToRead: Set<HKSampleType> = [
+            HKSampleType.categoryType(forIdentifier: .appleStandHour)!
+        ]
+        
+        healthStore.requestAuthorization(toShare: nil, read: typesToRead) { (success, error) in
+            completion(success, error)
+        }
+    }
+        
+    func fetchAppleStandHourData(for timeRange: TimeRange, completion: @escaping ([(Date, Double)]?, Error?) -> Void) {
+        guard let appleStandHourType = HKObjectType.categoryType(forIdentifier: .appleStandHour) else {
+            completion(nil, NSError(domain: "HealthTrackManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Anxiety Risk data not available"]))
+            return
+        }
+        
+        // Calculate start and end dates based on the selected time range
+        var startDate: Date
+        var endDate: Date
+        
+        switch timeRange {
+        case .daily:
+            startDate = Calendar.current.startOfDay(for: Date())
+            endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)!
+        case .weekly:
+            startDate = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
+            endDate = Calendar.current.date(byAdding: .weekOfYear, value: 1, to: startDate)!
+        case .monthly:
+            startDate = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Date()))!
+            endDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate)!
+        case .halfYearly:
+            let currentMonth = Calendar.current.component(.month, from: Date())
+            startDate = Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: Date()), month: currentMonth < 7 ? 1 : 7, day: 1))!
+            endDate = Calendar.current.date(byAdding: .month, value: currentMonth < 7 ? 6 : 12 - currentMonth, to: startDate)!
+        case .yearly:
+            startDate = Calendar.current.date(from: Calendar.current.dateComponents([.year], from: Date()))!
+            endDate = Calendar.current.date(byAdding: .year, value: 1, to: startDate)!
+        }
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let query = HKSampleQuery(sampleType: appleStandHourType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, samples, error) in
+            guard let samples = samples as? [HKCategorySample], error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            var appleStandHourData: [(Date, Double)] = []
+            
+            for sample in samples {
+                let date = sample.startDate
+                let value = sample.value == HKCategoryValueAppleStandHour.stood.rawValue ? 1.0 : 0.0
+                appleStandHourData.append((date, value))
+            }
+            
+            completion(appleStandHourData, nil)
+        }
+        
+        healthStore.execute(query)
+    }
+    }
+
+    // Enum to represent different time ranges
+    enum TimeRange {
+        case daily
+        case weekly
+        case monthly
+        case halfYearly
+        case yearly
+    }
+    
+    
+
+    
+    /*
     //MARK: Daily Hrs Data
     func requestDailyAuthorization(completion: @escaping (Bool, Error?) -> Void) {
         let healthKitTypesToRead: Set<HKObjectType> = [
@@ -315,7 +389,7 @@ class DetailsAnexietyRiskHealthKitManager{
 
         healthStore.execute(query)
     }
-    
-}
+    */
+
 
 

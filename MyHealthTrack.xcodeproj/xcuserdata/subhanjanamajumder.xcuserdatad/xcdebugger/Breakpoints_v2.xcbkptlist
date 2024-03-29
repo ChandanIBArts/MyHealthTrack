@@ -68,5 +68,85 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3809A668-BF33-49E8-9EEE-410C6EB7C4B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHealthTrack/UserInterface/Screens/Mental Wellbeing/Anexiety Risk/TVCell/AnexietyChartCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63DE8F06-BEA5-4A95-AA1D-31B6DE160BF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHealthTrack/UserInterface/Screens/Sleep/TVCell/SleepChartCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "segmentBar(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "117A6934-5066-4858-B0A7-AAC649C9FF95"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyHealthTrack/UserInterface/Screens/Sleep/TVCell/SleepChartCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "segmentBar(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "117A6934-5066-4858-B0A7-AAC649C9FF95 - 4cea058a08e040dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Array&lt;(Foundation.Date, Swift.Double)&gt;) -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.SleepChartCell.segmentBar(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/MyHealthTrack%204/MyHealthTrack/UserInterface/Screens/Sleep/TVCell/SleepChartCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "117A6934-5066-4858-B0A7-AAC649C9FF95 - 4cea058a08e040dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Array&lt;(Foundation.Date, Swift.Double)&gt;) -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MyHealthTrack.SleepChartCell.segmentBar(__C.UISegmentedControl) -&gt; ()"
+                  moduleName = "MyHealthTrack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subhanjanamajumder/Desktop/Chandan/MyHealthTrack%204/MyHealthTrack/UserInterface/Screens/Sleep/TVCell/SleepChartCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
